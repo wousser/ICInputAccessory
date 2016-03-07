@@ -53,6 +53,7 @@ class ExampleViewController: UIViewController, UITableViewDataSource {
     view.addSubview(tableView)
     tableView.frame = view.bounds
     tableView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+    let _ = ICTokenField()
   }
 
   // MARK: - UITableViewDataSource

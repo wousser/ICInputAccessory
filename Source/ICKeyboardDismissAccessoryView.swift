@@ -30,7 +30,9 @@ class ICKeyboardDismissAccessoryView: UIView {
 
   private(set) lazy var dismissButton: UIButton = {
     let _button = UIButton()
-    _button.setImage(UIImage(named: "icook-iphone-button-hidekeyboard"), forState: .Normal)
+    let resources = NSBundle(forClass: self.dynamicType)
+    let icon = UIImage(named: "icook-iphone-button-hide-keyboard", inBundle: resources, compatibleWithTraitCollection: nil)
+    _button.setImage(icon, forState: .Normal)
     _button.backgroundColor = Constants.ButtonColor
     _button.exclusiveTouch = true
     _button.layer.cornerRadius = 4

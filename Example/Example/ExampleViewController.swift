@@ -37,7 +37,7 @@ class ExampleViewController: UIViewController, UITableViewDataSource {
     return _tableView
   }()
 
-  private let types: [UIView.Type] = [ICKeyboardDismissAccessoryView.self]
+  private let types: [UIView.Type] = [ICKeyboardDismissTextField.self]
 
   // MARK: - Initialization
 
@@ -66,18 +66,22 @@ class ExampleViewController: UIViewController, UITableViewDataSource {
   }
 
   func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    return String(types[section])
+    switch types[section] {
+    case is ICKeyboardDismissTextField.Type:
+      return "Dismiss Keyboard"
+    default:
+      return ""
+    }
   }
 
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier(NSStringFromClass(ExampleCell.self), forIndexPath: indexPath)
     switch types[indexPath.section] {
-    case is ICKeyboardDismissAccessoryView.Type:
-      let textField = UITextField()
+    case let type as ICKeyboardDismissTextField.Type:
+      let textField = type.init()
       textField.leftViewMode = .Always
       textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: 15))
-      textField.inputAccessoryView = ICKeyboardDismissAccessoryView()
-      textField.placeholder = String(ICKeyboardDismissAccessoryView.self)
+      textField.placeholder = String(type)
       (cell as? ExampleCell)?.showcase = textField
     default:
       break

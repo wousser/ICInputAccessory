@@ -28,7 +28,7 @@ import UIKit
 
 public class ICKeyboardDismissAccessoryView: UIView {
 
-  private(set) lazy var dismissButton: UIButton = {
+  public private(set) lazy var dismissButton: UIButton = {
     let _button = UIButton()
     let resources = NSBundle(forClass: self.dynamicType)
     let icon = UIImage(named: "icook-iphone-button-hide-keyboard", inBundle: resources, compatibleWithTraitCollection: nil)

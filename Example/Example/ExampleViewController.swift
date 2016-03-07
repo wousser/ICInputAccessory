@@ -31,7 +31,7 @@ class ExampleViewController: UIViewController, UITableViewDataSource {
 
   private(set) lazy var tableView: UITableView = {
     let _tableView = UITableView(frame: .zero, style: .Grouped)
-    _tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: NSStringFromClass(UITableViewCell.self))
+    _tableView.registerClass(ExampleCell.self, forCellReuseIdentifier: NSStringFromClass(ExampleCell.self))
     _tableView.allowsSelection = false
     _tableView.dataSource = self
     return _tableView
@@ -70,7 +70,18 @@ class ExampleViewController: UIViewController, UITableViewDataSource {
   }
 
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier(NSStringFromClass(UITableViewCell.self), forIndexPath: indexPath)
+    let cell = tableView.dequeueReusableCellWithIdentifier(NSStringFromClass(ExampleCell.self), forIndexPath: indexPath)
+    switch types[indexPath.section] {
+    case is ICKeyboardDismissAccessoryView.Type:
+      let textField = UITextField()
+      textField.leftViewMode = .Always
+      textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: 15))
+      textField.inputAccessoryView = ICKeyboardDismissAccessoryView()
+      textField.placeholder = String(ICKeyboardDismissAccessoryView.self)
+      (cell as? ExampleCell)?.showcase = textField
+    default:
+      break
+    }
     return cell
   }
 

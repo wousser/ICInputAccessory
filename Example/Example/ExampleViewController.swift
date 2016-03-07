@@ -25,6 +25,7 @@
 //
 
 import UIKit
+import ICInputAccessory
 
 class ExampleViewController: UIViewController, UITableViewDataSource {
 
@@ -36,7 +37,7 @@ class ExampleViewController: UIViewController, UITableViewDataSource {
     return _tableView
   }()
 
-  private let types = ["ICKeyboardDismissAccessoryView"]
+  private let types: [UIView.Type] = [ICKeyboardDismissAccessoryView.self]
 
   // MARK: - Initialization
 
@@ -65,7 +66,7 @@ class ExampleViewController: UIViewController, UITableViewDataSource {
   }
 
   func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    return types[section]
+    return String(types[section])
   }
 
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

@@ -1,0 +1,14 @@
+PODS:
+  - ICInputAccessory (0.1.0)
+
+DEPENDENCIES:
+  - ICInputAccessory (from `./`)
+
+EXTERNAL SOURCES:
+  ICInputAccessory:
+    :path: "./"
+
+SPEC CHECKSUMS:
+  ICInputAccessory: 99d2957193e587e3d82c4b3a045c58c3b02c120c
+
+COCOAPODS: 0.39.0

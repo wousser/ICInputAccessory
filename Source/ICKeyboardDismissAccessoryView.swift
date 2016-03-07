@@ -26,7 +26,7 @@
 
 import UIKit
 
-class ICKeyboardDismissAccessoryView: UIView {
+public class ICKeyboardDismissAccessoryView: UIView {
 
   private(set) lazy var dismissButton: UIButton = {
     let _button = UIButton()
@@ -43,19 +43,19 @@ class ICKeyboardDismissAccessoryView: UIView {
 
   // MARK: - Initialization
 
-  override init(frame: CGRect) {
+  override public init(frame: CGRect) {
     super.init(frame: frame)
     setUpSubviews()
   }
 
-  required init?(coder aDecoder: NSCoder) {
+  required public init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
     setUpSubviews()
   }
 
   // MARK: - UIView
 
-  override func pointInside(point: CGPoint, withEvent event: UIEvent?) -> Bool {
+  override public func pointInside(point: CGPoint, withEvent event: UIEvent?) -> Bool {
     for subview in subviews {
       if !subview.hidden && subview.alpha > 0 &&
           subview.userInteractionEnabled &&

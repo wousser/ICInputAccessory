@@ -37,7 +37,7 @@ class ExampleViewController: UIViewController, UITableViewDataSource {
     return _tableView
   }()
 
-  private let types: [UIView.Type] = [ICKeyboardDismissTextField.self]
+  private let types: [UIView.Type] = [ICKeyboardDismissTextField.self, ICTokenField.self]
 
   // MARK: - Initialization
 
@@ -53,7 +53,6 @@ class ExampleViewController: UIViewController, UITableViewDataSource {
     view.addSubview(tableView)
     tableView.frame = view.bounds
     tableView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
-    let _ = ICTokenField()
   }
 
   // MARK: - UITableViewDataSource
@@ -70,6 +69,8 @@ class ExampleViewController: UIViewController, UITableViewDataSource {
     switch types[section] {
     case is ICKeyboardDismissTextField.Type:
       return "Dismiss Keyboard"
+    case is ICTokenField.Type:
+      return "Text Field with Tokens"
     default:
       return ""
     }
@@ -84,6 +85,19 @@ class ExampleViewController: UIViewController, UITableViewDataSource {
       textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: 15))
       textField.placeholder = String(type)
       (cell as? ExampleCell)?.showcase = textField
+
+    case let type as ICTokenField.Type:
+      let tokenField = type.init()
+      tokenField.placeholder = String(type)
+
+      let container = UIView(frame: cell.bounds)
+      container.backgroundColor = UIColor(red:0.96, green:0.48, blue:0.4, alpha:1)
+
+      tokenField.frame = container.bounds.insetBy(dx: 15, dy: 3)
+      tokenField.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+      container.addSubview(tokenField)
+      (cell as? ExampleCell)?.showcase = container
+
     default:
       break
     }

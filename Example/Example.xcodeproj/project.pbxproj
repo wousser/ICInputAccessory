@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B548C5A71C8D55A8009D5AEE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B548C5A51C8D55A8009D5AEE /* InfoPlist.strings */; };
 		B5E9F8FF1C8D3B6E00443DC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E9F8FE1C8D3B6E00443DC7 /* AppDelegate.swift */; };
 		B5E9F9011C8D3B6E00443DC7 /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E9F9001C8D3B6E00443DC7 /* ExampleViewController.swift */; };
 		B5E9F9061C8D3B6E00443DC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5E9F9051C8D3B6E00443DC7 /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B548C5A61C8D55A8009D5AEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B5E9F8FB1C8D3B6E00443DC7 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5E9F8FE1C8D3B6E00443DC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5E9F9001C8D3B6E00443DC7 /* ExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 				B5E9F9051C8D3B6E00443DC7 /* Assets.xcassets */,
 				B5E9F9001C8D3B6E00443DC7 /* ExampleViewController.swift */,
 				B5E9F90A1C8D3B6E00443DC7 /* Info.plist */,
+				B548C5A51C8D55A8009D5AEE /* InfoPlist.strings */,
 				B5E9F9071C8D3B6E00443DC7 /* LaunchScreen.storyboard */,
 			);
 			path = Example;
@@ -120,6 +123,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5E9F9061C8D3B6E00443DC7 /* Assets.xcassets in Resources */,
+				B548C5A71C8D55A8009D5AEE /* InfoPlist.strings in Resources */,
 				B5E9F9091C8D3B6E00443DC7 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -139,6 +143,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		B548C5A51C8D55A8009D5AEE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B548C5A61C8D55A8009D5AEE /* Base */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		B5E9F9071C8D3B6E00443DC7 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

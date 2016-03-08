@@ -35,10 +35,16 @@ class ExampleCell: UITableViewCell {
         contentView.addSubview(displayingView)
         displayingView.translatesAutoresizingMaskIntoConstraints = false
 
-        displayingView.topAnchor.constraintEqualToAnchor(contentView.topAnchor).active = true
-        displayingView.leftAnchor.constraintEqualToAnchor(contentView.leftAnchor).active = true
-        displayingView.bottomAnchor.constraintEqualToAnchor(contentView.bottomAnchor).active = true
-        displayingView.rightAnchor.constraintEqualToAnchor(contentView.rightAnchor).active = true
+        if #available(iOS 9.0, *) {
+          displayingView.topAnchor.constraintEqualToAnchor(contentView.topAnchor).active = true
+          displayingView.leftAnchor.constraintEqualToAnchor(contentView.leftAnchor).active = true
+          displayingView.bottomAnchor.constraintEqualToAnchor(contentView.bottomAnchor).active = true
+          displayingView.rightAnchor.constraintEqualToAnchor(contentView.rightAnchor).active = true
+        } else {
+          let views = ["view": displayingView]
+          contentView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[view]|", options: [], metrics: nil, views: views))
+          contentView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[view]|", options: [], metrics: nil, views: views))
+        }
       }
     }
   }

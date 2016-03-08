@@ -16,6 +16,6 @@ install:
   - bundle exec pod install --no-repo-update
 script:
   - xcodebuild -project ICInputAccessory.xcodeproj -scheme ICInputAccessory-iOS -sdk iphonesimulator -destination "name=iPhone 6,OS=$VERSION" clean build | xcpretty -c
-  - xcodebuild -workspace ICInputAccessory.xcworkspace -scheme Example -sdk iphonesimulator -destination "name=iPhone 6,OS=$VERSION" clean build | xcpretty -c
+  - xcodebuild -workspace ICInputAccessory.xcworkspace -scheme Example -sdk iphonesimulator -destination "name=iPhone 6,OS=$VERSION" clean test | xcpretty -c
 notifications:
   email: false

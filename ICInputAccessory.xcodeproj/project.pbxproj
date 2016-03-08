@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		B548C5AD1C8D69A5009D5AEE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B548C5AC1C8D69A5009D5AEE /* Images.xcassets */; };
+		B548C5EE1C8EB9E2009D5AEE /* ICKeyboardDismissTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B548C5ED1C8EB9E2009D5AEE /* ICKeyboardDismissTextField.swift */; };
 		B56BC42E1C89A7EA00C20AD6 /* ICInputAccessory.h in Headers */ = {isa = PBXBuildFile; fileRef = B56BC42D1C89A7EA00C20AD6 /* ICInputAccessory.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B56BC4361C89A8D800C20AD6 /* ICKeyboardDismissAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56BC4351C89A8D800C20AD6 /* ICKeyboardDismissAccessoryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B548C5AC1C8D69A5009D5AEE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Source/Images.xcassets; sourceTree = SOURCE_ROOT; };
+		B548C5ED1C8EB9E2009D5AEE /* ICKeyboardDismissTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ICKeyboardDismissTextField.swift; path = Source/ICKeyboardDismissTextField.swift; sourceTree = SOURCE_ROOT; };
 		B56BC42A1C89A7EA00C20AD6 /* ICInputAccessory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ICInputAccessory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B56BC42D1C89A7EA00C20AD6 /* ICInputAccessory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ICInputAccessory.h; path = Source/ICInputAccessory.h; sourceTree = SOURCE_ROOT; };
 		B56BC42F1C89A7EA00C20AD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -52,6 +54,7 @@
 			children = (
 				B56BC42D1C89A7EA00C20AD6 /* ICInputAccessory.h */,
 				B56BC4351C89A8D800C20AD6 /* ICKeyboardDismissAccessoryView.swift */,
+				B548C5ED1C8EB9E2009D5AEE /* ICKeyboardDismissTextField.swift */,
 				B548C5AC1C8D69A5009D5AEE /* Images.xcassets */,
 				B56BC42F1C89A7EA00C20AD6 /* Info.plist */,
 			);
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B56BC4361C89A8D800C20AD6 /* ICKeyboardDismissAccessoryView.swift in Sources */,
+				B548C5EE1C8EB9E2009D5AEE /* ICKeyboardDismissTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

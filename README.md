@@ -1,6 +1,9 @@
 # ICInputAccessory
 
+A customized input accessory UI to dismiss keyboard.
+
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![Build Status](https://travis-ci.org/polydice/ICInputAccessory.svg?branch=develop)](https://travis-ci.org/polydice/ICInputAccessory)
 
 ## Installation
 

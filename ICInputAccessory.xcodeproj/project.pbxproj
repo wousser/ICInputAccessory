@@ -72,9 +72,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		B56BC4291C89A7EA00C20AD6 /* ICInputAccessory */ = {
+		B56BC4291C89A7EA00C20AD6 /* ICInputAccessory-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B56BC4321C89A7EA00C20AD6 /* Build configuration list for PBXNativeTarget "ICInputAccessory" */;
+			buildConfigurationList = B56BC4321C89A7EA00C20AD6 /* Build configuration list for PBXNativeTarget "ICInputAccessory-iOS" */;
 			buildPhases = (
 				B56BC4251C89A7EA00C20AD6 /* Sources */,
 				B56BC4261C89A7EA00C20AD6 /* Frameworks */,
@@ -85,7 +85,7 @@
 			);
 			dependencies = (
 			);
-			name = ICInputAccessory;
+			name = "ICInputAccessory-iOS";
 			productName = ICInputAccessory;
 			productReference = B56BC42A1C89A7EA00C20AD6 /* ICInputAccessory.framework */;
 			productType = "com.apple.product-type.framework";
@@ -116,7 +116,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B56BC4291C89A7EA00C20AD6 /* ICInputAccessory */,
+				B56BC4291C89A7EA00C20AD6 /* ICInputAccessory-iOS */,
 			);
 		};
 /* End PBXProject section */
@@ -246,7 +246,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.polydice.ICInputAccessory;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ICInputAccessory;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -265,7 +265,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.polydice.ICInputAccessory;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ICInputAccessory;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -282,7 +282,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B56BC4321C89A7EA00C20AD6 /* Build configuration list for PBXNativeTarget "ICInputAccessory" */ = {
+		B56BC4321C89A7EA00C20AD6 /* Build configuration list for PBXNativeTarget "ICInputAccessory-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B56BC4331C89A7EA00C20AD6 /* Debug */,

@@ -84,6 +84,8 @@ public class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDele
     }
   }
 
+  // MARK: - UI Customization
+
   /// The placeholder with customized attributes.
   public var attributedPlaceholder: NSAttributedString? {
     didSet {
@@ -100,6 +102,20 @@ public class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDele
       addConstraint(NSLayoutConstraint(item: placeholderLabel, attribute: .Leading, relatedBy: .Equal, toItem: scrollView, attribute: .Leading, multiplier: 1, constant: 0))
       addConstraint(NSLayoutConstraint(item: placeholderLabel, attribute: .Trailing, relatedBy: .GreaterThanOrEqual, toItem: scrollView, attribute: .Trailing, multiplier: 1, constant: 10))
       addConstraint(NSLayoutConstraint(item: placeholderLabel, attribute: .CenterY, relatedBy: .Equal, toItem: self, attribute: .CenterY, multiplier: 1, constant: 0))
+    }
+  }
+
+  /// Customized attributes for tokens in the normal state, e.g. NSFontAttributeName and NSForegroundColorAttributeName.
+  public var normalTokenAttributes: [String: NSObject]? {
+    didSet {
+      tokens.forEach { $0.normalTextAttributes = normalTokenAttributes ?? [:] }
+    }
+  }
+
+  /// Customized attributes for tokens in the highlighted state.
+  public var highlightedTokenAttributes: [String: NSObject]? {
+    didSet {
+      tokens.forEach { $0.highlightedTextAttributes = normalTokenAttributes ?? [:] }
     }
   }
 
@@ -224,7 +240,7 @@ public class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDele
         textField.text = nil
 
         if newToken != delimiter {
-          tokens.append(ICToken(text: newToken))
+          tokens.append(ICToken(text: newToken, normalAttributes: normalTokenAttributes, highlightedAttributes: highlightedTokenAttributes))
           layoutTokenTextField()
           delegate?.tokenField(self, didEnterText: newToken)
         }
@@ -369,7 +385,7 @@ public class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDele
       return
     }
     inputTextField.text = nil
-    tokens.append(ICToken(text: text))
+    tokens.append(ICToken(text: text, normalAttributes: normalTokenAttributes, highlightedAttributes: highlightedTokenAttributes))
     layoutTokenTextField()
     delegate?.tokenField(self, didEnterText: text)
   }

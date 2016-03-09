@@ -37,7 +37,11 @@ class ExampleViewController: UIViewController, UITableViewDataSource {
     return _tableView
   }()
 
-  private let types: [UIView.Type] = [ICKeyboardDismissTextField.self, ICTokenField.self]
+  private let types: [UIView.Type] = [
+    ICKeyboardDismissTextField.self,
+    ICTokenField.self,
+    CustomizedTokenField.self
+  ]
 
   // MARK: - Initialization
 
@@ -71,6 +75,8 @@ class ExampleViewController: UIViewController, UITableViewDataSource {
       return "Dismiss Keyboard"
     case is ICTokenField.Type:
       return "Text Field with Tokens"
+    case is CustomizedTokenField.Type:
+      return "Customize Token Field"
     default:
       return ""
     }
@@ -94,6 +100,9 @@ class ExampleViewController: UIViewController, UITableViewDataSource {
       tokenField.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
       container.addSubview(tokenField)
       (cell as? ExampleCell)?.showcase = container
+
+    case let type as CustomizedTokenField.Type:
+      (cell as? ExampleCell)?.showcase = type.init()
 
     default:
       break

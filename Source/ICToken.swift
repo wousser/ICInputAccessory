@@ -44,12 +44,21 @@ class ICToken: UIView {
   var normalTextAttributes: [String : NSObject] = [
     NSForegroundColorAttributeName: UIColor(red:0.14, green:0.38, blue:0.95, alpha:1),
     NSBackgroundColorAttributeName: UIColor.clearColor()
-  ]
+  ] {
+    didSet {
+      if !highlighted { updateTextLabel() }
+      delimiterLabel.textColor = self.normalTextAttributes[NSForegroundColorAttributeName] as? UIColor
+    }
+  }
 
   var highlightedTextAttributes: [String: NSObject] = [
     NSForegroundColorAttributeName: UIColor.whiteColor(),
     NSBackgroundColorAttributeName: UIColor(red:0.14, green:0.38, blue:0.95, alpha:1)
-  ]
+  ] {
+    didSet {
+      if highlighted { updateTextLabel() }
+    }
+  }
 
   // MARK: - Private Properties
 
@@ -81,8 +90,10 @@ class ICToken: UIView {
     setUpSubviews()
   }
 
-  convenience init(text: String) {
+  convenience init(text: String, normalAttributes: [String: NSObject]? = nil, highlightedAttributes: [String: NSObject]? = nil) {
     self.init()
+    if let attributes = normalAttributes { normalTextAttributes = attributes }
+    if let attributes = highlightedAttributes { highlightedTextAttributes = attributes }
     // didSet is not called within the initializer
     setText(text)
   }
@@ -98,8 +109,12 @@ class ICToken: UIView {
     if let color = attributes[NSBackgroundColorAttributeName] as? UIColor {
       textLabel.backgroundColor = color
     }
+    // Avoid overlapped translucent background colors
     attributes[NSBackgroundColorAttributeName] = nil
     textLabel.attributedText = NSAttributedString(string: text, attributes: attributes)
+
+    delimiterLabel.textColor = normalTextAttributes[NSForegroundColorAttributeName] as? UIColor
+    delimiterLabel.font = normalTextAttributes[NSFontAttributeName] as? UIFont
   }
 
   private func setUpSubviews() {

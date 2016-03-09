@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		154CE52873EEBDF8EF05A61F /* Pods_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0DB1D3E89AB75183DB104E0 /* Pods_Example.framework */; };
+		B52819581C90215C007D01D5 /* CustomizedTokenField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52819571C90215C007D01D5 /* CustomizedTokenField.swift */; };
 		B548C5A71C8D55A8009D5AEE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B548C5A51C8D55A8009D5AEE /* InfoPlist.strings */; };
 		B548C5A91C8D6150009D5AEE /* ExampleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B548C5A81C8D6150009D5AEE /* ExampleCell.swift */; };
 		B548C5C51C8E91B0009D5AEE /* ICInputAccessoryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B548C5C41C8E91B0009D5AEE /* ICInputAccessoryUITests.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B52819571C90215C007D01D5 /* CustomizedTokenField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomizedTokenField.swift; sourceTree = "<group>"; };
 		B548C5A61C8D55A8009D5AEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B548C5A81C8D6150009D5AEE /* ExampleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleCell.swift; sourceTree = "<group>"; };
 		B548C5C21C8E91B0009D5AEE /* ICInputAccessoryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ICInputAccessoryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,6 +116,7 @@
 			children = (
 				B5E9F8FE1C8D3B6E00443DC7 /* AppDelegate.swift */,
 				B5E9F9051C8D3B6E00443DC7 /* Assets.xcassets */,
+				B52819571C90215C007D01D5 /* CustomizedTokenField.swift */,
 				B548C5A81C8D6150009D5AEE /* ExampleCell.swift */,
 				B5E9F9001C8D3B6E00443DC7 /* ExampleViewController.swift */,
 				B5E9F90A1C8D3B6E00443DC7 /* Info.plist */,
@@ -299,6 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5E9F8FF1C8D3B6E00443DC7 /* AppDelegate.swift in Sources */,
+				B52819581C90215C007D01D5 /* CustomizedTokenField.swift in Sources */,
 				B548C5A91C8D6150009D5AEE /* ExampleCell.swift in Sources */,
 				B5E9F9011C8D3B6E00443DC7 /* ExampleViewController.swift in Sources */,
 			);

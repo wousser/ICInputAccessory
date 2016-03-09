@@ -87,13 +87,10 @@ class ExampleViewController: UIViewController, UITableViewDataSource {
       (cell as? ExampleCell)?.showcase = textField
 
     case let type as ICTokenField.Type:
+      let container = UIView(frame: cell.bounds)
       let tokenField = type.init()
       tokenField.placeholder = String(type)
-
-      let container = UIView(frame: cell.bounds)
-      container.backgroundColor = UIColor(red:0.96, green:0.48, blue:0.4, alpha:1)
-
-      tokenField.frame = container.bounds.insetBy(dx: 15, dy: 3)
+      tokenField.frame = container.bounds.insetBy(dx: 5, dy: 0)
       tokenField.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
       container.addSubview(tokenField)
       (cell as? ExampleCell)?.showcase = container

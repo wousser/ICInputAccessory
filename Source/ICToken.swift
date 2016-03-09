@@ -42,13 +42,13 @@ class ICToken: UIView {
   }
 
   var normalTextAttributes: [String : NSObject] = [
-    NSForegroundColorAttributeName: UIColor.whiteColor(),
-    NSBackgroundColorAttributeName: UIColor.whiteColor().colorWithAlphaComponent(0.25)
+    NSForegroundColorAttributeName: UIColor(red:0.14, green:0.38, blue:0.95, alpha:1),
+    NSBackgroundColorAttributeName: UIColor.clearColor()
   ]
 
   var highlightedTextAttributes: [String: NSObject] = [
-    NSForegroundColorAttributeName: UIColor(red:0.8, green:0.32, blue:0.24, alpha:1),
-    NSBackgroundColorAttributeName: UIColor.whiteColor()
+    NSForegroundColorAttributeName: UIColor.whiteColor(),
+    NSBackgroundColorAttributeName: UIColor(red:0.14, green:0.38, blue:0.95, alpha:1)
   ]
 
   // MARK: - Private Properties
@@ -56,7 +56,7 @@ class ICToken: UIView {
   private(set) lazy var delimiterLabel: UILabel = {
     let _delimiter = UILabel()
     _delimiter.text = " , "
-    _delimiter.textColor = UIColor.whiteColor()
+    _delimiter.textColor = self.normalTextAttributes[NSForegroundColorAttributeName] as? UIColor
     return _delimiter
   }()
 

@@ -76,7 +76,7 @@ public class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDele
       if let text = newValue {
         attributedPlaceholder = NSAttributedString(
           string: text,
-          attributes: [NSForegroundColorAttributeName: UIColor.whiteColor().colorWithAlphaComponent(0.5)]
+          attributes: [NSForegroundColorAttributeName: UIColor(red: 0.78, green: 0.78, blue: 0.80, alpha: 0.9)]
         )
       } else {
         attributedPlaceholder = nil
@@ -110,8 +110,6 @@ public class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDele
   private lazy var inputTextField: ICBackspaceTextField = {
     let _textField = ICBackspaceTextField()
     _textField.backgroundColor = UIColor.clearColor()
-    _textField.textColor = UIColor.whiteColor()
-    _textField.tintColor = UIColor.whiteColor()
     _textField.clearButtonMode = .WhileEditing
     _textField.autocorrectionType = .No
     _textField.returnKeyType = .Search
@@ -316,10 +314,7 @@ public class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDele
       frame = CGRect(x: 0, y: 7, width: UIScreen.mainScreen().bounds.width, height: 30)
     }
 
-    layer.cornerRadius = 5
-    layer.shouldRasterize = true
-    layer.rasterizationScale = UIScreen.mainScreen().scale
-    backgroundColor = UIColor(red:0.8, green:0.32, blue:0.24, alpha:1)
+    backgroundColor = UIColor.whiteColor()
 
     addSubview(scrollView)
     scrollView.addSubview(inputTextField)

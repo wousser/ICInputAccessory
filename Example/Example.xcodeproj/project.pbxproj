@@ -154,6 +154,7 @@
 				B5E9F8F91C8D3B6E00443DC7 /* Resources */,
 				CAB3B20531AAE2438C48D751 /* Embed Pods Frameworks */,
 				7B2FB96C7361D5883F3ADD14 /* Copy Pods Resources */,
+				B5C50ADD1C917F4A0059032B /* Swift Lint */,
 			);
 			buildRules = (
 			);
@@ -252,6 +253,20 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
+		};
+		B5C50ADD1C917F4A0059032B /* Swift Lint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Swift Lint";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then swiftlint; fi";
 		};
 		CAB3B20531AAE2438C48D751 /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -460,6 +475,7 @@
 				B548C5CA1C8E91B0009D5AEE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B5E9F8F61C8D3B6E00443DC7 /* Build configuration list for PBXProject "Example" */ = {
 			isa = XCConfigurationList;

@@ -12,8 +12,7 @@ cache:
 before_install:
   - export LANG=en_US.UTF-8
 install:
-  - bundle install --without development --deployment --jobs=3 --retry=3
-  - bundle exec pod install --no-repo-update
+  - make install
 script:
   - xcodebuild -project ICInputAccessory.xcodeproj -scheme ICInputAccessory-iOS -sdk iphonesimulator -destination "name=iPhone 6,OS=$VERSION" clean build | xcpretty -c
   - xcodebuild -workspace ICInputAccessory.xcworkspace -scheme Example -sdk iphonesimulator -destination "name=iPhone 6,OS=$VERSION" clean test | xcpretty -c

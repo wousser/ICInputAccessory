@@ -12,6 +12,7 @@
 		B548C5A71C8D55A8009D5AEE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B548C5A51C8D55A8009D5AEE /* InfoPlist.strings */; };
 		B548C5A91C8D6150009D5AEE /* ExampleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B548C5A81C8D6150009D5AEE /* ExampleCell.swift */; };
 		B548C5C51C8E91B0009D5AEE /* ICInputAccessoryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B548C5C41C8E91B0009D5AEE /* ICInputAccessoryUITests.swift */; };
+		B5C53E191C92851400AF3489 /* CustomizedTokenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C53E181C92851400AF3489 /* CustomizedTokenViewController.swift */; };
 		B5E9F8FF1C8D3B6E00443DC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E9F8FE1C8D3B6E00443DC7 /* AppDelegate.swift */; };
 		B5E9F9011C8D3B6E00443DC7 /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E9F9001C8D3B6E00443DC7 /* ExampleViewController.swift */; };
 		B5E9F9061C8D3B6E00443DC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5E9F9051C8D3B6E00443DC7 /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 		B548C5C21C8E91B0009D5AEE /* ICInputAccessoryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ICInputAccessoryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B548C5C41C8E91B0009D5AEE /* ICInputAccessoryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICInputAccessoryUITests.swift; sourceTree = "<group>"; };
 		B548C5C61C8E91B0009D5AEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B5C53E181C92851400AF3489 /* CustomizedTokenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomizedTokenViewController.swift; sourceTree = "<group>"; };
 		B5E9F8FB1C8D3B6E00443DC7 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5E9F8FE1C8D3B6E00443DC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5E9F9001C8D3B6E00443DC7 /* ExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleViewController.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				B5E9F8FE1C8D3B6E00443DC7 /* AppDelegate.swift */,
 				B5E9F9051C8D3B6E00443DC7 /* Assets.xcassets */,
 				B52819571C90215C007D01D5 /* CustomizedTokenField.swift */,
+				B5C53E181C92851400AF3489 /* CustomizedTokenViewController.swift */,
 				B548C5A81C8D6150009D5AEE /* ExampleCell.swift */,
 				B5E9F9001C8D3B6E00443DC7 /* ExampleViewController.swift */,
 				B5E9F90A1C8D3B6E00443DC7 /* Info.plist */,
@@ -303,6 +306,7 @@
 			files = (
 				B5E9F8FF1C8D3B6E00443DC7 /* AppDelegate.swift in Sources */,
 				B52819581C90215C007D01D5 /* CustomizedTokenField.swift in Sources */,
+				B5C53E191C92851400AF3489 /* CustomizedTokenViewController.swift in Sources */,
 				B548C5A91C8D6150009D5AEE /* ExampleCell.swift in Sources */,
 				B5E9F9011C8D3B6E00443DC7 /* ExampleViewController.swift in Sources */,
 			);

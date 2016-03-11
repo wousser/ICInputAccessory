@@ -27,15 +27,7 @@
 import UIKit
 import ICInputAccessory
 
-class ExampleViewController: UIViewController, UITableViewDataSource {
-
-  private(set) lazy var tableView: UITableView = {
-    let _tableView = UITableView(frame: .zero, style: .Grouped)
-    _tableView.registerClass(ExampleCell.self, forCellReuseIdentifier: NSStringFromClass(ExampleCell.self))
-    _tableView.allowsSelection = false
-    _tableView.dataSource = self
-    return _tableView
-  }()
+class ExampleViewController: UITableViewController {
 
   private let types: [UIView.Type] = [
     ICKeyboardDismissTextField.self,
@@ -46,7 +38,7 @@ class ExampleViewController: UIViewController, UITableViewDataSource {
   // MARK: - Initialization
 
   convenience init() {
-    self.init(nibName: nil, bundle: nil)
+    self.init(style: .Grouped)
     title = "ICInputAccessory"
   }
 
@@ -54,22 +46,20 @@ class ExampleViewController: UIViewController, UITableViewDataSource {
 
   override func loadView() {
     super.loadView()
-    view.addSubview(tableView)
-    tableView.frame = view.bounds
-    tableView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+    tableView.registerClass(ExampleCell.self, forCellReuseIdentifier: NSStringFromClass(ExampleCell.self))
   }
 
   // MARK: - UITableViewDataSource
 
-  func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+  override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
     return types.count
   }
 
-  func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+  override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return 1
   }
 
-  func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+  override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
     switch types[section] {
     case is ICKeyboardDismissTextField.Type:
       return "Dismiss Keyboard"
@@ -82,7 +72,7 @@ class ExampleViewController: UIViewController, UITableViewDataSource {
     }
   }
 
-  func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+  override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier(NSStringFromClass(ExampleCell.self), forIndexPath: indexPath)
     switch types[indexPath.section] {
     case let type as ICKeyboardDismissTextField.Type:
@@ -91,6 +81,10 @@ class ExampleViewController: UIViewController, UITableViewDataSource {
       textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: 15))
       textField.placeholder = String(type)
       (cell as? ExampleCell)?.showcase = textField
+
+    case let type as CustomizedTokenField.Type:
+      cell.textLabel?.text = String(type)
+      cell.accessoryType = .DisclosureIndicator
 
     case let type as ICTokenField.Type:
       let container = UIView(frame: cell.bounds)
@@ -101,13 +95,22 @@ class ExampleViewController: UIViewController, UITableViewDataSource {
       container.addSubview(tokenField)
       (cell as? ExampleCell)?.showcase = container
 
-    case let type as CustomizedTokenField.Type:
-      (cell as? ExampleCell)?.showcase = type.init()
-
     default:
       break
     }
     return cell
+  }
+
+  // MARK: - UITableViewDelegate
+
+  override func tableView(tableView: UITableView, shouldHighlightRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    return types[indexPath.section] == CustomizedTokenField.self
+  }
+
+  override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    if types[indexPath.section] == CustomizedTokenField.self {
+      presentViewController(UINavigationController(rootViewController: CustomizedTokenViewController()), animated: true, completion: nil)
+    }
   }
 
 }

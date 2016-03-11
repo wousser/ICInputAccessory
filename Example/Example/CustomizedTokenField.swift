@@ -27,29 +27,16 @@
 import UIKit
 import ICInputAccessory
 
-class CustomizedTokenField: UIView {
+class CustomizedTokenField: ICTokenField {
 
   override init(frame: CGRect) {
     super.init(frame: frame)
-    setUpSubviews()
+    applyCustomizedStyle()
   }
 
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
-    setUpSubviews()
-  }
-
-  private func setUpSubviews() {
-    backgroundColor = UIColor(red:0.96, green:0.48, blue:0.4, alpha:1)
-
-    let tokenField = ICTokenField()
-    tokenField.applyCustomizedStyle()
-    tokenField.translatesAutoresizingMaskIntoConstraints = false
-    addSubview(tokenField)
-
-    let views = ["field": tokenField]
-    addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-10-[field]-10-|", options: [], metrics: nil, views: views))
-    addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-3-[field]-3-|", options: [], metrics: nil, views: views))
+    applyCustomizedStyle()
   }
 
 }
@@ -61,6 +48,8 @@ class CustomizedTokenField: UIView {
 extension ICTokenField {
 
   func applyCustomizedStyle() {
+    icon = UIImage(named: "icook-iphone-input-search")
+
     layer.cornerRadius = 5
     layer.shouldRasterize = true
     layer.rasterizationScale = UIScreen.mainScreen().scale

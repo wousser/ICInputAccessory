@@ -31,6 +31,7 @@ public protocol ICTokenFieldDelegate: class {
   func tokenFieldDidEndEditing(tokenField: ICTokenField)
   func tokenFieldWillReturn(tokenField: ICTokenField)
   func tokenField(tokenField: ICTokenField, didEnterText text: String)
+  func tokenField(tokenField: ICTokenField, didDeleteText text: String, atIndex index: Int)
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -319,6 +320,7 @@ public class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDele
         layoutTokenTextField()
         togglePlaceholderIfNeeded()
         inputTextField.showsCursor = true
+        delegate?.tokenField(self, didDeleteText: token.text, atIndex: index)
         return true
       }
     }

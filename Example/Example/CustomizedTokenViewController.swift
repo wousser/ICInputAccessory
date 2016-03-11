@@ -27,15 +27,21 @@
 import UIKit
 import ICInputAccessory
 
-class CustomizedTokenViewController: UIViewController {
+class CustomizedTokenViewController: UIViewController, ICTokenFieldDelegate {
 
   private let tokenField = CustomizedTokenField()
+  private let textView = UITextView()
 
   // MARK: - UIViewController
 
   override func loadView() {
     super.loadView()
     view.backgroundColor = UIColor.whiteColor()
+    textView.text = "[\n\n]";
+    textView.font = UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
+    textView.frame = view.bounds.insetBy(dx: 10, dy: 10)
+    textView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+    view.addSubview(textView)
   }
 
   override func viewDidLoad() {
@@ -49,6 +55,7 @@ class CustomizedTokenViewController: UIViewController {
     navigationItem.rightBarButtonItem = cancelBarButton
 
     navigationItem.titleView = tokenField
+    tokenField.delegate = self
   }
 
   override func viewWillAppear(animated: Bool) {
@@ -59,12 +66,43 @@ class CustomizedTokenViewController: UIViewController {
   override func viewWillDisappear(animated: Bool) {
     super.viewWillAppear(animated)
     tokenField.resignFirstResponder()
+    textView.endEditing(true)
+  }
+
+  // MARK: - ICTokenFieldDelegate
+
+  func tokenFieldDidBeginEditing(tokenField: ICTokenField) {
+    print(__FUNCTION__)
+  }
+
+  func tokenFieldDidEndEditing(tokenField: ICTokenField) {
+    print(__FUNCTION__)
+  }
+
+  func tokenFieldWillReturn(tokenField: ICTokenField) {
+    print(__FUNCTION__)
+  }
+
+  func tokenField(tokenField: ICTokenField, didEnterText text: String) {
+    print("Add: \"\(text)\"")
+    updateTexts()
+  }
+
+  func tokenField(tokenField: ICTokenField, didDeleteText text: String, atIndex index: Int) {
+    print("Delete: \"\(text)\"")
+    updateTexts()
   }
 
   // MARK: - UIResponder Callbacks
 
   @IBAction private func dismiss(sender: UIBarButtonItem) {
     presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+  }
+
+  // MARK: - Private Methods
+
+  private func updateTexts() {
+    textView.text = "[\n  " + tokenField.texts.map { "\"" + $0 + "\"" } .joinWithSeparator(",\n  ") + "\n]"
   }
 
 }

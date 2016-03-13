@@ -26,19 +26,27 @@
 
 import UIKit
 
-public protocol ICTokenFieldDelegate: class {
-  func tokenFieldDidBeginEditing(tokenField: ICTokenField)
-  func tokenFieldDidEndEditing(tokenField: ICTokenField)
-  func tokenFieldWillReturn(tokenField: ICTokenField)
-  func tokenField(tokenField: ICTokenField, didEnterText text: String)
-  func tokenField(tokenField: ICTokenField, didDeleteText text: String, atIndex index: Int)
+/// The protocol defines the messages sent to a delegate. All the methods are optional.
+@objc public protocol ICTokenFieldDelegate: NSObjectProtocol {
+  /// Tells the delegate that editing began for the token field.
+  optional func tokenFieldDidBeginEditing(tokenField: ICTokenField)
+  /// Tells the delegate that editing stopped for the token field.
+  optional func tokenFieldDidEndEditing(tokenField: ICTokenField)
+  /// Tells the delegate that the token field will process the pressing of the return button.
+  optional func tokenFieldWillReturn(tokenField: ICTokenField)
+  /// Tells the delegate that the text becomes a token in the token field.
+  optional func tokenField(tokenField: ICTokenField, didEnterText text: String)
+  /// Tells the delegate that the token at certain index is removed from the token field.
+  optional func tokenField(tokenField: ICTokenField, didDeleteText text: String, atIndex index: Int)
 }
+
 
 ////////////////////////////////////////////////////////////////////////////////
 
 
 public class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDelegate {
 
+  /// The receiver’s delegate.
   public weak var delegate: ICTokenFieldDelegate?
 
   /// Characters that completes a new token, defaults are whitespace and commas.
@@ -213,14 +221,14 @@ public class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDele
   }
 
   public func textFieldDidBeginEditing(textField: UITextField) {
-    delegate?.tokenFieldDidBeginEditing(self)
+    delegate?.tokenFieldDidBeginEditing?(self)
   }
 
   public func textFieldDidEndEditing(textField: UITextField) {
     completeCurrentInputText()
     togglePlaceholderIfNeeded()
     tokens.forEach { $0.highlighted = false }
-    delegate?.tokenFieldDidEndEditing(self)
+    delegate?.tokenFieldDidEndEditing?(self)
   }
 
   public func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
@@ -243,7 +251,7 @@ public class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDele
         if newToken != delimiter {
           tokens.append(ICToken(text: newToken, normalAttributes: normalTokenAttributes, highlightedAttributes: highlightedTokenAttributes))
           layoutTokenTextField()
-          delegate?.tokenField(self, didEnterText: newToken)
+          delegate?.tokenField?(self, didEnterText: newToken)
         }
         togglePlaceholderIfNeeded()
 
@@ -256,7 +264,7 @@ public class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDele
   public func textFieldShouldReturn(textField: UITextField) -> Bool {
     completeCurrentInputText()
     togglePlaceholderIfNeeded()
-    delegate?.tokenFieldWillReturn(self)
+    delegate?.tokenFieldWillReturn?(self)
     return true
   }
 
@@ -320,7 +328,7 @@ public class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDele
         layoutTokenTextField()
         togglePlaceholderIfNeeded()
         inputTextField.showsCursor = true
-        delegate?.tokenField(self, didDeleteText: token.text, atIndex: index)
+        delegate?.tokenField?(self, didDeleteText: token.text, atIndex: index)
         return true
       }
     }
@@ -389,7 +397,7 @@ public class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDele
     inputTextField.text = nil
     tokens.append(ICToken(text: text, normalAttributes: normalTokenAttributes, highlightedAttributes: highlightedTokenAttributes))
     layoutTokenTextField()
-    delegate?.tokenField(self, didEnterText: text)
+    delegate?.tokenField?(self, didEnterText: text)
   }
 
   /// Removes the input text and all displayed tokens.

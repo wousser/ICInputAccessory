@@ -1,9 +1,13 @@
 # ICInputAccessory
 
-Customized text fields used in the iCook app.
+Customized text fields used in the [iCook app](https://itunes.apple.com/app/id554065086).
+Try <https://testflight.icook.tw>.
 
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Build Status](https://travis-ci.org/polydice/ICInputAccessory.svg?branch=develop)](https://travis-ci.org/polydice/ICInputAccessory)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/ICInputAccessory.svg)](https://img.shields.io/cocoapods/v/ICInputAccessory.svg)
+![Platform](https://img.shields.io/cocoapods/p/ICInputAccessory.svg?style=flat)
+![Swift 2.1.1](https://img.shields.io/badge/Swift-2.1.1-orange.svg)
 
 ### ICKeyboardDismissTextField
 
@@ -12,20 +16,14 @@ Customized text fields used in the iCook app.
 ### ICTokenField
 
 * A horizontal scrolling UI that groups input texts.
-* Easy to add and delete tokens.
+* Easy to add, select and delete tokens.
 * Customizable icon and colors.
 
-<table>
-  <tr>
-    <th>ICKeyboardDismissTextField</th>
-    <th rowspan="2"></th>
-    <th>ICTokenField</th>
-  </tr>
-  <tr>
-    <th><img src="https://raw.githubusercontent.com/polydice/ICInputAccessory/gh-pages/screenshots/ICKeyboardDismissTextField.png" width="90%" /></th>
-    <th><img src="https://raw.githubusercontent.com/polydice/ICInputAccessory/gh-pages/screenshots/ICTokenField.png" width="90%" /></th>
-  </tr>
-</table>
+![ICTokenField](https://raw.githubusercontent.com/polydice/ICInputAccessory/gh-pages/screenshots/ICTokenField.gif)
+
+## Requirements
+
+iOS 8.0+ with Xcode 7.2 or above.
 
 ## Installation
 
@@ -37,21 +35,22 @@ Customized text fields used in the iCook app.
   github "polydice/ICInputAccessory"
   ```
 
-* On your application targets' **General** settings tab, in the **Linked Frameworks and Libraries** section, drag and drop `ICInputAccessory.framework` from the Carthage/Build directory.
+* Follow the [instruction](https://github.com/Carthage/Carthage#if-youre-building-for-ios) to add the framework to an iOS project.
 
-* On your application targets’ **Build Phases** settings tab, click the **+** icon and choose **New Run Script Phase**. Create a Run Script with the following contents:
+### Install via [CocoaPods](http://guides.cocoapods.org/)
 
+* Create a `Podfile` with the following specification and run `pod install`.
+
+  ```rb
+  platform :ios, '8.0'
+  use_frameworks!
+
+  pod 'ICInputAccessory'
   ```
-  /usr/local/bin/carthage copy-frameworks
-  ```
 
-  and add the following path to **Input Files**:
+### Install Manually
 
-  ```
-  $(SRCROOT)/Carthage/Build/iOS/ICInputAccessory.framework
-  ```
-
-* For more information, please check out the [Carthage Documentation](https://github.com/Carthage/Carthage#if-youre-building-for-ios).
+* Everything you need resides in the `Source` directory. Drag those files to a project.
 
 ## Usage
 
@@ -107,7 +106,7 @@ public var normalTokenAttributes: [String : NSObject]? { get set }
 public var highlightedTokenAttributes: [String : NSObject]? { get set }
 ```
 
-  See `Example/CustomizedTokenField.swift` for more detail.
+See `Example/CustomizedTokenField.swift` for more details.
 
 #### ICTokenFieldDelegate
 
@@ -118,3 +117,33 @@ public var highlightedTokenAttributes: [String : NSObject]? { get set }
 * `tokenFieldWillReturn(_:)`
 * `tokenField(_:didEnterText:)`
 * `tokenField(_:didDeleteText:atIndex:)`
+
+## Development
+
+Meke sure you have [Homebrew](http://brew.sh/) installed, then run in the project root:
+
+```
+make setup
+```
+
+Tasks for testing:
+
+```
+rake -T
+```
+
+## Contributing
+
+Thank you for being interested in contributing to this project. We'd love to hear your ideas!
+
+Please fork this repository, create a branch named like `feature/some-new-feature` and send us a pull request to make this project better.
+
+## Contact
+
+[![Twitter](https://img.shields.io/badge/twitter-@polydice-blue.svg?style=flat)](https://twitter.com/polydice)
+
+## License
+
+Copyright (c) 2016 [Polydice, Inc.](https://polydice.com)
+
+**ICInputAccessory** is released under the MIT license. See [LICENSE](https://github.com/polydice/ICInputAccessory/blob/master/LICENSE) for details.

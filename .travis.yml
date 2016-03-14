@@ -13,6 +13,8 @@ before_install:
   - export LANG=en_US.UTF-8
 install:
   - make install
+before_script:
+  - xcodebuild -workspace ICInputAccessory.xcworkspace -list
 script:
   - bundle exec rake ci:test[$VERSION]
 notifications:

@@ -55,6 +55,8 @@ class ExampleCell: UITableViewCell {
     super.prepareForReuse()
     showcase?.removeFromSuperview()
     showcase = nil
+    textLabel?.text = nil
+    accessoryType = .None
   }
 
 }

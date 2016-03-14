@@ -1,5 +1,5 @@
 language: objective-c
-osx_image: xcode7.3
+osx_image: xcode7.2
 env:
   matrix:
   - VERSION=8.4
@@ -13,9 +13,10 @@ before_install:
   - export LANG=en_US.UTF-8
 install:
   - make install
+before_script:
+  - xcodebuild -workspace ICInputAccessory.xcworkspace -list
 script:
-  - xcodebuild -project ICInputAccessory.xcodeproj -scheme ICInputAccessory-iOS -sdk iphonesimulator -destination "name=iPhone 6,OS=$VERSION" clean build | xcpretty -c
-  - xcodebuild -workspace ICInputAccessory.xcworkspace -scheme Example -sdk iphonesimulator -destination "name=iPhone 6,OS=$VERSION" clean test | xcpretty -c
+  - bundle exec rake ci:test[$VERSION]
 notifications:
   email: false
   slack:

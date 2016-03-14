@@ -18,3 +18,5 @@ script:
   - xcodebuild -workspace ICInputAccessory.xcworkspace -scheme Example -sdk iphonesimulator -destination "name=iPhone 6,OS=$VERSION" clean test | xcpretty -c
 notifications:
   email: false
+  slack:
+    secure: 0k+ZnAEwVDd1BHTs/2Xybm9UWD8A56kf5UwXurGC95scHXL8y8ANWrpuyNXv6Q6eaEAi9scFPJryZoSAUfaz8uS1lKdJyeuVqw9LAxJ7ouV/ViErOwA7tZ/DdUc6zHlx+ORUTEPIFR4ZcTASfY5vds7gFRa6St6qtOjMYv9imiud+hSF5jTeADOqxlANKy/cQCeGhtcuiJ49NydIIwOb6F3FhOcyT0uSsJ0OAr2KTOmFRlJ44/m/4NfSrkuIWhuYSqqGJUUAWtVvDWqag9N8RwFcEEr1ahTJypPRfHITHTbz07jC1M7zqdb7RFA3ZX26cs+mt+R657ToVRxmQA8cGWx9waN3tWNVKgSxww3fMa2j+xBxghDhEI7m7YdGBIF3Mx1N2gKNEunSxp/p+mzudQI6c8DheSknIriuvsJfZNe1Xb16UMpG5D199Izsj5m8avw4T+foBlb1yP6ARh/27LxJcj9Lbly3Ep3Jr5Msz22rq0+IFdvNyK2DVldvrVGHEmy66R+i9ZZl7On8oThacMhfjrF2kOGmkvnwVbk1YjbuXvi5qLiUVZkjpSwvMGzFZl2R1XSzflybNrAMOeZpFYJuCbk+8tFXM7xYn+nupLocmNSN7x6MjZxoYunHCbFyHT9hHNRbHin+yA1IpKmRpuFjT88JMK0u1WPlB+4+T6o=

@@ -50,4 +50,51 @@ class ICInputAccessoryUITests: XCTestCase {
     accessory.childrenMatchingType(.Button).element.tap()
   }
 
+  func testTokenField() {
+    let app = XCUIApplication()
+    let tablesQuery = app.tables
+    let textField = tablesQuery.cells.containingType(.StaticText, identifier:"ICTokenField").childrenMatchingType(.TextField).element
+
+    textField.tap()
+    textField.typeText("Try")
+    textField.typeText(" ")
+    textField.typeText("iCook")
+    textField.typeText(",")
+    textField.typeText("beta")
+    textField.typeText(" ")
+
+    let deleteKey = app.keys["delete"]
+    deleteKey.tap()
+    deleteKey.tap()
+
+    textField.typeText("TestFlight")
+    textField.typeText(",")
+
+    let searchButton = app.buttons["Search"]
+    searchButton.tap()
+  }
+
+  func testCustomizedTokenField() {
+    let app = XCUIApplication()
+    app.tables.staticTexts["CustomizedTokenField"].tap()
+
+    let tokenField = app.navigationBars["Example.CustomizedTokenView"].scrollViews.childrenMatchingType(.TextField).element
+    tokenField.typeText("Try")
+    tokenField.typeText(" ")
+    tokenField.typeText("iCook")
+    tokenField.typeText(",")
+    tokenField.typeText("beta")
+    tokenField.typeText(" ")
+
+    let deleteKey = app.keys["delete"]
+    deleteKey.tap()
+    deleteKey.tap()
+
+    tokenField.typeText("TestFlight")
+    tokenField.typeText(",")
+
+    let searchButton = app.buttons["Search"]
+    searchButton.tap()
+  }
+
 }

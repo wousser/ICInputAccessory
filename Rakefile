@@ -5,7 +5,12 @@ namespace :ci do
   task :test, [:os] do |t, args|
     version = args[:os] || "latest"
     Rake::Task["framework:build"].invoke version
-    Rake::Task["example:test"].invoke version
+    # UI Testing requires iOS Simulator 9.0 or later.
+    if version == "latest" || Gem::Version.new("9.0") <= Gem::Version.new(version)
+      Rake::Task["example:test"].invoke version
+    else
+      Rake::Task["example:build"].invoke version
+    end
   end
 end
 

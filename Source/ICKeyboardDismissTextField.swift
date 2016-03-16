@@ -38,22 +38,30 @@ public class ICKeyboardDismissTextField: UITextField {
 
   override public init(frame: CGRect) {
     super.init(frame: frame)
-    inputAccessoryView = accessoryView
+    setUpAccessoryView()
   }
 
   required public init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
-    inputAccessoryView = accessoryView
+    setUpAccessoryView()
   }
 
   // MARK: - UIResponder
 
   override public func becomeFirstResponder() -> Bool {
-    accessoryView.alpha = 1
+    if UI_USER_INTERFACE_IDIOM() == .Phone {
+      accessoryView.alpha = 1
+    }
     return super.becomeFirstResponder()
   }
 
   // MARK: - Private Methods
+
+  private func setUpAccessoryView() {
+    if UI_USER_INTERFACE_IDIOM() == .Phone {
+      inputAccessoryView = accessoryView
+    }
+  }
 
   @IBAction private func dismiss(sender: UIButton) {
     resignFirstResponder()

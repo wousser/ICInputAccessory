@@ -9,3 +9,7 @@ bundle-install:
 
 pod-install:
 	bundle exec pod install --no-repo-update
+
+setup: brew-install
+	bundle install
+	bundle exec pod install --no-repo-update

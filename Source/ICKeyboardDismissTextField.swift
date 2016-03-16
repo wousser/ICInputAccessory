@@ -26,13 +26,16 @@
 
 import UIKit
 
+@IBDesignable
 public class ICKeyboardDismissTextField: UITextField {
 
-  private lazy var accessoryView: UIView = {
-    let _accessory = ICKeyboardDismissAccessoryView()
-    _accessory.dismissButton.addTarget(self, action: Selector("dismiss:"), forControlEvents: .TouchUpInside)
-    return _accessory
-  }()
+  @IBOutlet public var keyboardAccessoryView: ICKeyboardDismissAccessoryView! {
+    didSet {
+      if UI_USER_INTERFACE_IDIOM() != .Phone { return }
+      keyboardAccessoryView.dismissButton.addTarget(self, action: Selector("dismiss:"), forControlEvents: .TouchUpInside)
+      inputAccessoryView = keyboardAccessoryView
+    }
+  }
 
   // MARK: - Initialization
 
@@ -41,7 +44,7 @@ public class ICKeyboardDismissTextField: UITextField {
     setUpAccessoryView()
   }
 
-  required public init?(coder aDecoder: NSCoder) {
+  public required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
     setUpAccessoryView()
   }
@@ -50,7 +53,7 @@ public class ICKeyboardDismissTextField: UITextField {
 
   public override func becomeFirstResponder() -> Bool {
     if UI_USER_INTERFACE_IDIOM() == .Phone {
-      accessoryView.alpha = 1
+      keyboardAccessoryView.alpha = 1
     }
     return super.becomeFirstResponder()
   }
@@ -58,15 +61,15 @@ public class ICKeyboardDismissTextField: UITextField {
   // MARK: - Private Methods
 
   private func setUpAccessoryView() {
-    if UI_USER_INTERFACE_IDIOM() == .Phone {
-      inputAccessoryView = accessoryView
+    if keyboardAccessoryView == nil {
+      keyboardAccessoryView = ICKeyboardDismissAccessoryView()
     }
   }
 
   @IBAction private func dismiss(sender: UIButton) {
     resignFirstResponder()
     UIView.animateWithDuration(0.3) {
-      self.accessoryView.alpha = 0
+      self.keyboardAccessoryView.alpha = 0
     }
   }
 

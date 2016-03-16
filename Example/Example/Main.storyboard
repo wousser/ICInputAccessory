@@ -18,7 +18,7 @@
                             <rect key="frame" x="0.0" y="269.5" width="600" height="88"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                            <state key="normal" title="Back"/>
+                            <state key="normal" title="Back to Code"/>
                             <connections>
                                 <action selector="dismiss:" destination="0fq-Xw-Z0G" eventType="touchUpInside" id="Ia6-YR-Zzm"/>
                             </connections>
@@ -59,6 +59,22 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nCe-ZG-eEP" id="6tu-Im-VHX">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2dP-7v-mWC" customClass="ICTokenField" customModule="ICInputAccessory">
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="ICTokenFIeld"/>
+                                                        <userDefinedRuntimeAttribute type="image" keyPath="icon" value="icook-iphone-input-search"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                            <real key="value" value="0.0"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -104,4 +120,7 @@
             <point key="canvasLocation" x="708" y="377"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icook-iphone-input-search" width="20" height="20"/>
+    </resources>
 </document>

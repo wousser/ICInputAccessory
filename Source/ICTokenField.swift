@@ -44,6 +44,7 @@ import UIKit
 ////////////////////////////////////////////////////////////////////////////////
 
 
+@IBDesignable
 public class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDelegate {
 
   /// The receiver’s delegate.
@@ -58,7 +59,7 @@ public class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDele
   }
 
   /// The image on the left of text field.
-  public var icon: UIImage? {
+  @IBInspectable public var icon: UIImage? {
     didSet {
       if let icon = icon {
         let imageView = UIImageView(image: icon)
@@ -77,7 +78,7 @@ public class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDele
   }
 
   /// The placeholder with the default color and font.
-  public var placeholder: String? {
+  @IBInspectable public var placeholder: String? {
     get {
       return attributedPlaceholder?.string
     }
@@ -213,6 +214,19 @@ public class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDele
     layoutTokenTextField()
   }
 
+  // MARK: - NSKeyValueCoding
+
+  public override func setValue(value: AnyObject?, forUndefinedKey key: String) {
+    switch value {
+    case let image as UIImage? where key == "icon":
+      icon = image
+    case let text as String? where key == "placeholder":
+      placeholder = text
+    default:
+      break
+    }
+  }
+
   // MARK: - UITextFieldDelegate
 
   public func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
@@ -339,8 +353,6 @@ public class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDele
     if CGRectEqualToRect(frame, CGRect.zero) {
       frame = CGRect(x: 0, y: 7, width: UIScreen.mainScreen().bounds.width, height: 30)
     }
-
-    backgroundColor = UIColor.whiteColor()
 
     addSubview(scrollView)
     scrollView.addSubview(inputTextField)

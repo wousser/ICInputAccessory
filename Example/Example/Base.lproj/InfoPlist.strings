@@ -1,0 +1,9 @@
+/*
+  InfoPlist.strings
+  Example
+
+  Created by Ben on 07/03/2016.
+  Copyright © 2016 Polydice, Inc. All rights reserved.
+*/
+
+"CFBundleDisplayName" = "ICInputAccessory";

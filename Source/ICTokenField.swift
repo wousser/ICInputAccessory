@@ -181,34 +181,34 @@ public class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDele
 
   // MARK: - Initialization
 
-  override public init(frame: CGRect) {
+  public override init(frame: CGRect) {
     super.init(frame: frame)
     setUpSubviews()
   }
 
-  required public init?(coder aDecoder: NSCoder) {
+  public required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
     setUpSubviews()
   }
 
   // MARK: - UIResponder
 
-  override public func isFirstResponder() -> Bool {
+  public override func isFirstResponder() -> Bool {
     return inputTextField.isFirstResponder() || super.isFirstResponder()
   }
 
-  override public func becomeFirstResponder() -> Bool {
+  public override func becomeFirstResponder() -> Bool {
     return inputTextField.becomeFirstResponder()
   }
 
-  override public func resignFirstResponder() -> Bool {
+  public override func resignFirstResponder() -> Bool {
     super.resignFirstResponder()
     return inputTextField.resignFirstResponder()
   }
 
   // MARK: - UIView
 
-  override public func layoutSubviews() {
+  public override func layoutSubviews() {
     super.layoutSubviews()
     layoutTokenTextField()
   }

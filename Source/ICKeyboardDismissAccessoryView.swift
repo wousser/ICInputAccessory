@@ -43,19 +43,19 @@ public class ICKeyboardDismissAccessoryView: UIView {
 
   // MARK: - Initialization
 
-  override public init(frame: CGRect) {
+  public override init(frame: CGRect) {
     super.init(frame: frame)
     setUpSubviews()
   }
 
-  required public init?(coder aDecoder: NSCoder) {
+  public required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
     setUpSubviews()
   }
 
   // MARK: - UIView
 
-  override public func pointInside(point: CGPoint, withEvent event: UIEvent?) -> Bool {
+  public override func pointInside(point: CGPoint, withEvent event: UIEvent?) -> Bool {
     for subview in subviews {
       if !subview.hidden && subview.alpha > 0 &&
           subview.userInteractionEnabled &&

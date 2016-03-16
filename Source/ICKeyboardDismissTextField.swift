@@ -36,7 +36,7 @@ public class ICKeyboardDismissTextField: UITextField {
 
   // MARK: - Initialization
 
-  override public init(frame: CGRect) {
+  public override init(frame: CGRect) {
     super.init(frame: frame)
     setUpAccessoryView()
   }
@@ -48,7 +48,7 @@ public class ICKeyboardDismissTextField: UITextField {
 
   // MARK: - UIResponder
 
-  override public func becomeFirstResponder() -> Bool {
+  public override func becomeFirstResponder() -> Bool {
     if UI_USER_INTERFACE_IDIOM() == .Phone {
       accessoryView.alpha = 1
     }

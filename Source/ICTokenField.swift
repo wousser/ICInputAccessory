@@ -148,14 +148,12 @@ public class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDele
   private var leftView: UIView? {
     didSet {
       oldValue?.removeFromSuperview()
+      leftEdgeConstraint.active = leftView == nil
       if let icon = leftView {
         addSubview(icon)
         icon.translatesAutoresizingMaskIntoConstraints = false
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-10-[icon]-10-[wrapper]", options: [], metrics: nil, views: ["icon": icon, "wrapper": scrollView]))
         addConstraint(NSLayoutConstraint(item: icon, attribute: .CenterY, relatedBy: .Equal, toItem: self, attribute: .CenterY, multiplier: 1, constant: 0))
-        leftEdgeConstraint.active = false
-      } else {
-        leftEdgeConstraint.active = true
       }
     }
   }

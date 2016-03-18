@@ -47,6 +47,8 @@ import UIKit
 @IBDesignable
 public class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDelegate {
 
+  // MARK: - Public Properties
+
   /// The receiver’s delegate.
   public weak var delegate: ICTokenFieldDelegate?
 
@@ -126,6 +128,35 @@ public class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDele
   public var highlightedTokenAttributes: [String: NSObject]? {
     didSet {
       tokens.forEach { $0.highlightedTextAttributes = normalTokenAttributes ?? [:] }
+    }
+  }
+
+  /// The tint color of icon image and text field.
+  public override var tintColor: UIColor! {
+    didSet {
+      inputTextField.tintColor = tintColor
+      leftView?.tintColor = tintColor
+    }
+  }
+
+  /// The text color of text field in the interface builder. Same as textField.text.
+  @IBInspectable var textColor: UIColor? {
+    get {
+      return inputTextField.textColor
+    }
+    set {
+      inputTextField.textColor = newValue
+    }
+  }
+
+  /// The corner radius of token field in the interface builder. Same as layer.cornerRadius.
+  @IBInspectable var cornerRadius: CGFloat {
+    get {
+      return layer.cornerRadius
+    }
+    set {
+      layer.cornerRadius = newValue
+      layer.masksToBounds = newValue > 0
     }
   }
 
@@ -220,6 +251,10 @@ public class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDele
       icon = image
     case let text as String? where key == "placeholder":
       placeholder = text
+    case let color as UIColor? where key == "textColor":
+      textColor = color
+    case let value as CGFloat where key == "cornerRadius":
+      cornerRadius = value
     default:
       break
     }

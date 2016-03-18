@@ -25,8 +25,23 @@
 //
 
 import UIKit
+import ICInputAccessory
 
 class StoryboardViewController: UITableViewController {
+
+  @IBOutlet weak var tokenField: ICTokenField! {
+    didSet {
+      tokenField.normalTokenAttributes = [
+        NSForegroundColorAttributeName: UIColor.whiteColor(),
+        NSBackgroundColorAttributeName: UIColor.whiteColor().colorWithAlphaComponent(0.25),
+      ]
+
+      tokenField.highlightedTokenAttributes = [
+        NSForegroundColorAttributeName: UIColor.darkGrayColor(),
+        NSBackgroundColorAttributeName: UIColor.whiteColor(),
+      ]
+    }
+  }
 
   @IBAction func dismiss(sender: UIButton) {
     presentingViewController?.dismissViewControllerAnimated(true, completion: nil)

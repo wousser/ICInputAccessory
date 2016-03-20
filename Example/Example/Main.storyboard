@@ -33,7 +33,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ICKeyboardDismissTextField" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qdb-Ab-nYe" customClass="ICKeyboardDismissTextField" customModule="ICInputAccessory">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Storyboard ICKeyboardDismissTextField" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qdb-Ab-nYe" customClass="ICKeyboardDismissTextField" customModule="ICInputAccessory">
                                                     <rect key="frame" x="18" y="12" width="564" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -65,7 +65,7 @@
                                                     <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="ICTokenFIeld"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Storyboard ICTokenField"/>
                                                         <userDefinedRuntimeAttribute type="image" keyPath="icon" value="icook-iphone-input-search"/>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                             <real key="value" value="0.0"/>

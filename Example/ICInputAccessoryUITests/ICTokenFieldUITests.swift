@@ -1,5 +1,5 @@
 //
-//  ICInputAccessoryUITests.swift
+//  ICTokenFieldUITests.swift
 //  ICInputAccessoryUITests
 //
 //  Created by Ben on 08/03/2016.
@@ -26,7 +26,7 @@
 
 import XCTest
 
-class ICInputAccessoryUITests: XCTestCase {
+class ICTokenFieldUITests: XCTestCase {
 
   override func setUp() {
     super.setUp()
@@ -39,15 +39,6 @@ class ICInputAccessoryUITests: XCTestCase {
   override func tearDown() {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
     super.tearDown()
-  }
-
-  func testKeyboardDismissing() {
-    let app = XCUIApplication()
-    app.tables.cells.textFields["ICKeyboardDismissTextField"].tap()
-
-    let keyboardWindow = app.childrenMatchingType(.Window).elementBoundByIndex(1)
-    let accessory = keyboardWindow.childrenMatchingType(.Other).element.childrenMatchingType(.Other).element.childrenMatchingType(.Other).elementBoundByIndex(0)
-    accessory.childrenMatchingType(.Button).element.tap()
   }
 
   func testTokenField() {
@@ -95,6 +86,33 @@ class ICInputAccessoryUITests: XCTestCase {
 
     let searchButton = app.buttons["Search"]
     searchButton.tap()
+  }
+
+  func testStoryboard() {
+    let app = XCUIApplication()
+    let tablesQuery = app.tables
+    tablesQuery.buttons["Storyboard"].tap()
+
+    let tokenField = tablesQuery.cells.containingType(.StaticText, identifier:"Storyboard ICTokenField").childrenMatchingType(.TextField).element
+    tokenField.tap()
+    tokenField.typeText("Try")
+    tokenField.typeText(" ")
+    tokenField.typeText("iCook")
+    tokenField.typeText(",")
+    tokenField.typeText("beta")
+    tokenField.typeText(" ")
+
+    let deleteKey = app.keys["delete"]
+    deleteKey.tap()
+    deleteKey.tap()
+
+    tokenField.typeText("TestFlight")
+    tokenField.typeText(",")
+
+    let searchButton = app.buttons["Search"]
+    searchButton.tap()
+
+    tablesQuery.buttons["Back to Code"].tap()
   }
 
 }

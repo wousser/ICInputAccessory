@@ -18,6 +18,7 @@ Try <https://testflight.icook.tw>.
 * A horizontal scrolling UI that groups input texts.
 * Easy to add, select and delete tokens.
 * Customizable icon and colors.
+* Supports storyboard.
 
 ![ICTokenField](https://raw.githubusercontent.com/polydice/ICInputAccessory/gh-pages/screenshots/ICTokenField.gif)
 
@@ -104,6 +105,15 @@ public var normalTokenAttributes: [String : NSObject]? { get set }
 
 /// Customized attributes for tokens in the highlighted state.
 public var highlightedTokenAttributes: [String : NSObject]? { get set }
+```
+
+* Customizable properties in storyboard:
+
+```swift
+@IBInspectable var icon: UIImage?
+@IBInspectable var placeholder: String?
+@IBInspectable var textColor: UIColor?
+@IBInspectable var cornerRadius: CGFloat
 ```
 
 See `Example/CustomizedTokenField.swift` for more details.

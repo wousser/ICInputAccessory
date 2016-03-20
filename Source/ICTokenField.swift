@@ -44,7 +44,10 @@ import UIKit
 ////////////////////////////////////////////////////////////////////////////////
 
 
+@IBDesignable
 public class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDelegate {
+
+  // MARK: - Public Properties
 
   /// The receiver’s delegate.
   public weak var delegate: ICTokenFieldDelegate?
@@ -58,7 +61,7 @@ public class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDele
   }
 
   /// The image on the left of text field.
-  public var icon: UIImage? {
+  @IBInspectable public var icon: UIImage? {
     didSet {
       if let icon = icon {
         let imageView = UIImageView(image: icon)
@@ -77,7 +80,7 @@ public class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDele
   }
 
   /// The placeholder with the default color and font.
-  public var placeholder: String? {
+  @IBInspectable public var placeholder: String? {
     get {
       return attributedPlaceholder?.string
     }
@@ -128,6 +131,35 @@ public class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDele
     }
   }
 
+  /// The tint color of icon image and text field.
+  public override var tintColor: UIColor! {
+    didSet {
+      inputTextField.tintColor = tintColor
+      leftView?.tintColor = tintColor
+    }
+  }
+
+  /// The text color of text field in the interface builder. Same as textField.text.
+  @IBInspectable var textColor: UIColor? {
+    get {
+      return inputTextField.textColor
+    }
+    set {
+      inputTextField.textColor = newValue
+    }
+  }
+
+  /// The corner radius of token field in the interface builder. Same as layer.cornerRadius.
+  @IBInspectable var cornerRadius: CGFloat {
+    get {
+      return layer.cornerRadius
+    }
+    set {
+      layer.cornerRadius = newValue
+      layer.masksToBounds = newValue > 0
+    }
+  }
+
   // MARK: - Private Properties
 
   private var tokens = [ICToken]()
@@ -147,14 +179,12 @@ public class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDele
   private var leftView: UIView? {
     didSet {
       oldValue?.removeFromSuperview()
+      leftEdgeConstraint.active = leftView == nil
       if let icon = leftView {
         addSubview(icon)
         icon.translatesAutoresizingMaskIntoConstraints = false
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-10-[icon]-10-[wrapper]", options: [], metrics: nil, views: ["icon": icon, "wrapper": scrollView]))
         addConstraint(NSLayoutConstraint(item: icon, attribute: .CenterY, relatedBy: .Equal, toItem: self, attribute: .CenterY, multiplier: 1, constant: 0))
-        leftEdgeConstraint.active = false
-      } else {
-        leftEdgeConstraint.active = true
       }
     }
   }
@@ -181,36 +211,53 @@ public class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDele
 
   // MARK: - Initialization
 
-  override public init(frame: CGRect) {
+  public override init(frame: CGRect) {
     super.init(frame: frame)
     setUpSubviews()
   }
 
-  required public init?(coder aDecoder: NSCoder) {
+  public required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
     setUpSubviews()
   }
 
   // MARK: - UIResponder
 
-  override public func isFirstResponder() -> Bool {
+  public override func isFirstResponder() -> Bool {
     return inputTextField.isFirstResponder() || super.isFirstResponder()
   }
 
-  override public func becomeFirstResponder() -> Bool {
+  public override func becomeFirstResponder() -> Bool {
     return inputTextField.becomeFirstResponder()
   }
 
-  override public func resignFirstResponder() -> Bool {
+  public override func resignFirstResponder() -> Bool {
     super.resignFirstResponder()
     return inputTextField.resignFirstResponder()
   }
 
   // MARK: - UIView
 
-  override public func layoutSubviews() {
+  public override func layoutSubviews() {
     super.layoutSubviews()
     layoutTokenTextField()
+  }
+
+  // MARK: - NSKeyValueCoding
+
+  public override func setValue(value: AnyObject?, forUndefinedKey key: String) {
+    switch value {
+    case let image as UIImage? where key == "icon":
+      icon = image
+    case let text as String? where key == "placeholder":
+      placeholder = text
+    case let color as UIColor? where key == "textColor":
+      textColor = color
+    case let value as CGFloat where key == "cornerRadius":
+      cornerRadius = value
+    default:
+      break
+    }
   }
 
   // MARK: - UITextFieldDelegate
@@ -339,8 +386,6 @@ public class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDele
     if CGRectEqualToRect(frame, CGRect.zero) {
       frame = CGRect(x: 0, y: 7, width: UIScreen.mainScreen().bounds.width, height: 30)
     }
-
-    backgroundColor = UIColor.whiteColor()
 
     addSubview(scrollView)
     scrollView.addSubview(inputTextField)

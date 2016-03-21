@@ -6,5 +6,6 @@ xcodeproj "ICInputAccessory"
 xcodeproj "Example/Example"
 
 target :Example do
-  pod "ICInputAccessory", path: "./"
+  pod "ICInputAccessory/KeyboardDismissTextField", path: "./"
+  pod "ICInputAccessory/TokenField", path: "./"
 end

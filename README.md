@@ -20,7 +20,7 @@ Try <https://testflight.icook.tw>.
 * Customizable icon and colors.
 * Supports storyboard.
 
-![ICTokenField](https://raw.githubusercontent.com/polydice/ICInputAccessory/gh-pages/screenshots/ICTokenField.gif)
+![ICTokenField](https://polydice.github.io/ICInputAccessory/screenshots/ICTokenField.gif)
 
 ## Requirements
 
@@ -40,13 +40,14 @@ iOS 8.0+ with Xcode 7.2 or above.
 
 ### Install via [CocoaPods](http://guides.cocoapods.org/)
 
-* Create a `Podfile` with the following specification and run `pod install`.
+* **ICInputAccessory** supports subspecs. Create a `Podfile` with the following specification and run `pod install`.
 
   ```rb
   platform :ios, '8.0'
   use_frameworks!
 
-  pod 'ICInputAccessory'
+  pod 'ICInputAccessory/TokenField'
+  pod 'ICInputAccessory/KeyboardDismissTextField'
   ```
 
 ### Install Manually

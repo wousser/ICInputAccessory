@@ -7,7 +7,7 @@ Try <https://testflight.icook.tw>.
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/ICInputAccessory.svg)](https://img.shields.io/cocoapods/v/ICInputAccessory.svg)
 ![Platform](https://img.shields.io/cocoapods/p/ICInputAccessory.svg?style=flat)
-![Swift 2.1.1](https://img.shields.io/badge/Swift-2.1.1-orange.svg)
+![Swift 2.2](https://img.shields.io/badge/Swift-2.2-orange.svg)
 
 ### ICKeyboardDismissTextField
 
@@ -23,6 +23,11 @@ Try <https://testflight.icook.tw>.
 ![ICTokenField](https://polydice.github.io/ICInputAccessory/screenshots/ICTokenField.gif)
 
 ## Requirements
+
+ICInputAccessory | iOS  | Xcode | Swift
+---------------- | :--: | :---: | -----
+v1.0.0           | 8.0+ | 7.2   | ![Swift 2.1.1](https://img.shields.io/badge/Swift-2.1.1-orange.svg)
+v1.1.0           | 8.0+ | 7.3   | ![Swift 2.2](https://img.shields.io/badge/Swift-2.2-orange.svg)
 
 iOS 8.0+ with Xcode 7.2 or above.
 

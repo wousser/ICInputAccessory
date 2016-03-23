@@ -72,15 +72,15 @@ class CustomizedTokenViewController: UIViewController, ICTokenFieldDelegate {
   // MARK: - ICTokenFieldDelegate
 
   func tokenFieldDidBeginEditing(tokenField: ICTokenField) {
-    print(__FUNCTION__)
+    print(#function)
   }
 
   func tokenFieldDidEndEditing(tokenField: ICTokenField) {
-    print(__FUNCTION__)
+    print(#function)
   }
 
   func tokenFieldWillReturn(tokenField: ICTokenField) {
-    print(__FUNCTION__)
+    print(#function)
   }
 
   func tokenField(tokenField: ICTokenField, didEnterText text: String) {

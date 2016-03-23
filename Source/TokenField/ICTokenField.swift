@@ -172,7 +172,7 @@ public class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDele
     _textField.returnKeyType = .Search
     _textField.delegate = self
     _textField.backspaceDelegate = self
-    _textField.addTarget(self, action: Selector("togglePlaceholderIfNeeded:"), forControlEvents: .AllEditingEvents)
+    _textField.addTarget(self, action: #selector(togglePlaceholderIfNeeded(_:)), forControlEvents: .AllEditingEvents)
     return _textField
   }()
 
@@ -206,7 +206,7 @@ public class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDele
   }()
 
   private lazy var tapGestureRecognizer: UITapGestureRecognizer = {
-    UITapGestureRecognizer(target: self, action: Selector("handleTapGesture:"))
+    UITapGestureRecognizer(target: self, action: #selector(handleTapGesture(_:)))
   }()
 
   // MARK: - Initialization
@@ -336,12 +336,12 @@ public class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDele
 
   // MARK: - UIResponder Callbacks
 
-  @IBAction private func togglePlaceholderIfNeeded(sender: UITextField? = nil) {
+  @objc private func togglePlaceholderIfNeeded(sender: UITextField? = nil) {
     let showsPlaceholder = tokens.isEmpty && (inputTextField.text?.isEmpty ?? true)
     placeholderLabel.hidden = !showsPlaceholder
   }
 
-  @IBAction private func handleTapGesture(sender: UITapGestureRecognizer) {
+  @objc private func handleTapGesture(sender: UITapGestureRecognizer) {
     if !isFirstResponder() {
       inputTextField.becomeFirstResponder()
     }

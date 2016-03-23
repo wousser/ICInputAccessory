@@ -50,7 +50,7 @@ class CustomizedTokenViewController: UIViewController, ICTokenFieldDelegate {
     navigationController?.navigationBar.translucent = false
     navigationController?.navigationBar.barStyle = .Black
 
-    let cancelBarButton = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: Selector("dismiss:"))
+    let cancelBarButton = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: #selector(dismiss(_:)))
     cancelBarButton.tintColor = UIColor.whiteColor()
     navigationItem.rightBarButtonItem = cancelBarButton
 
@@ -95,7 +95,7 @@ class CustomizedTokenViewController: UIViewController, ICTokenFieldDelegate {
 
   // MARK: - UIResponder Callbacks
 
-  @IBAction private func dismiss(sender: UIBarButtonItem) {
+  @objc private func dismiss(sender: UIBarButtonItem) {
     presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
   }
 

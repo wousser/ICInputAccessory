@@ -32,7 +32,7 @@ public class ICKeyboardDismissTextField: UITextField {
   @IBOutlet public var keyboardAccessoryView: ICKeyboardDismissAccessoryView! {
     didSet {
       if UI_USER_INTERFACE_IDIOM() != .Phone { return }
-      keyboardAccessoryView.dismissButton.addTarget(self, action: Selector("dismiss:"), forControlEvents: .TouchUpInside)
+      keyboardAccessoryView.dismissButton.addTarget(self, action: #selector(dismiss(_:)), forControlEvents: .TouchUpInside)
       inputAccessoryView = keyboardAccessoryView
     }
   }
@@ -58,18 +58,18 @@ public class ICKeyboardDismissTextField: UITextField {
     return super.becomeFirstResponder()
   }
 
+  @objc private func dismiss(sender: UIButton) {
+    resignFirstResponder()
+    UIView.animateWithDuration(0.3) {
+      self.keyboardAccessoryView.alpha = 0
+    }
+  }
+
   // MARK: - Private Methods
 
   private func setUpAccessoryView() {
     if keyboardAccessoryView == nil {
       keyboardAccessoryView = ICKeyboardDismissAccessoryView()
-    }
-  }
-
-  @IBAction private func dismiss(sender: UIButton) {
-    resignFirstResponder()
-    UIView.animateWithDuration(0.3) {
-      self.keyboardAccessoryView.alpha = 0
     }
   }
 

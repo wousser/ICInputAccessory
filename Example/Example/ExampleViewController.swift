@@ -39,7 +39,7 @@ class ExampleViewController: UITableViewController {
     let _button = UIButton(type: .System)
     _button.frame = CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.width, height: 88)
     _button.setTitle("Storyboard", forState: .Normal)
-    _button.addTarget(self, action: Selector("showStoryboard:"), forControlEvents: .TouchUpInside)
+    _button.addTarget(self, action: #selector(showStoryboard(_:)), forControlEvents: .TouchUpInside)
     return _button
   }()
 
@@ -125,7 +125,7 @@ class ExampleViewController: UITableViewController {
 
   // MARK: - UIResponder Callbacks
 
-  @IBAction private func showStoryboard(sender: UIButton) {
+  @objc private func showStoryboard(sender: UIButton) {
     if let controller = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle()).instantiateInitialViewController() {
       controller.modalTransitionStyle = .FlipHorizontal
       presentViewController(controller, animated: true, completion: nil)

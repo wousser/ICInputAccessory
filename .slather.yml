@@ -1,0 +1,8 @@
+coverage_service: cobertura_xml
+workspace: ICInputAccessory.xcworkspace
+xcodeproj: Example/Example.xcodeproj
+scheme: Example
+source_directory: Source
+ignore:
+  - Carthage/*
+  - Pods/*

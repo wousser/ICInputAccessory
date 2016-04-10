@@ -17,6 +17,8 @@ before_script:
   - xcodebuild -workspace ICInputAccessory.xcworkspace -list
 script:
   - bundle exec rake ci:test[$VERSION]
+after_success:
+  - bundle exec rake coverage
 notifications:
   email: false
   slack:

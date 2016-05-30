@@ -24,12 +24,12 @@ Pod::Spec.new do |s|
 
   s.default_subspecs = "KeyboardDismissTextField", "TokenField"
 
-  s.subspec :KeyboardDismissTextField do |sp|
+  s.subspec "KeyboardDismissTextField" do |sp|
     sp.source_files  = "Source/KeyboardDismissTextField/*.swift"
     sp.resources     = "Source/KeyboardDismissTextField/*.xcassets"
   end
 
-  s.subspec :TokenField do |sp|
+  s.subspec "TokenField" do |sp|
     sp.source_files  = "Source/TokenField/*.swift"
   end
 end

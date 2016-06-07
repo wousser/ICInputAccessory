@@ -282,9 +282,9 @@ public class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDele
     removeHighlightedToken()  // as user starts typing when a token is focused
     inputTextField.showsCursor = true
 
-    guard
-      let input = textField.text,
-      let text: NSString = (input as NSString).stringByReplacingCharactersInRange(range, withString: string)
+    guard let
+      input = textField.text,
+      text: NSString = (input as NSString).stringByReplacingCharactersInRange(range, withString: string)
     else {
       return true
     }

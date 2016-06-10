@@ -26,10 +26,8 @@ Try <https://testflight.icook.tw>.
 
 ICInputAccessory | iOS  | Xcode | Swift
 ---------------- | :--: | :---: | -----
-v1.0.0           | 8.0+ | 7.2   | ![Swift 2.1.1](https://img.shields.io/badge/Swift-2.1.1-orange.svg)
-v1.1.0           | 8.0+ | 7.3   | ![Swift 2.2](https://img.shields.io/badge/Swift-2.2-orange.svg)
-
-iOS 8.0+ with Xcode 7.2 or above.
+`~> v1.0.0`      | 8.0+ | 7.2   | ![Swift 2.1.1](https://img.shields.io/badge/Swift-2.1.1-orange.svg)
+`~> v1.1.0`      | 8.0+ | 7.3   | ![Swift 2.2](https://img.shields.io/badge/Swift-2.2-orange.svg)
 
 ## Installation
 

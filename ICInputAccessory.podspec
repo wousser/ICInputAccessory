@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name          = "ICInputAccessory"
-  s.version       = "1.0.0"
+  s.version       = "1.1.0"
   s.summary       = "A customized token text field used in the iCook app."
   s.description   = <<-DESC
                      ICKeyboardDismissTextField:

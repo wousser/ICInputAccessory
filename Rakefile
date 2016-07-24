@@ -1,6 +1,13 @@
 task default: "ci:test"
 
 namespace :ci do
+  desc "Build targets on Travis CI with a specified OS version, default OS=latest"
+  task :build, [:os] do |t, args|
+    version = args[:os] || "latest"
+    Rake::Task["framework:build"].invoke version
+    Rake::Task["example:build"].invoke version
+  end
+
   desc "Run tests on Travis CI with a specified OS version, default OS=latest"
   task :test, [:os] do |t, args|
     version = args[:os] || "latest"

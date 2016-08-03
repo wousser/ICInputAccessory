@@ -134,15 +134,19 @@ See `Example/CustomizedTokenField.swift` for more details.
 
 ## Development
 
-Meke sure you have [Homebrew](http://brew.sh/) installed, then run in the project root:
+* Meke sure [Homebrew](http://brew.sh/) is installed.
+* Current `develop` branch requires Ruby `2.3.1`.
+* Set up dependencies by running the following command in the project root:
 
-```
+  ```
 make setup
 ```
 
-Tasks for testing:
+* Open **ICInputAccessory.xcworkspace** and run the demo app with the `Example` scheme.
 
-```
+* See more tasks for building and testing:
+
+  ```
 rake -T
 ```
 

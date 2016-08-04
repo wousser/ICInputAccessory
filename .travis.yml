@@ -16,7 +16,7 @@ install:
 before_script:
   - xcodebuild -workspace ICInputAccessory.xcworkspace -list
 script:
-  - bundle exec rake ci:test[$VERSION]
+  - bundle exec rake ci:build[$VERSION]
 notifications:
   email: false
   slack:

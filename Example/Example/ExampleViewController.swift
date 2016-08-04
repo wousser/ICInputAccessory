@@ -39,7 +39,7 @@ class ExampleViewController: UITableViewController {
     let _button = UIButton(type: .System)
     _button.frame = CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.width, height: 88)
     _button.setTitle("Storyboard", forState: .Normal)
-    _button.addTarget(self, action: #selector(showStoryboard(_:)), forControlEvents: .TouchUpInside)
+    _button.addTarget(self, action: .showStoryboard, forControlEvents: .TouchUpInside)
     return _button
   }()
 
@@ -132,4 +132,12 @@ class ExampleViewController: UITableViewController {
     }
   }
 
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+private extension Selector {
+  static let showStoryboard = #selector(ExampleViewController.showStoryboard(_:))
 }

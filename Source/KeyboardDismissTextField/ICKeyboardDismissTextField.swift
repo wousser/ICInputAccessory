@@ -32,7 +32,7 @@ public class ICKeyboardDismissTextField: UITextField {
   @IBOutlet public var keyboardAccessoryView: ICKeyboardDismissAccessoryView! {
     didSet {
       if UI_USER_INTERFACE_IDIOM() != .Phone { return }
-      keyboardAccessoryView.dismissButton.addTarget(self, action: #selector(dismiss(_:)), forControlEvents: .TouchUpInside)
+      keyboardAccessoryView.dismissButton.addTarget(self, action: .dismiss, forControlEvents: .TouchUpInside)
       inputAccessoryView = keyboardAccessoryView
     }
   }
@@ -73,4 +73,12 @@ public class ICKeyboardDismissTextField: UITextField {
     }
   }
 
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+private extension Selector {
+  static let dismiss = #selector(ICKeyboardDismissTextField.dismiss(_:))
 }

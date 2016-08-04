@@ -50,7 +50,7 @@ class CustomizedTokenViewController: UIViewController, ICTokenFieldDelegate {
     navigationController?.navigationBar.translucent = false
     navigationController?.navigationBar.barStyle = .Black
 
-    let cancelBarButton = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: #selector(dismiss(_:)))
+    let cancelBarButton = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: .dismiss)
     cancelBarButton.tintColor = UIColor.whiteColor()
     navigationItem.rightBarButtonItem = cancelBarButton
 
@@ -105,4 +105,12 @@ class CustomizedTokenViewController: UIViewController, ICTokenFieldDelegate {
     textView.text = "[\n  " + tokenField.texts.map { "\"" + $0 + "\"" } .joinWithSeparator(",\n  ") + "\n]"
   }
 
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+private extension Selector {
+  static let dismiss = #selector(CustomizedTokenViewController.dismiss(_:))
 }

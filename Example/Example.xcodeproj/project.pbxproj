@@ -163,12 +163,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B5E9F90D1C8D3B6E00443DC7 /* Build configuration list for PBXNativeTarget "Example" */;
 			buildPhases = (
-				96705876C946719953BCD0C6 /* 📦 Check Pods Manifest.lock */,
+				96705876C946719953BCD0C6 /* [CP] Check Pods Manifest.lock */,
 				B5E9F8F71C8D3B6E00443DC7 /* Sources */,
 				B5E9F8F81C8D3B6E00443DC7 /* Frameworks */,
 				B5E9F8F91C8D3B6E00443DC7 /* Resources */,
-				CAB3B20531AAE2438C48D751 /* 📦 Embed Pods Frameworks */,
-				7B2FB96C7361D5883F3ADD14 /* 📦 Copy Pods Resources */,
+				CAB3B20531AAE2438C48D751 /* [CP] Embed Pods Frameworks */,
+				7B2FB96C7361D5883F3ADD14 /* [CP] Copy Pods Resources */,
 				B5C50ADD1C917F4A0059032B /* Swift Lint */,
 			);
 			buildRules = (
@@ -240,14 +240,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		7B2FB96C7361D5883F3ADD14 /* 📦 Copy Pods Resources */ = {
+		7B2FB96C7361D5883F3ADD14 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -255,14 +255,14 @@
 			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-Example/Pods-Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		96705876C946719953BCD0C6 /* 📦 Check Pods Manifest.lock */ = {
+		96705876C946719953BCD0C6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,14 +284,14 @@
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then swiftlint; fi";
 		};
-		CAB3B20531AAE2438C48D751 /* 📦 Embed Pods Frameworks */ = {
+		CAB3B20531AAE2438C48D751 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;

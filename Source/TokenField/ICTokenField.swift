@@ -172,7 +172,7 @@ public class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDele
     _textField.returnKeyType = .Search
     _textField.delegate = self
     _textField.backspaceDelegate = self
-    _textField.addTarget(self, action: #selector(togglePlaceholderIfNeeded(_:)), forControlEvents: .AllEditingEvents)
+    _textField.addTarget(self, action: .togglePlaceholderIfNeeded, forControlEvents: .AllEditingEvents)
     return _textField
   }()
 
@@ -206,7 +206,7 @@ public class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDele
   }()
 
   private lazy var tapGestureRecognizer: UITapGestureRecognizer = {
-    UITapGestureRecognizer(target: self, action: #selector(handleTapGesture(_:)))
+    UITapGestureRecognizer(target: self, action: .handleTapGesture)
   }()
 
   // MARK: - Initialization
@@ -282,9 +282,9 @@ public class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDele
     removeHighlightedToken()  // as user starts typing when a token is focused
     inputTextField.showsCursor = true
 
-    guard
-      let input = textField.text,
-      let text: NSString = (input as NSString).stringByReplacingCharactersInRange(range, withString: string)
+    guard let
+      input = textField.text,
+      text: NSString = (input as NSString).stringByReplacingCharactersInRange(range, withString: string)
     else {
       return true
     }
@@ -453,4 +453,13 @@ public class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDele
     togglePlaceholderIfNeeded()
   }
 
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+private extension Selector {
+  static let togglePlaceholderIfNeeded = #selector(ICTokenField.togglePlaceholderIfNeeded(_:))
+  static let handleTapGesture = #selector(ICTokenField.handleTapGesture(_:))
 }

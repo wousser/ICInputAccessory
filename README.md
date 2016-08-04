@@ -7,7 +7,7 @@ Try <https://testflight.icook.tw>.
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/ICInputAccessory.svg)](https://img.shields.io/cocoapods/v/ICInputAccessory.svg)
 ![Platform](https://img.shields.io/cocoapods/p/ICInputAccessory.svg?style=flat)
-![Swift 2.1.1](https://img.shields.io/badge/Swift-2.1.1-orange.svg)
+![Swift 2.2](https://img.shields.io/badge/Swift-2.2-orange.svg)
 
 ### ICKeyboardDismissTextField
 
@@ -18,12 +18,16 @@ Try <https://testflight.icook.tw>.
 * A horizontal scrolling UI that groups input texts.
 * Easy to add, select and delete tokens.
 * Customizable icon and colors.
+* Supports storyboard.
 
-![ICTokenField](https://raw.githubusercontent.com/polydice/ICInputAccessory/gh-pages/screenshots/ICTokenField.gif)
+![ICTokenField](https://polydice.github.io/ICInputAccessory/screenshots/ICTokenField.gif)
 
 ## Requirements
 
-iOS 8.0+ with Xcode 7.2 or above.
+ICInputAccessory | iOS  | Xcode | Swift
+---------------- | :--: | :---: | -----
+`~> v1.0.0`      | 8.0+ | 7.2   | ![Swift 2.1.1](https://img.shields.io/badge/Swift-2.1.1-orange.svg)
+`~> v1.1.0`      | 8.0+ | 7.3   | ![Swift 2.2](https://img.shields.io/badge/Swift-2.2-orange.svg)
 
 ## Installation
 
@@ -39,13 +43,14 @@ iOS 8.0+ with Xcode 7.2 or above.
 
 ### Install via [CocoaPods](http://guides.cocoapods.org/)
 
-* Create a `Podfile` with the following specification and run `pod install`.
+* **ICInputAccessory** supports subspecs. Create a `Podfile` with the following specification and run `pod install`.
 
   ```rb
   platform :ios, '8.0'
   use_frameworks!
 
-  pod 'ICInputAccessory'
+  pod 'ICInputAccessory/TokenField'
+  pod 'ICInputAccessory/KeyboardDismissTextField'
   ```
 
 ### Install Manually
@@ -106,6 +111,15 @@ public var normalTokenAttributes: [String : NSObject]? { get set }
 public var highlightedTokenAttributes: [String : NSObject]? { get set }
 ```
 
+* Customizable properties in storyboard:
+
+```swift
+@IBInspectable var icon: UIImage?
+@IBInspectable var placeholder: String?
+@IBInspectable var textColor: UIColor?
+@IBInspectable var cornerRadius: CGFloat
+```
+
 See `Example/CustomizedTokenField.swift` for more details.
 
 #### ICTokenFieldDelegate
@@ -120,15 +134,19 @@ See `Example/CustomizedTokenField.swift` for more details.
 
 ## Development
 
-Meke sure you have [Homebrew](http://brew.sh/) installed, then run in the project root:
+* Meke sure [Homebrew](http://brew.sh/) is installed.
+* Current `develop` branch requires Ruby `2.3.1`.
+* Set up dependencies by running the following command in the project root:
 
-```
+  ```
 make setup
 ```
 
-Tasks for testing:
+* Open **ICInputAccessory.xcworkspace** and run the demo app with the `Example` scheme.
 
-```
+* See more tasks for building and testing:
+
+  ```
 rake -T
 ```
 

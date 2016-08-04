@@ -1,8 +1,8 @@
 //
-//  ICKeyboardDismissTextField.swift
-//  ICInputAccessory
+//  StoryboardViewController.swift
+//  Example
 //
-//  Created by Ben on 07/03/2016.
+//  Created by Ben on 16/03/2016.
 //  Copyright © 2016 Polydice, Inc.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -25,49 +25,26 @@
 //
 
 import UIKit
+import ICInputAccessory
 
-public class ICKeyboardDismissTextField: UITextField {
+class StoryboardViewController: UITableViewController {
 
-  private lazy var accessoryView: UIView = {
-    let _accessory = ICKeyboardDismissAccessoryView()
-    _accessory.dismissButton.addTarget(self, action: Selector("dismiss:"), forControlEvents: .TouchUpInside)
-    return _accessory
-  }()
+  @IBOutlet weak var tokenField: ICTokenField! {
+    didSet {
+      tokenField.normalTokenAttributes = [
+        NSForegroundColorAttributeName: UIColor.whiteColor(),
+        NSBackgroundColorAttributeName: UIColor.whiteColor().colorWithAlphaComponent(0.25),
+      ]
 
-  // MARK: - Initialization
-
-  override public init(frame: CGRect) {
-    super.init(frame: frame)
-    setUpAccessoryView()
-  }
-
-  required public init?(coder aDecoder: NSCoder) {
-    super.init(coder: aDecoder)
-    setUpAccessoryView()
-  }
-
-  // MARK: - UIResponder
-
-  override public func becomeFirstResponder() -> Bool {
-    if UI_USER_INTERFACE_IDIOM() == .Phone {
-      accessoryView.alpha = 1
-    }
-    return super.becomeFirstResponder()
-  }
-
-  // MARK: - Private Methods
-
-  private func setUpAccessoryView() {
-    if UI_USER_INTERFACE_IDIOM() == .Phone {
-      inputAccessoryView = accessoryView
+      tokenField.highlightedTokenAttributes = [
+        NSForegroundColorAttributeName: UIColor.darkGrayColor(),
+        NSBackgroundColorAttributeName: UIColor.whiteColor(),
+      ]
     }
   }
 
-  @IBAction private func dismiss(sender: UIButton) {
-    resignFirstResponder()
-    UIView.animateWithDuration(0.3) {
-      self.accessoryView.alpha = 0
-    }
+  @IBAction func dismiss(sender: UIButton) {
+    presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
   }
 
 }

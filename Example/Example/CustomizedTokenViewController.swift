@@ -50,7 +50,7 @@ class CustomizedTokenViewController: UIViewController, ICTokenFieldDelegate {
     navigationController?.navigationBar.translucent = false
     navigationController?.navigationBar.barStyle = .Black
 
-    let cancelBarButton = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: Selector("dismiss:"))
+    let cancelBarButton = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: .dismiss)
     cancelBarButton.tintColor = UIColor.whiteColor()
     navigationItem.rightBarButtonItem = cancelBarButton
 
@@ -72,15 +72,15 @@ class CustomizedTokenViewController: UIViewController, ICTokenFieldDelegate {
   // MARK: - ICTokenFieldDelegate
 
   func tokenFieldDidBeginEditing(tokenField: ICTokenField) {
-    print(__FUNCTION__)
+    print(#function)
   }
 
   func tokenFieldDidEndEditing(tokenField: ICTokenField) {
-    print(__FUNCTION__)
+    print(#function)
   }
 
   func tokenFieldWillReturn(tokenField: ICTokenField) {
-    print(__FUNCTION__)
+    print(#function)
   }
 
   func tokenField(tokenField: ICTokenField, didEnterText text: String) {
@@ -95,7 +95,7 @@ class CustomizedTokenViewController: UIViewController, ICTokenFieldDelegate {
 
   // MARK: - UIResponder Callbacks
 
-  @IBAction private func dismiss(sender: UIBarButtonItem) {
+  @objc private func dismiss(sender: UIBarButtonItem) {
     presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
   }
 
@@ -105,4 +105,12 @@ class CustomizedTokenViewController: UIViewController, ICTokenFieldDelegate {
     textView.text = "[\n  " + tokenField.texts.map { "\"" + $0 + "\"" } .joinWithSeparator(",\n  ") + "\n]"
   }
 
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+private extension Selector {
+  static let dismiss = #selector(CustomizedTokenViewController.dismiss(_:))
 }

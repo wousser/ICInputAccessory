@@ -35,6 +35,14 @@ class ExampleViewController: UITableViewController {
     CustomizedTokenField.self
   ]
 
+  private lazy var flipButton: UIButton = {
+    let _button = UIButton(type: .System)
+    _button.frame = CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.width, height: 88)
+    _button.setTitle("Storyboard", forState: .Normal)
+    _button.addTarget(self, action: .showStoryboard, forControlEvents: .TouchUpInside)
+    return _button
+  }()
+
   // MARK: - Initialization
 
   convenience init() {
@@ -47,6 +55,8 @@ class ExampleViewController: UITableViewController {
   override func loadView() {
     super.loadView()
     tableView.registerClass(ExampleCell.self, forCellReuseIdentifier: NSStringFromClass(ExampleCell.self))
+    tableView.tableFooterView = flipButton
+    tableView.tableFooterView?.userInteractionEnabled
   }
 
   // MARK: - UITableViewDataSource
@@ -113,4 +123,21 @@ class ExampleViewController: UITableViewController {
     }
   }
 
+  // MARK: - UIResponder Callbacks
+
+  @objc private func showStoryboard(sender: UIButton) {
+    if let controller = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle()).instantiateInitialViewController() {
+      controller.modalTransitionStyle = .FlipHorizontal
+      presentViewController(controller, animated: true, completion: nil)
+    }
+  }
+
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+private extension Selector {
+  static let showStoryboard = #selector(ExampleViewController.showStoryboard(_:))
 }

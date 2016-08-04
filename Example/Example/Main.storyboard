@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="XY5-gz-UXC">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--ICInputAccessory-->
+        <scene sceneID="ssv-qC-OfH">
+            <objects>
+                <tableViewController id="0fq-Xw-Z0G" customClass="StoryboardViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="ZTV-zA-HhW">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="N87-CU-PrP">
+                            <rect key="frame" x="0.0" y="269.5" width="600" height="88"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Back to Code"/>
+                            <connections>
+                                <action selector="dismiss:" destination="0fq-Xw-Z0G" eventType="touchUpInside" id="Ia6-YR-Zzm"/>
+                            </connections>
+                        </button>
+                        <sections>
+                            <tableViewSection headerTitle="Dismiss Keyboard" id="tmE-Ln-PNX">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="hiq-lt-L5I">
+                                        <rect key="frame" x="0.0" y="113.5" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hiq-lt-L5I" id="dNb-Qm-7pq">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Storyboard ICKeyboardDismissTextField" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qdb-Ab-nYe" customClass="ICKeyboardDismissTextField" customModule="ICInputAccessory">
+                                                    <rect key="frame" x="18" y="12" width="564" height="20"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="keyboardAccessoryView" destination="zaj-ho-SsM" id="wlb-FZ-bH0"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="qdb-Ab-nYe" secondAttribute="trailing" constant="10" id="8T6-yk-3Bl"/>
+                                                <constraint firstItem="qdb-Ab-nYe" firstAttribute="centerY" secondItem="dNb-Qm-7pq" secondAttribute="centerY" id="UB2-Jc-XXc"/>
+                                                <constraint firstItem="qdb-Ab-nYe" firstAttribute="leading" secondItem="dNb-Qm-7pq" secondAttribute="leadingMargin" constant="10" id="WQl-qX-FOh"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Text Field with Tokens" id="dx2-iZ-OPN">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="nCe-ZG-eEP">
+                                        <rect key="frame" x="0.0" y="207.5" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nCe-ZG-eEP" id="6tu-Im-VHX">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2dP-7v-mWC" customClass="ICTokenField" customModule="ICInputAccessory">
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Storyboard ICTokenField"/>
+                                                        <userDefinedRuntimeAttribute type="image" keyPath="icon" value="icook-iphone-input-search"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="0.0"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                            <real key="value" value="0.0"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                                            <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="2dP-7v-mWC" firstAttribute="centerY" secondItem="6tu-Im-VHX" secondAttribute="centerY" id="QVu-go-I6O"/>
+                                                <constraint firstItem="2dP-7v-mWC" firstAttribute="leading" secondItem="6tu-Im-VHX" secondAttribute="leading" id="UjO-GY-bMj"/>
+                                                <constraint firstAttribute="trailing" secondItem="2dP-7v-mWC" secondAttribute="trailing" id="qHK-Hg-C1s"/>
+                                                <constraint firstItem="2dP-7v-mWC" firstAttribute="top" secondItem="6tu-Im-VHX" secondAttribute="top" id="tCI-Eg-VzE"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="0fq-Xw-Z0G" id="dzH-mw-zz6"/>
+                            <outlet property="delegate" destination="0fq-Xw-Z0G" id="x9o-bW-6Q0"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="ICInputAccessory" id="Q3g-An-b4N"/>
+                    <connections>
+                        <outlet property="tokenField" destination="2dP-7v-mWC" id="iiG-b9-QDf"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Lj-fL-J07" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="zaj-ho-SsM" customClass="ICKeyboardDismissAccessoryView" customModule="ICInputAccessory">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                            <color key="value" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </objects>
+            <point key="canvasLocation" x="1520" y="377"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ee2-Ek-31J">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XY5-gz-UXC" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wet-wK-15h">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="0fq-Xw-Z0G" kind="relationship" relationship="rootViewController" id="eaz-Pe-xkY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QTj-zS-BEl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="708" y="377"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icook-iphone-input-search" width="20" height="20"/>
+    </resources>
+</document>

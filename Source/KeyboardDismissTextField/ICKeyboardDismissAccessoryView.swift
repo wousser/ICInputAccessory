@@ -26,7 +26,15 @@
 
 import UIKit
 
+@IBDesignable
 public class ICKeyboardDismissAccessoryView: UIView {
+
+  /// The background color of the button to dismiss keyboard.
+  @IBInspectable var buttonColor: UIColor = Constants.ButtonColor {
+    didSet {
+      dismissButton.backgroundColor = buttonColor
+    }
+  }
 
   public private(set) lazy var dismissButton: UIButton = {
     let _button = UIButton()
@@ -41,21 +49,27 @@ public class ICKeyboardDismissAccessoryView: UIView {
     return _button
   }()
 
+  private struct Constants {
+    static let ButtonColor = UIColor(red:0.21, green:0.2, blue:0.19, alpha:0.5)
+    static let EdgePadding = CGFloat(7)
+    static let InteractiveSize = CGSize(width: 44, height: 44)
+  }
+
   // MARK: - Initialization
 
-  override public init(frame: CGRect) {
+  public override init(frame: CGRect) {
     super.init(frame: frame)
     setUpSubviews()
   }
 
-  required public init?(coder aDecoder: NSCoder) {
+  public required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
     setUpSubviews()
   }
 
   // MARK: - UIView
 
-  override public func pointInside(point: CGPoint, withEvent event: UIEvent?) -> Bool {
+  public override func pointInside(point: CGPoint, withEvent event: UIEvent?) -> Bool {
     for subview in subviews {
       if !subview.hidden && subview.alpha > 0 &&
           subview.userInteractionEnabled &&
@@ -66,13 +80,15 @@ public class ICKeyboardDismissAccessoryView: UIView {
     return false
   }
 
-  // MARK: - Private Methods
+  // MARK: - NSKeyValueCoding
 
-  private struct Constants {
-    static let ButtonColor = UIColor(red:0.21, green:0.2, blue:0.19, alpha:0.5)
-    static let EdgePadding = CGFloat(7)
-    static let InteractiveSize = CGSize(width: 44, height: 44)
+  public override func setValue(value: AnyObject?, forUndefinedKey key: String) {
+    if let color = value as? UIColor where key == "buttonColor" {
+      buttonColor = color
+    }
   }
+
+  // MARK: - Private Methods
 
   private func setUpSubviews() {
     backgroundColor = UIColor.clearColor()
@@ -101,7 +117,7 @@ public class ICKeyboardDismissAccessoryView: UIView {
     ))
   }
 
-  // MARK: - Public Methods
+  // MARK: - Internal Methods
 
   class func requiredHeight() -> CGFloat {
     return Constants.InteractiveSize.height + Constants.EdgePadding * 2

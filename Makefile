@@ -1,6 +1,7 @@
 install: brew-install bundle-install pod-install
 
 brew-install:
+	brew update
 	brew tap homebrew/bundle
 	brew bundle
 
@@ -16,3 +17,6 @@ setup: brew-install
 
 carthage:
 	set -o pipefail && carthage build --no-skip-current --verbose | xcpretty
+
+documentation:
+	bundle exec jazzy --config .jazzy.yml

@@ -8,6 +8,8 @@ matrix:
       script: bundle exec rake ci:build[latest]
     - env: BUILD=carthage
       script: make carthage
+      after_script:
+        - make documentation
 cache:
   bundler: true
   directories:

@@ -13,3 +13,6 @@ pod-install:
 setup: brew-install
 	bundle install
 	bundle exec pod install --no-repo-update
+
+carthage:
+	set -o pipefail && carthage build --no-skip-current --verbose | xcpretty

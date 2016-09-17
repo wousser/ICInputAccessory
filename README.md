@@ -6,8 +6,8 @@ Try <https://testflight.icook.tw>.
 [![Build Status](https://travis-ci.org/polydice/ICInputAccessory.svg?branch=develop)](https://travis-ci.org/polydice/ICInputAccessory)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/ICInputAccessory.svg)](https://img.shields.io/cocoapods/v/ICInputAccessory.svg)
-![Platform](https://img.shields.io/cocoapods/p/ICInputAccessory.svg?style=flat)
-![Swift 2.2](https://img.shields.io/badge/Swift-2.2-orange.svg)
+[![Platform](https://img.shields.io/cocoapods/p/ICInputAccessory.svg?style=flat)](https://cocoapods.org/pods/ICInputAccessory)
+![Swift 2.3](https://img.shields.io/badge/Swift-2.3-orange.svg)
 
 ### ICKeyboardDismissTextField
 
@@ -28,6 +28,7 @@ ICInputAccessory | iOS  | Xcode | Swift
 ---------------- | :--: | :---: | -----
 `~> v1.0.0`      | 8.0+ | 7.2   | ![Swift 2.1.1](https://img.shields.io/badge/Swift-2.1.1-orange.svg)
 `~> v1.1.0`      | 8.0+ | 7.3   | ![Swift 2.2](https://img.shields.io/badge/Swift-2.2-orange.svg)
+`develop` branch | 8.0+ | 8.0   | ![Swift 2.3](https://img.shields.io/badge/Swift-2.3-orange.svg)
 
 ## Installation
 

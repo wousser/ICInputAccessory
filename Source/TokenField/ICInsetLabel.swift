@@ -42,7 +42,7 @@ class ICInsetLabel: UILabel {
     self.cornerRadius = cornerRadius
 
     switch cornerRadius {
-    case .constant(let radius) where radius > 0:
+    case let .constant(radius) where radius > 0:
       layer.cornerRadius = radius
       fallthrough
     case .dynamic:

@@ -54,7 +54,7 @@ class ExampleViewController: UITableViewController {
 
   override func loadView() {
     super.loadView()
-    tableView.register(ExampleCell.self, forCellReuseIdentifier: NSStringFromClass(ExampleCell.self))
+    tableView.register(ExampleCell.self, forCellReuseIdentifier: String(describing: ExampleCell.self))
     tableView.tableFooterView = flipButton
     tableView.tableFooterView?.isUserInteractionEnabled = true
   }
@@ -83,23 +83,24 @@ class ExampleViewController: UITableViewController {
   }
 
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(ExampleCell.self), for: indexPath)
-    switch types[(indexPath as NSIndexPath).section] {
+    let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ExampleCell.self), for: indexPath)
+
+    switch types[indexPath.section] {
     case let type as ICKeyboardDismissTextField.Type:
       let textField = type.init()
       textField.leftViewMode = .always
       textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: 15))
-      textField.placeholder = String(type)
+      textField.placeholder = String(describing: type)
       (cell as? ExampleCell)?.showcase = textField
 
     case let type as CustomizedTokenField.Type:
-      cell.textLabel?.text = String(type)
+      cell.textLabel?.text = String(describing: type)
       cell.accessoryType = .disclosureIndicator
 
     case let type as ICTokenField.Type:
       let container = UIView(frame: cell.bounds)
       let tokenField = type.init()
-      tokenField.placeholder = String(type)
+      tokenField.placeholder = String(describing: type)
       tokenField.frame = container.bounds.insetBy(dx: 5, dy: 0)
       tokenField.autoresizingMask = [.flexibleWidth, .flexibleHeight]
       container.addSubview(tokenField)
@@ -114,18 +115,18 @@ class ExampleViewController: UITableViewController {
   // MARK: - UITableViewDelegate
 
   override func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
-    return types[(indexPath as NSIndexPath).section] == CustomizedTokenField.self
+    return types[indexPath.section] == CustomizedTokenField.self
   }
 
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    if types[(indexPath as NSIndexPath).section] == CustomizedTokenField.self {
+    if types[indexPath.section] == CustomizedTokenField.self {
       present(UINavigationController(rootViewController: CustomizedTokenViewController()), animated: true, completion: nil)
     }
   }
 
   // MARK: - UIResponder Callbacks
 
-  @objc private func showStoryboard(_ sender: UIButton) {
+  @objc fileprivate func showStoryboard(_ sender: UIButton) {
     if let controller = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateInitialViewController() {
       controller.modalTransitionStyle = .flipHorizontal
       present(controller, animated: true, completion: nil)

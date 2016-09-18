@@ -6,6 +6,5 @@ github_file_prefix: https://github.com/polydice/ICInputAccessory/blob/develop
 xcodebuild_arguments: [-scheme, ICInputAccessory-iOS]
 module: ICInputAccessory
 module_version: 1.1.0
-swift_version: 2.2
 output: docs/output
-theme: apple
+theme: fullwidth

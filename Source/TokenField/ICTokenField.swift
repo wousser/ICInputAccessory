@@ -41,15 +41,13 @@ import UIKit
 }
 
 
-////////////////////////////////////////////////////////////////////////////////
-
-
+/// A text field that groups input texts with delimiters.
 @IBDesignable
 public class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDelegate {
 
   // MARK: - Public Properties
 
-  /// The receiver’s delegate.
+  /// The receiver's delegate.
   public weak var delegate: ICTokenFieldDelegate?
 
   /// Characters that completes a new token, defaults are whitespace and commas.
@@ -117,7 +115,7 @@ public class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDele
     }
   }
 
-  /// Customized attributes for tokens in the normal state, e.g. NSFontAttributeName and NSForegroundColorAttributeName.
+  /// Customized attributes for tokens in the normal state, e.g. `NSFontAttributeName` and `NSForegroundColorAttributeName`.
   public var normalTokenAttributes: [String: NSObject]? {
     didSet {
       tokens.forEach { $0.normalTextAttributes = normalTokenAttributes ?? [:] }
@@ -211,11 +209,13 @@ public class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDele
 
   // MARK: - Initialization
 
+  /// Initializes and returns a newly allocated view object with the specified frame rectangle.
   public override init(frame: CGRect) {
     super.init(frame: frame)
     setUpSubviews()
   }
 
+  /// Returns an object initialized from data in a given unarchiver.
   public required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
     setUpSubviews()
@@ -365,9 +365,7 @@ public class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDele
 
   // MARK: - Private Methods
 
-  /**
-  Returns true if any highlighted token is found and removed, otherwise false.
-  */
+  /// Returns true if any highlighted token is found and removed, otherwise false.
   private func removeHighlightedToken() -> Bool {
     for (index, token) in tokens.enumerate() {
       if token.highlighted {

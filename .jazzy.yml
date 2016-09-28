@@ -1,0 +1,10 @@
+clean: true
+author: polydice
+author_url: https://github.com/polydice
+github_url: https://github.com/polydice/ICInputAccessory
+github_file_prefix: https://github.com/polydice/ICInputAccessory/blob/develop
+xcodebuild_arguments: [-scheme, ICInputAccessory-iOS]
+module: ICInputAccessory
+module_version: 1.2.0
+output: docs/output
+theme: fullwidth

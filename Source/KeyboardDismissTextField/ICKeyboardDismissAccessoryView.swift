@@ -26,16 +26,18 @@
 
 import UIKit
 
+/// A customized keyboard accessory view with a dismiss button.
 @IBDesignable
 public class ICKeyboardDismissAccessoryView: UIView {
 
   /// The background color of the button to dismiss keyboard.
-  @IBInspectable var buttonColor: UIColor = Constants.ButtonColor {
+  @IBInspectable public var buttonColor: UIColor = Constants.ButtonColor {
     didSet {
       dismissButton.backgroundColor = buttonColor
     }
   }
 
+  /// The button to dismiss keyboard.
   public private(set) lazy var dismissButton: UIButton = {
     let _button = UIButton()
     let resources = NSBundle(forClass: self.dynamicType)
@@ -57,11 +59,13 @@ public class ICKeyboardDismissAccessoryView: UIView {
 
   // MARK: - Initialization
 
+  /// Initializes and returns a newly allocated view object with the specified frame rectangle.
   public override init(frame: CGRect) {
     super.init(frame: frame)
     setUpSubviews()
   }
 
+  /// Returns an object initialized from data in a given unarchiver.
   public required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
     setUpSubviews()

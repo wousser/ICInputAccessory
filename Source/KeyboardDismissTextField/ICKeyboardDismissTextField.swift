@@ -26,9 +26,11 @@
 
 import UIKit
 
+/// A text field that has a button to dismiss keyboard on the input accessory view.
 @IBDesignable
 public class ICKeyboardDismissTextField: UITextField {
 
+  /// The custom input accessory view with a button to dismiss keyboard.
   @IBOutlet public var keyboardAccessoryView: ICKeyboardDismissAccessoryView! {
     didSet {
       if UI_USER_INTERFACE_IDIOM() != .Phone { return }
@@ -39,11 +41,13 @@ public class ICKeyboardDismissTextField: UITextField {
 
   // MARK: - Initialization
 
+  /// Initializes and returns a newly allocated view object with the specified frame rectangle.
   public override init(frame: CGRect) {
     super.init(frame: frame)
     setUpAccessoryView()
   }
 
+  /// Returns an object initialized from data in a given unarchiver.
   public required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
     setUpAccessoryView()

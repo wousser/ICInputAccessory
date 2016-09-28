@@ -3,15 +3,16 @@
 Customized text fields used in the [iCook app](https://itunes.apple.com/app/id554065086).
 Try <https://testflight.icook.tw>.
 
-[![Build Status](https://travis-ci.org/polydice/ICInputAccessory.svg?branch=develop)](https://travis-ci.org/polydice/ICInputAccessory)
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/ICInputAccessory.svg)](https://img.shields.io/cocoapods/v/ICInputAccessory.svg)
-![Platform](https://img.shields.io/cocoapods/p/ICInputAccessory.svg?style=flat)
-![Swift 2.2](https://img.shields.io/badge/Swift-2.2-orange.svg)
+[![Build Status](https://travis-ci.org/polydice/ICInputAccessory.svg)](https://travis-ci.org/polydice/ICInputAccessory)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg)](https://github.com/Carthage/Carthage)
+[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/ICInputAccessory.svg)](https://cocoapods.org/pods/ICInputAccessory)
+![Platform](https://img.shields.io/cocoapods/p/ICInputAccessory.svg)
+[![Docs](https://img.shields.io/cocoapods/metrics/doc-percent/ICInputAccessory.svg)](http://cocoadocs.org/docsets/ICInputAccessory/)
+![Swift 2.3](https://img.shields.io/badge/Swift-2.3-orange.svg)
 
 ### ICKeyboardDismissTextField
 
-* An input accessory view with a button to dismiss keyboard.
+* A text field that has a button to dismiss keyboard on the input accessory view.
 
 ### ICTokenField
 
@@ -26,8 +27,10 @@ Try <https://testflight.icook.tw>.
 
 ICInputAccessory | iOS  | Xcode | Swift
 ---------------- | :--: | :---: | -----
-`~> v1.0.0`      | 8.0+ | 7.2   | ![Swift 2.1.1](https://img.shields.io/badge/Swift-2.1.1-orange.svg)
-`~> v1.1.0`      | 8.0+ | 7.3   | ![Swift 2.2](https://img.shields.io/badge/Swift-2.2-orange.svg)
+`~> 1.0.0`       | 8.0+ | 7.2   | ![Swift 2.1.1](https://img.shields.io/badge/Swift-2.1.1-orange.svg)
+`~> 1.1.0`       | 8.0+ | 7.3   | ![Swift 2.2](https://img.shields.io/badge/Swift-2.2-orange.svg)
+`~> 1.2.0`       | 8.0+ | 8.0   | ![Swift 2.3](https://img.shields.io/badge/Swift-2.3-orange.svg)
+`feature/swift-3`| 8.0+ | 8.0   | ![Swift 3.0](https://img.shields.io/badge/Swift-3.0-orange.svg)
 
 ## Installation
 

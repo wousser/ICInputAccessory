@@ -4,10 +4,10 @@ matrix:
   include:
     - env: VERSION=9.3
     - env: VERSION=latest
-    - env: VERSION=carthage
       before_script:
         - bundle exec danger
       script:
+        - bundle exec rake ci:build[$VERSION]
         - make carthage
       after_script:
         - make documentation

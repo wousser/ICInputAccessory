@@ -18,5 +18,5 @@ setup: brew-install
 carthage:
 	set -o pipefail && carthage build --no-skip-current --verbose | xcpretty
 
-documentation:
+docs:
 	bundle exec jazzy --config .jazzy.yml

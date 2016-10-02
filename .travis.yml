@@ -8,9 +8,10 @@ matrix:
         - bundle exec danger
       script:
         - bundle exec rake ci:build[$VERSION]
-        - make carthage
+        - make -B carthage
+        - make -B docs
       after_script:
-        - make documentation
+        - sh scripts/update-docs.sh
 cache:
   bundler: true
   directories:

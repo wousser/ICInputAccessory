@@ -32,3 +32,9 @@ Pods/
 
 ## Carthage
 Carthage/
+
+# Docsets
+output
+undocumented.json
+*.docset
+*.tgz

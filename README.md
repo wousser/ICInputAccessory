@@ -1,7 +1,5 @@
 # ICInputAccessory
 
-[![Join the chat at https://gitter.im/ICInputAccessory/Lobby](https://badges.gitter.im/ICInputAccessory/Lobby.svg)](https://gitter.im/ICInputAccessory/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
 Customized text fields used in the [iCook app](https://itunes.apple.com/app/id554065086).
 Try <https://testflight.icook.tw>.
 
@@ -9,8 +7,8 @@ Try <https://testflight.icook.tw>.
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg)](https://github.com/Carthage/Carthage)
 [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/ICInputAccessory.svg)](https://cocoapods.org/pods/ICInputAccessory)
 ![Platform](https://img.shields.io/cocoapods/p/ICInputAccessory.svg)
-[![Docs](https://img.shields.io/cocoapods/metrics/doc-percent/ICInputAccessory.svg)](http://cocoadocs.org/docsets/ICInputAccessory/)
-![Swift 2.3](https://img.shields.io/badge/Swift-2.3-orange.svg)
+[![CocoaDocs](https://img.shields.io/cocoapods/metrics/doc-percent/ICInputAccessory.svg)](http://cocoadocs.org/docsets/ICInputAccessory/)
+![Swift 3.0](https://img.shields.io/badge/Swift-3.0-orange.svg)
 
 ### ICKeyboardDismissTextField
 
@@ -32,7 +30,7 @@ ICInputAccessory | iOS  | Xcode | Swift
 `~> 1.0.0`       | 8.0+ | 7.2   | ![Swift 2.1.1](https://img.shields.io/badge/Swift-2.1.1-orange.svg)
 `~> 1.1.0`       | 8.0+ | 7.3   | ![Swift 2.2](https://img.shields.io/badge/Swift-2.2-orange.svg)
 `~> 1.2.0`       | 8.0+ | 8.0   | ![Swift 2.3](https://img.shields.io/badge/Swift-2.3-orange.svg)
-`feature/swift-3`| 8.0+ | 8.0   | ![Swift 3.0](https://img.shields.io/badge/Swift-3.0-orange.svg)
+`develop`        | 8.0+ | 8.0   | ![Swift 3.0](https://img.shields.io/badge/Swift-3.0-orange.svg)
 
 ## Installation
 
@@ -164,6 +162,7 @@ Please fork this repository, create a branch named like `feature/some-new-featur
 ## Contact
 
 [![Twitter](https://img.shields.io/badge/twitter-@polydice-blue.svg?style=flat)](https://twitter.com/polydice)
+[![Join the chat at https://gitter.im/polydice/ICInputAccessory](https://badges.gitter.im/polydice/ICInputAccessory.svg)](https://gitter.im/polydice/ICInputAccessory)
 
 ## License
 

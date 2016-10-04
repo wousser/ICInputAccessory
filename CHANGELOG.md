@@ -1,3 +1,7 @@
+## v1.3.0
+
+#### Changes
+
 ## v1.2.0
 
 #### Changes
@@ -8,10 +12,9 @@
 
 #### Changes
 
+* Swift 2.2
 * Support storyboard
 * Support subspecs
-* Upgrade to Swift 2.2
-* Use CocoaPods (1.0.1)
 
 ## v1.0.0
 

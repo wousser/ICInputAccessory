@@ -2,12 +2,13 @@ language: objective-c
 osx_image: xcode8
 matrix:
   include:
-    - env: BUILD=9.3
-      script: bundle exec rake ci:build[9.3]
-    - env: BUILD=latest
-      script: bundle exec rake ci:build[latest]
-    - env: BUILD=carthage
-      script: make carthage
+    - env: VERSION=9.3
+    - env: VERSION=latest
+      before_script:
+        - bundle exec danger
+      script:
+        - bundle exec rake ci:build[$VERSION]
+        - make carthage
       after_script:
         - make documentation
 cache:
@@ -21,6 +22,8 @@ install:
   - make install
 before_script:
   - xcodebuild -workspace ICInputAccessory.xcworkspace -list
+script:
+  - bundle exec rake ci:build[$VERSION]
 notifications:
   email: false
   slack:

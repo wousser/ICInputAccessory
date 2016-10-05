@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>ICTokenFieldDelegate Protocol Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset="utf-8">
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+
+  </head>
+  <body>
+
+    <a name="//apple_ref/swift/Protocol/ICTokenFieldDelegate" class="dashAnchor"></a>
+
+    <a title="ICTokenFieldDelegate Protocol Reference"></a>
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="../index.html">
+          ICInputAccessory Docs
+        </a>
+         (69% documented)
+      </p>
+
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="https://github.com/polydice/ICInputAccessory">
+            <img class="header-icon" src="../img/gh.png"/>
+            View on GitHub
+          </a>
+        </p>
+
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="../index.html">ICInputAccessory Reference</a>
+      <img class="carat" src="../img/carat.png" />
+      ICTokenFieldDelegate Protocol Reference
+    </p>
+
+    <div class="content-wrapper">
+      <nav class="navigation">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ICKeyboardDismissAccessoryView.html">ICKeyboardDismissAccessoryView</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ICKeyboardDismissTextField.html">ICKeyboardDismissTextField</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ICTokenField.html">ICTokenField</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/ICTokenFieldDelegate.html">ICTokenFieldDelegate</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+
+        <section class="section">
+          <div class="section-content">
+            <h1>ICTokenFieldDelegate</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">ICTokenFieldDelegate</span><span class="p">:</span> <span class="kt">NSObjectProtocol</span></code></pre>
+
+                </div>
+              </div>
+            <p>The protocol defines the messages sent to a delegate. All the methods are optional.</p>
+
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-content">
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP16ICInputAccessory20ICTokenFieldDelegate25tokenFieldDidBeginEditingFT10tokenFieldCS_12ICTokenField_T_"></a>
+                    <a name="//apple_ref/swift/Method/tokenFieldDidBeginEditing(tokenField:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP16ICInputAccessory20ICTokenFieldDelegate25tokenFieldDidBeginEditingFT10tokenFieldCS_12ICTokenField_T_">tokenFieldDidBeginEditing(tokenField:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Tells the delegate that editing began for the token field.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">optional</span> <span class="kd">func</span> <span class="nf">tokenFieldDidBeginEditing</span><span class="p">(</span><span class="nv">tokenField</span><span class="p">:</span> <span class="kt"><a href="../Classes/ICTokenField.html">ICTokenField</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/polydice/ICInputAccessory/blob/develop/Source/TokenField/ICTokenField.swift#L32">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP16ICInputAccessory20ICTokenFieldDelegate23tokenFieldDidEndEditingFT10tokenFieldCS_12ICTokenField_T_"></a>
+                    <a name="//apple_ref/swift/Method/tokenFieldDidEndEditing(tokenField:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP16ICInputAccessory20ICTokenFieldDelegate23tokenFieldDidEndEditingFT10tokenFieldCS_12ICTokenField_T_">tokenFieldDidEndEditing(tokenField:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Tells the delegate that editing stopped for the token field.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">optional</span> <span class="kd">func</span> <span class="nf">tokenFieldDidEndEditing</span><span class="p">(</span><span class="nv">tokenField</span><span class="p">:</span> <span class="kt"><a href="../Classes/ICTokenField.html">ICTokenField</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/polydice/ICInputAccessory/blob/develop/Source/TokenField/ICTokenField.swift#L34">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP16ICInputAccessory20ICTokenFieldDelegate20tokenFieldWillReturnFT10tokenFieldCS_12ICTokenField_T_"></a>
+                    <a name="//apple_ref/swift/Method/tokenFieldWillReturn(tokenField:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP16ICInputAccessory20ICTokenFieldDelegate20tokenFieldWillReturnFT10tokenFieldCS_12ICTokenField_T_">tokenFieldWillReturn(tokenField:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Tells the delegate that the token field will process the pressing of the return button.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">optional</span> <span class="kd">func</span> <span class="nf">tokenFieldWillReturn</span><span class="p">(</span><span class="nv">tokenField</span><span class="p">:</span> <span class="kt"><a href="../Classes/ICTokenField.html">ICTokenField</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/polydice/ICInputAccessory/blob/develop/Source/TokenField/ICTokenField.swift#L36">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP16ICInputAccessory20ICTokenFieldDelegate10tokenFieldFT10tokenFieldCS_12ICTokenField12didEnterTextSS_T_"></a>
+                    <a name="//apple_ref/swift/Method/tokenField(tokenField:didEnterText:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP16ICInputAccessory20ICTokenFieldDelegate10tokenFieldFT10tokenFieldCS_12ICTokenField12didEnterTextSS_T_">tokenField(tokenField:didEnterText:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Tells the delegate that the text becomes a token in the token field.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">optional</span> <span class="kd">func</span> <span class="nf">tokenField</span><span class="p">(</span><span class="nv">tokenField</span><span class="p">:</span> <span class="kt"><a href="../Classes/ICTokenField.html">ICTokenField</a></span><span class="p">,</span> <span class="n">didEnterText</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/polydice/ICInputAccessory/blob/develop/Source/TokenField/ICTokenField.swift#L38">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP16ICInputAccessory20ICTokenFieldDelegate10tokenFieldFT10tokenFieldCS_12ICTokenField13didDeleteTextSS7atIndexSi_T_"></a>
+                    <a name="//apple_ref/swift/Method/tokenField(tokenField:didDeleteText:atIndex:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP16ICInputAccessory20ICTokenFieldDelegate10tokenFieldFT10tokenFieldCS_12ICTokenField13didDeleteTextSS7atIndexSi_T_">tokenField(tokenField:didDeleteText:atIndex:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Tells the delegate that the token at certain index is removed from the token field.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">optional</span> <span class="kd">func</span> <span class="nf">tokenField</span><span class="p">(</span><span class="nv">tokenField</span><span class="p">:</span> <span class="kt"><a href="../Classes/ICTokenField.html">ICTokenField</a></span><span class="p">,</span> <span class="n">didDeleteText</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">atIndex</span> <span class="nv">index</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/polydice/ICInputAccessory/blob/develop/Source/TokenField/ICTokenField.swift#L40">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+      </article>
+    </div>
+    <section class="footer">
+      <p>&copy; 2016 <a class="link" href="https://github.com/polydice" target="_blank" rel="external">polydice</a>. All rights reserved. (Last updated: 2016-10-05)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+    </section>
+  </body>
+</div>
+</html>

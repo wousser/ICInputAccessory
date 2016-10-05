@@ -17,7 +17,7 @@ git --no-pager diff --stat
 git add .
 git commit -m "[CI] Update documentation at $(date +'%Y-%m-%d %H:%M:%S %z')"
 
-if [ "${TRAVIS_BRANCH}" = "feature/auto-generated-docs" ]; then
+if [ "${TRAVIS_BRANCH}" = "develop" ]; then
   echo "Updating gh-pages..."
   git remote add upstream "https://${DANGER_GITHUB_API_TOKEN}@github.com/polydice/ICInputAccessory.git"
   git push --quiet upstream HEAD:gh-pages

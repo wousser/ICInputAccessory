@@ -18,5 +18,7 @@ setup: brew-install
 carthage:
 	set -o pipefail && carthage build --no-skip-current --verbose | xcpretty
 
-documentation:
+docs:
+	rm -rfv docs
+	git clone -b gh-pages --single-branch https://github.com/polydice/ICInputAccessory.git docs
 	bundle exec jazzy --config .jazzy.yml

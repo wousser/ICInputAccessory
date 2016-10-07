@@ -5,12 +5,13 @@ matrix:
     - env: VERSION=9.3
     - env: VERSION=latest
       before_script:
-        - bundle exec danger
+        - if [ -n "$DANGER_GITHUB_API_TOKEN" ]; then bundle exec danger; fi
       script:
         - bundle exec rake ci:build[$VERSION]
-        - make carthage
+        - make -B carthage
+        - make -B docs
       after_script:
-        - make documentation
+        - sh scripts/update-docs.sh
 cache:
   bundler: true
   directories:

@@ -1,5 +1,7 @@
 # ICInputAccessory
 
+[![Join the chat at https://gitter.im/ICInputAccessory/Lobby](https://badges.gitter.im/ICInputAccessory/Lobby.svg)](https://gitter.im/ICInputAccessory/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Customized text fields used in the [iCook app](https://itunes.apple.com/app/id554065086).
 Try <https://testflight.icook.tw>.
 

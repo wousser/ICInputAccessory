@@ -2,6 +2,8 @@
 
 #### Changes
 
+* Swift 3.0
+
 ## v1.2.0
 
 #### Changes

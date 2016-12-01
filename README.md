@@ -9,6 +9,7 @@ Try <https://testflight.icook.tw>.
 ![Platform](https://img.shields.io/cocoapods/p/ICInputAccessory.svg)
 [![CocoaDocs](https://img.shields.io/cocoapods/metrics/doc-percent/ICInputAccessory.svg)](http://cocoadocs.org/docsets/ICInputAccessory/)
 ![Swift 3.0](https://img.shields.io/badge/Swift-3.0-orange.svg)
+[![Gitter](https://badges.gitter.im/ICInputAccessory/Lobby.svg)](https://gitter.im/ICInputAccessory/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=body_badge)
 
 ### ICKeyboardDismissTextField
 

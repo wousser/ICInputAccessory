@@ -33,12 +33,12 @@ class StoryboardViewController: UITableViewController {
     didSet {
       tokenField.normalTokenAttributes = [
         NSForegroundColorAttributeName: UIColor.white,
-        NSBackgroundColorAttributeName: UIColor.white.withAlphaComponent(0.25),
+        NSBackgroundColorAttributeName: UIColor.white.withAlphaComponent(0.25)
       ]
 
       tokenField.highlightedTokenAttributes = [
         NSForegroundColorAttributeName: UIColor.darkGray,
-        NSBackgroundColorAttributeName: UIColor.white,
+        NSBackgroundColorAttributeName: UIColor.white
       ]
     }
   }

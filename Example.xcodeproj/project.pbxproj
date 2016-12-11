@@ -284,7 +284,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then swiftlint; fi";
+			shellScript = "sh ${SRCROOT}/scripts/swiftlint.sh";
 		};
 		CAB3B20531AAE2438C48D751 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;

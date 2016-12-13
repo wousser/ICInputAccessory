@@ -294,7 +294,7 @@ open class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDelega
         let newToken = text.substring(to: index)
         textField.text = nil
 
-        if newToken != delimiter {
+        if !newToken.isEmpty && newToken != delimiter {
           tokens.append(ICToken(text: newToken, normalAttributes: normalTokenAttributes, highlightedAttributes: highlightedTokenAttributes))
           layoutTokenTextField()
           delegate?.tokenField?(self, didEnterText: newToken)

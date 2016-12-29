@@ -30,35 +30,38 @@ ICInputAccessory | iOS  | Xcode | Swift
 `~> 1.0.0`       | 8.0+ | 7.2   | ![Swift 2.1.1](https://img.shields.io/badge/Swift-2.1.1-orange.svg)
 `~> 1.1.0`       | 8.0+ | 7.3   | ![Swift 2.2](https://img.shields.io/badge/Swift-2.2-orange.svg)
 `~> 1.2.0`       | 8.0+ | 8.0   | ![Swift 2.3](https://img.shields.io/badge/Swift-2.3-orange.svg)
-`develop`        | 8.0+ | 8.0   | ![Swift 3.0](https://img.shields.io/badge/Swift-3.0-orange.svg)
+`~> 1.3.0`       | 8.0+ | 8.0   | ![Swift 3.0](https://img.shields.io/badge/Swift-3.0-orange.svg)
 
 ## Installation
 
-### Install via [Carthage](https://github.com/Carthage/Carthage)
+### Use [Carthage](https://github.com/Carthage/Carthage)
 
-* Create a `Cartfile` with the following specification and run `carthage update`.
+Create a `Cartfile` with the following specification and run `carthage update ICInputAccessory`. Follow the [instructions](https://github.com/Carthage/Carthage#if-youre-building-for-ios) to add the framework to an iOS project.
 
-  ```
-  github "polydice/ICInputAccessory"
-  ```
+```
+github "polydice/ICInputAccessory"
+```
 
-* Follow the [instruction](https://github.com/Carthage/Carthage#if-youre-building-for-ios) to add the framework to an iOS project.
+### Use [CocoaPods](http://guides.cocoapods.org/)
 
-### Install via [CocoaPods](http://guides.cocoapods.org/)
+**ICInputAccessory** supports subspecs. Create a `Podfile` with the following specification and run `pod install`.
 
-* **ICInputAccessory** supports subspecs. Create a `Podfile` with the following specification and run `pod install`.
+```rb
+platform :ios, '8.0'
+use_frameworks!
 
-  ```rb
-  platform :ios, '8.0'
-  use_frameworks!
+pod 'ICInputAccessory/TokenField'
+pod 'ICInputAccessory/KeyboardDismissTextField'
+```
 
-  pod 'ICInputAccessory/TokenField'
-  pod 'ICInputAccessory/KeyboardDismissTextField'
-  ```
+### Use Git Submodule
 
-### Install Manually
+```
+git submodule add -b master git@github.com:polydice/ICInputAccessory.git Dependencies/ICInputAccessory
+```
 
-* Everything you need resides in the `Source` directory. Drag those files to a project.
+* Everything you need resides in the `Source` directory. Add those files to your project.
+* Alternatively, drag **ICInputAccessory.xcodeproj** to your app project as a subproject. Add **ICInputAccessory-iOS** to the **Target Dependencies** in the application target's **Build Phases** settings.
 
 ## Usage
 

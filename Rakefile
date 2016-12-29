@@ -23,6 +23,7 @@ namespace :ci do
   end
 end
 
+
 namespace :example do
   desc "Build the example project"
   task :build, [:os] do |t, args|
@@ -46,4 +47,34 @@ namespace :framework do
     sh %(xcodebuild -project ICInputAccessory.xcodeproj -scheme ICInputAccessory-iOS -sdk iphonesimulator -destination "name=iPhone 6s,OS=#{version}" clean build | xcpretty -c && exit ${PIPESTATUS[0]})
     exit $?.exitstatus if not $?.success?
   end
+end
+
+
+desc "Bump versions"
+task :bump, [:version] do |t, args|
+  version = args[:version]
+  unless version
+    puts %(Usage: rake "bump[version]")
+    next
+  end
+
+  FileUtils.mv "ICInputAccessory.xcodeproj", "ICInputAccessory.tmp"
+  sh %(xcrun agvtool new-marketing-version #{version})
+  FileUtils.mv "ICInputAccessory.tmp", "ICInputAccessory.xcodeproj"
+
+  FileUtils.mv "Example.xcodeproj", "Example.tmp"
+  sh %(xcrun agvtool new-marketing-version #{version})
+  FileUtils.mv "Example.tmp", "Example.xcodeproj"
+
+  podspec = "ICInputAccessory.podspec"
+  text = File.read podspec
+  File.write podspec, text.gsub(%r(\"\d+\.\d+\.\d+\"), "\"#{version}\"")
+  puts "Updated #{podspec} to #{version}"
+
+  jazzy = ".jazzy.yml"
+  text = File.read jazzy
+  File.write jazzy, text.gsub(%r(:\s\d+\.\d+\.\d+), ": #{version}")
+  puts "Updated #{jazzy} to #{version}"
+
+  sh %(bundle exec pod install)
 end

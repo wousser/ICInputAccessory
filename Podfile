@@ -3,7 +3,7 @@ use_frameworks!
 
 workspace "ICInputAccessory"
 project "ICInputAccessory"
-project "Example/Example"
+project "Example"
 
 target "Example" do
   pod "ICInputAccessory/KeyboardDismissTextField", path: "./"

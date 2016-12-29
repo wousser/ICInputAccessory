@@ -37,7 +37,7 @@ class CustomizedTokenViewController: UIViewController, ICTokenFieldDelegate {
   override func loadView() {
     super.loadView()
     view.backgroundColor = UIColor.white
-    textView.text = "[\n\n]";
+    textView.text = "[\n\n]"
     textView.font = UIFont.preferredFont(forTextStyle: .subheadline)
     textView.frame = view.bounds.insetBy(dx: 10, dy: 10)
     textView.autoresizingMask = [.flexibleWidth, .flexibleHeight]

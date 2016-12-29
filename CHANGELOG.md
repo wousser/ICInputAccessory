@@ -3,6 +3,7 @@
 #### Changes
 
 * Swift 3.0
+* Support `pod try ICInputAccessory`
 
 ## v1.2.0
 

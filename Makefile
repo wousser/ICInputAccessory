@@ -16,7 +16,7 @@ setup: brew-install
 	bundle exec pod install --no-repo-update
 
 carthage:
-	set -o pipefail && carthage build --no-skip-current --verbose | xcpretty
+	set -o pipefail && carthage build --no-skip-current --verbose | bundle exec xcpretty
 
 docs:
 	bundle exec jazzy --config .jazzy.yml

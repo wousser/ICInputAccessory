@@ -1,13 +1,5 @@
 language: objective-c
 osx_image: xcode8.2
-matrix:
-  include:
-    - env: VERSION=9.3
-    - env: VERSION=10.1
-      script:
-        - bundle exec rake ci:build[$VERSION]
-        - make -B carthage
-        - make -B docs
 cache:
   bundler: true
   directories:
@@ -20,7 +12,9 @@ install:
 before_script:
   - xcodebuild -workspace ICInputAccessory.xcworkspace -list
 script:
-  - bundle exec rake ci:build[$VERSION]
+  - bundle exec rake ci:build
+  - make -B carthage
+  - make -B docs
 notifications:
   email: false
   slack:

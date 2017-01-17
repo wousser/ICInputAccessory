@@ -1,6 +1,6 @@
 task default: "ci:test"
 
-latest = "10.2"
+latest = "10.1"
 
 namespace :ci do
   desc "Build targets on Travis CI with a specified OS version, default OS=#{latest}"

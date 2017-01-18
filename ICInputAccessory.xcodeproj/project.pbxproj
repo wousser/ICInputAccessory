@@ -132,6 +132,7 @@
 				TargetAttributes = {
 					B56BC4291C89A7EA00C20AD6 = {
 						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0820;
 					};
 				};
 			};
@@ -294,6 +295,7 @@
 				PRODUCT_NAME = ICInputAccessory;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -314,6 +316,7 @@
 				PRODUCT_NAME = ICInputAccessory;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

@@ -1,3 +1,18 @@
+## v1.4.0
+
+* Added delegate methods:
+
+  ```swift
+@objc optional func tokenField(_ tokenField: ICTokenField, didChangeInputText text: String)
+@objc optional func tokenField(_ tokenField: ICTokenField, shouldCompleteText text: String) -> Bool
+```
+
+* Changed delegate method:
+
+  ```swift
+@objc optional func tokenField(_ tokenField: ICTokenField, didCompleteText text: String)
+```
+
 ## v1.3.0
 
 * Swift 3.0

@@ -135,7 +135,9 @@ See `Example/CustomizedTokenField.swift` for more details.
 * `tokenFieldDidBeginEditing(_:)`
 * `tokenFieldDidEndEditing(_:)`
 * `tokenFieldWillReturn(_:)`
-* `tokenField(_:didEnterText:)`
+* `tokenField(_:didChangeInputText:)`
+* `tokenField(_:shouldCompleteText:)`
+* `tokenField(_:didCompleteText:)`
 * `tokenField(_:didDeleteText:atIndex:)`
 
 ## Development

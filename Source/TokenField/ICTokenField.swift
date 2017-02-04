@@ -34,6 +34,8 @@ import UIKit
   @objc optional func tokenFieldDidEndEditing(_ tokenField: ICTokenField)
   /// Tells the delegate that the token field will process the pressing of the return button.
   @objc optional func tokenFieldWillReturn(_ tokenField: ICTokenField)
+  /// Tells the delegate the input text is changed.
+  @objc optional func tokenField(_ tokenField: ICTokenField, didChangeInputText text: String)
   /// Asks the delegate if the text should become a token in the token field.
   @objc optional func tokenField(_ tokenField: ICTokenField, shouldCompleteText text: String) -> Bool
   /// Tells the delegate that the text becomes a token in the token field.
@@ -289,6 +291,7 @@ open class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDelega
     }
 
     let text = (input as NSString).replacingCharacters(in: range, with: string)
+    delegate?.tokenField?(self, didChangeInputText: text)
 
     for delimiter in delimiters {
       guard text.hasSuffix(delimiter) else {

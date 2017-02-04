@@ -83,6 +83,10 @@ class CustomizedTokenViewController: UIViewController, ICTokenFieldDelegate {
     print(#function)
   }
 
+  func tokenField(_ tokenField: ICTokenField, didChangeInputText text: String) {
+    print("Typing \"\(text)\"")
+  }
+
   func tokenField(_ tokenField: ICTokenField, shouldCompleteText text: String) -> Bool {
     print("Should add \"\(text)\"?")
     return text != "42"

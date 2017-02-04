@@ -1,11 +1,10 @@
 #!/bin/sh
 
-SWIFTLINT_VERSION="0.13.2"
-
 if ! command -v swiftlint >/dev/null; then
   brew install swiftlint
-elif [ $(swiftlint version) != "$SWIFTLINT_VERSION" ]; then
+elif [ ! -e .swiftlint-version ] || [ $(swiftlint version) != $(head -n 1 .swiftlint-version) ]; then
   brew upgrade swiftlint
+  swiftlint version >> .swiftlint-version
 fi
 
 swiftlint

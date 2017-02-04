@@ -83,7 +83,7 @@ class CustomizedTokenViewController: UIViewController, ICTokenFieldDelegate {
     print(#function)
   }
 
-  func tokenField(_ tokenField: ICTokenField, didEnterText text: String) {
+  func tokenField(_ tokenField: ICTokenField, didCompleteText text: String) {
     print("Add: \"\(text)\"")
     updateTexts()
   }

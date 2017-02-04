@@ -35,7 +35,7 @@ import UIKit
   /// Tells the delegate that the token field will process the pressing of the return button.
   @objc optional func tokenFieldWillReturn(_ tokenField: ICTokenField)
   /// Tells the delegate that the text becomes a token in the token field.
-  @objc optional func tokenField(_ tokenField: ICTokenField, didEnterText text: String)
+  @objc optional func tokenField(_ tokenField: ICTokenField, didCompleteText text: String)
   /// Tells the delegate that the token at certain index is removed from the token field.
   @objc optional func tokenField(_ tokenField: ICTokenField, didDeleteText text: String, atIndex index: Int)
 }
@@ -297,7 +297,7 @@ open class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDelega
         if !newToken.isEmpty && newToken != delimiter {
           tokens.append(ICToken(text: newToken, normalAttributes: normalTokenAttributes, highlightedAttributes: highlightedTokenAttributes))
           layoutTokenTextField()
-          delegate?.tokenField?(self, didEnterText: newToken)
+          delegate?.tokenField?(self, didCompleteText: newToken)
         }
         togglePlaceholderIfNeeded()
 
@@ -439,7 +439,7 @@ open class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDelega
     inputTextField.text = nil
     tokens.append(ICToken(text: text, normalAttributes: normalTokenAttributes, highlightedAttributes: highlightedTokenAttributes))
     layoutTokenTextField()
-    delegate?.tokenField?(self, didEnterText: text)
+    delegate?.tokenField?(self, didCompleteText: text)
   }
 
   /// Removes the input text and all displayed tokens.

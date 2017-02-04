@@ -83,13 +83,18 @@ class CustomizedTokenViewController: UIViewController, ICTokenFieldDelegate {
     print(#function)
   }
 
+  func tokenField(_ tokenField: ICTokenField, shouldCompleteText text: String) -> Bool {
+    print("Should add \"\(text)\"?")
+    return text != "42"
+  }
+
   func tokenField(_ tokenField: ICTokenField, didCompleteText text: String) {
-    print("Add: \"\(text)\"")
+    print("Added \"\(text)\"")
     updateTexts()
   }
 
   func tokenField(_ tokenField: ICTokenField, didDeleteText text: String, atIndex index: Int) {
-    print("Delete: \"\(text)\"")
+    print("Deleted \"\(text)\"")
     updateTexts()
   }
 

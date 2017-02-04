@@ -1,6 +1,6 @@
 PODS:
-  - ICInputAccessory/KeyboardDismissTextField (1.2.1)
-  - ICInputAccessory/TokenField (1.2.1)
+  - ICInputAccessory/KeyboardDismissTextField (1.3.0)
+  - ICInputAccessory/TokenField (1.3.0)
 
 DEPENDENCIES:
   - ICInputAccessory/KeyboardDismissTextField (from `./`)
@@ -11,8 +11,8 @@ EXTERNAL SOURCES:
     :path: "./"
 
 SPEC CHECKSUMS:
-  ICInputAccessory: 19865bd3efb918c22f8b7b5715566b85bc8b4577
+  ICInputAccessory: e9142958152461ddb627e78e3f1f0a8b263b7271
 
-PODFILE CHECKSUM: b125d926ec250330789d257be95f39437c2e5c9c
+PODFILE CHECKSUM: 6e8fb9f23fc92d92278fbf08ca8ef072ef28a486
 
 COCOAPODS: 1.1.1

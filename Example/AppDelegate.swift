@@ -1,8 +1,8 @@
 //
-//  StoryboardViewController.swift
+//  AppDelegate.swift
 //  Example
 //
-//  Created by Ben on 16/03/2016.
+//  Created by Ben on 07/03/2016.
 //  Copyright © 2016 Polydice, Inc.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -25,26 +25,18 @@
 //
 
 import UIKit
-import ICInputAccessory
 
-class StoryboardViewController: UITableViewController {
+@UIApplicationMain
+class AppDelegate: UIResponder, UIApplicationDelegate {
 
-  @IBOutlet weak var tokenField: ICTokenField! {
-    didSet {
-      tokenField.normalTokenAttributes = [
-        NSForegroundColorAttributeName: UIColor.whiteColor(),
-        NSBackgroundColorAttributeName: UIColor.whiteColor().colorWithAlphaComponent(0.25),
-      ]
+  var window: UIWindow?
 
-      tokenField.highlightedTokenAttributes = [
-        NSForegroundColorAttributeName: UIColor.darkGrayColor(),
-        NSBackgroundColorAttributeName: UIColor.whiteColor(),
-      ]
-    }
-  }
-
-  @IBAction func dismiss(sender: UIButton) {
-    presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+  func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
+    window = UIWindow(frame: UIScreen.main.bounds)
+    window?.backgroundColor = UIColor.white
+    window?.rootViewController = UINavigationController(rootViewController: ExampleViewController())
+    window?.makeKeyAndVisible()
+    return true
   }
 
 }

@@ -29,21 +29,21 @@ import UIKit
 /// The protocol defines the messages sent to a delegate. All the methods are optional.
 @objc public protocol ICTokenFieldDelegate: NSObjectProtocol {
   /// Tells the delegate that editing began for the token field.
-  optional func tokenFieldDidBeginEditing(tokenField: ICTokenField)
+  @objc optional func tokenFieldDidBeginEditing(_ tokenField: ICTokenField)
   /// Tells the delegate that editing stopped for the token field.
-  optional func tokenFieldDidEndEditing(tokenField: ICTokenField)
+  @objc optional func tokenFieldDidEndEditing(_ tokenField: ICTokenField)
   /// Tells the delegate that the token field will process the pressing of the return button.
-  optional func tokenFieldWillReturn(tokenField: ICTokenField)
+  @objc optional func tokenFieldWillReturn(_ tokenField: ICTokenField)
   /// Tells the delegate that the text becomes a token in the token field.
-  optional func tokenField(tokenField: ICTokenField, didEnterText text: String)
+  @objc optional func tokenField(_ tokenField: ICTokenField, didEnterText text: String)
   /// Tells the delegate that the token at certain index is removed from the token field.
-  optional func tokenField(tokenField: ICTokenField, didDeleteText text: String, atIndex index: Int)
+  @objc optional func tokenField(_ tokenField: ICTokenField, didDeleteText text: String, atIndex index: Int)
 }
 
 
 /// A text field that groups input texts with delimiters.
 @IBDesignable
-public class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDelegate {
+open class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDelegate {
 
   // MARK: - Public Properties
 
@@ -63,7 +63,7 @@ public class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDele
     didSet {
       if let icon = icon {
         let imageView = UIImageView(image: icon)
-        imageView.contentMode = .Center
+        imageView.contentMode = .center
         leftView = imageView
       } else {
         leftView = nil
@@ -108,10 +108,10 @@ public class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDele
       if placeholderLabel.superview != nil { return }
       insertSubview(placeholderLabel, belowSubview: scrollView)
       placeholderLabel.translatesAutoresizingMaskIntoConstraints = false
-      placeholderLabel.setContentHuggingPriority(UILayoutPriorityDefaultLow - 1, forAxis: .Horizontal)
-      addConstraint(NSLayoutConstraint(item: placeholderLabel, attribute: .Leading, relatedBy: .Equal, toItem: scrollView, attribute: .Leading, multiplier: 1, constant: 0))
-      addConstraint(NSLayoutConstraint(item: placeholderLabel, attribute: .Trailing, relatedBy: .GreaterThanOrEqual, toItem: scrollView, attribute: .Trailing, multiplier: 1, constant: 10))
-      addConstraint(NSLayoutConstraint(item: placeholderLabel, attribute: .CenterY, relatedBy: .Equal, toItem: self, attribute: .CenterY, multiplier: 1, constant: 0))
+      placeholderLabel.setContentHuggingPriority(UILayoutPriorityDefaultLow - 1, for: .horizontal)
+      addConstraint(NSLayoutConstraint(item: placeholderLabel, attribute: .leading, relatedBy: .equal, toItem: scrollView, attribute: .leading, multiplier: 1, constant: 0))
+      addConstraint(NSLayoutConstraint(item: placeholderLabel, attribute: .trailing, relatedBy: .greaterThanOrEqual, toItem: scrollView, attribute: .trailing, multiplier: 1, constant: 10))
+      addConstraint(NSLayoutConstraint(item: placeholderLabel, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1, constant: 0))
     }
   }
 
@@ -130,7 +130,7 @@ public class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDele
   }
 
   /// The tint color of icon image and text field.
-  public override var tintColor: UIColor! {
+  open override var tintColor: UIColor! {
     didSet {
       inputTextField.tintColor = tintColor
       leftView?.tintColor = tintColor
@@ -164,25 +164,25 @@ public class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDele
 
   private lazy var inputTextField: ICBackspaceTextField = {
     let _textField = ICBackspaceTextField()
-    _textField.backgroundColor = UIColor.clearColor()
-    _textField.clearButtonMode = .WhileEditing
-    _textField.autocorrectionType = .No
-    _textField.returnKeyType = .Search
+    _textField.backgroundColor = UIColor.clear
+    _textField.clearButtonMode = .whileEditing
+    _textField.autocorrectionType = .no
+    _textField.returnKeyType = .search
     _textField.delegate = self
     _textField.backspaceDelegate = self
-    _textField.addTarget(self, action: .togglePlaceholderIfNeeded, forControlEvents: .AllEditingEvents)
+    _textField.addTarget(self, action: .togglePlaceholderIfNeeded, for: .allEditingEvents)
     return _textField
   }()
 
   private var leftView: UIView? {
     didSet {
       oldValue?.removeFromSuperview()
-      leftEdgeConstraint.active = leftView == nil
+      leftEdgeConstraint.isActive = leftView == nil
       if let icon = leftView {
         addSubview(icon)
         icon.translatesAutoresizingMaskIntoConstraints = false
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-10-[icon]-10-[wrapper]", options: [], metrics: nil, views: ["icon": icon, "wrapper": scrollView]))
-        addConstraint(NSLayoutConstraint(item: icon, attribute: .CenterY, relatedBy: .Equal, toItem: self, attribute: .CenterY, multiplier: 1, constant: 0))
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-10-[icon]-10-[wrapper]", options: [], metrics: nil, views: ["icon": icon, "wrapper": scrollView]))
+        addConstraint(NSLayoutConstraint(item: icon, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1, constant: 0))
       }
     }
   }
@@ -192,15 +192,15 @@ public class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDele
   private lazy var scrollView: UIScrollView = {
     let _scrollView = UIScrollView()
     _scrollView.clipsToBounds = true
-    _scrollView.directionalLockEnabled = true
+    _scrollView.isDirectionalLockEnabled = true
     _scrollView.showsHorizontalScrollIndicator = false
     _scrollView.showsVerticalScrollIndicator = false
-    _scrollView.backgroundColor = UIColor.clearColor()
+    _scrollView.backgroundColor = UIColor.clear
     return _scrollView
   }()
 
   private lazy var leftEdgeConstraint: NSLayoutConstraint = {
-    NSLayoutConstraint(item: self.scrollView, attribute: .Left, relatedBy: .Equal, toItem: self, attribute: .Left, multiplier: 1, constant: 10)
+    NSLayoutConstraint(item: self.scrollView, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1, constant: 10)
   }()
 
   private lazy var tapGestureRecognizer: UITapGestureRecognizer = {
@@ -223,29 +223,29 @@ public class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDele
 
   // MARK: - UIResponder
 
-  public override func isFirstResponder() -> Bool {
-    return inputTextField.isFirstResponder() || super.isFirstResponder()
+  open override var isFirstResponder: Bool {
+    return inputTextField.isFirstResponder || super.isFirstResponder
   }
 
-  public override func becomeFirstResponder() -> Bool {
+  open override func becomeFirstResponder() -> Bool {
     return inputTextField.becomeFirstResponder()
   }
 
-  public override func resignFirstResponder() -> Bool {
+  open override func resignFirstResponder() -> Bool {
     super.resignFirstResponder()
     return inputTextField.resignFirstResponder()
   }
 
   // MARK: - UIView
 
-  public override func layoutSubviews() {
+  open override func layoutSubviews() {
     super.layoutSubviews()
     layoutTokenTextField()
   }
 
   // MARK: - NSKeyValueCoding
 
-  public override func setValue(value: AnyObject?, forUndefinedKey key: String) {
+  open override func setValue(_ value: Any?, forKey key: String) {
     switch value {
     case let image as UIImage? where key == "icon":
       icon = image
@@ -262,40 +262,39 @@ public class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDele
 
   // MARK: - UITextFieldDelegate
 
-  public func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+  open func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
     tokens.forEach { $0.highlighted = false }
     return true
   }
 
-  public func textFieldDidBeginEditing(textField: UITextField) {
+  open func textFieldDidBeginEditing(_ textField: UITextField) {
     delegate?.tokenFieldDidBeginEditing?(self)
   }
 
-  public func textFieldDidEndEditing(textField: UITextField) {
+  open func textFieldDidEndEditing(_ textField: UITextField) {
     completeCurrentInputText()
     togglePlaceholderIfNeeded()
     tokens.forEach { $0.highlighted = false }
     delegate?.tokenFieldDidEndEditing?(self)
   }
 
-  public func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
-    removeHighlightedToken()  // as user starts typing when a token is focused
+  open func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    _ = removeHighlightedToken()  // as user starts typing when a token is focused
     inputTextField.showsCursor = true
 
-    guard let
-      input = textField.text,
-      text: NSString = (input as NSString).stringByReplacingCharactersInRange(range, withString: string)
-    else {
+    guard let input = textField.text else {
       return true
     }
 
-    for delimiter in delimiters as [NSString] {
-      let index = text.length - delimiter.length
-      if 0 < index && text.substringFromIndex(index) == delimiter {
-        let newToken = text.substringToIndex(index)
+    let text = (input as NSString).replacingCharacters(in: range, with: string)
+
+    for delimiter in delimiters {
+      if text.hasSuffix(delimiter) {
+        let index = text.index(text.endIndex, offsetBy: -delimiter.characters.count)
+        let newToken = text.substring(to: index)
         textField.text = nil
 
-        if newToken != delimiter {
+        if !newToken.isEmpty && newToken != delimiter {
           tokens.append(ICToken(text: newToken, normalAttributes: normalTokenAttributes, highlightedAttributes: highlightedTokenAttributes))
           layoutTokenTextField()
           delegate?.tokenField?(self, didEnterText: newToken)
@@ -308,7 +307,7 @@ public class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDele
     return true
   }
 
-  public func textFieldShouldReturn(textField: UITextField) -> Bool {
+  open func textFieldShouldReturn(_ textField: UITextField) -> Bool {
     completeCurrentInputText()
     togglePlaceholderIfNeeded()
     delegate?.tokenFieldWillReturn?(self)
@@ -317,17 +316,17 @@ public class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDele
 
   // MARK: - ICBackspaceTextFieldDelegate
 
-  func textFieldShouldDelete(textField: ICBackspaceTextField) -> Bool {
+  func textFieldShouldDelete(_ textField: ICBackspaceTextField) -> Bool {
     if tokens.isEmpty {
       return true
     }
 
     if !textField.showsCursor {
-      removeHighlightedToken()
+      _ = removeHighlightedToken()
       return true
     }
 
-    if let text = textField.text where text.isEmpty {
+    if let text = textField.text, text.isEmpty {
       textField.showsCursor = false
       tokens.last?.highlighted = true
     }
@@ -336,17 +335,17 @@ public class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDele
 
   // MARK: - UIResponder Callbacks
 
-  @objc private func togglePlaceholderIfNeeded(sender: UITextField? = nil) {
+  @objc fileprivate func togglePlaceholderIfNeeded(_ sender: UITextField? = nil) {
     let showsPlaceholder = tokens.isEmpty && (inputTextField.text?.isEmpty ?? true)
-    placeholderLabel.hidden = !showsPlaceholder
+    placeholderLabel.isHidden = !showsPlaceholder
   }
 
-  @objc private func handleTapGesture(sender: UITapGestureRecognizer) {
-    if !isFirstResponder() {
+  @objc fileprivate func handleTapGesture(_ sender: UITapGestureRecognizer) {
+    if !isFirstResponder {
       inputTextField.becomeFirstResponder()
     }
 
-    let touch = sender.locationInView(scrollView)
+    let touch = sender.location(in: scrollView)
     var shouldFocusInputTextField = true
 
     // Hilight the tapped token
@@ -367,9 +366,9 @@ public class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDele
 
   /// Returns true if any highlighted token is found and removed, otherwise false.
   private func removeHighlightedToken() -> Bool {
-    for (index, token) in tokens.enumerate() {
+    for (index, token) in tokens.enumerated() {
       if token.highlighted {
-        tokens.removeAtIndex(index)
+        tokens.remove(at: index)
         layoutTokenTextField()
         togglePlaceholderIfNeeded()
         inputTextField.showsCursor = true
@@ -381,8 +380,8 @@ public class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDele
   }
 
   private func setUpSubviews() {
-    if CGRectEqualToRect(frame, CGRect.zero) {
-      frame = CGRect(x: 0, y: 7, width: UIScreen.mainScreen().bounds.width, height: 30)
+    if frame.equalTo(CGRect.zero) {
+      frame = CGRect(x: 0, y: 7, width: UIScreen.main.bounds.width, height: 30)
     }
 
     addSubview(scrollView)
@@ -390,9 +389,9 @@ public class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDele
     scrollView.translatesAutoresizingMaskIntoConstraints = false
 
     let views = ["wrapper": scrollView]
-    addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-(>=10)-[wrapper]|", options: [], metrics: nil, views: views))
-    addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[wrapper]|", options: [], metrics: nil, views: views))
-    leftEdgeConstraint.active = true
+    addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-(>=10)-[wrapper]|", options: [], metrics: nil, views: views))
+    addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[wrapper]|", options: [], metrics: nil, views: views))
+    leftEdgeConstraint.isActive = true
 
     layoutTokenTextField()
     addGestureRecognizer(tapGestureRecognizer)
@@ -433,8 +432,8 @@ public class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDele
   // MARK: - Public Methods
 
   /// Creates a token with the current input text.
-  public func completeCurrentInputText() {
-    guard let text = inputTextField.text where !text.isEmpty else {
+  open func completeCurrentInputText() {
+    guard let text = inputTextField.text, !text.isEmpty else {
       return
     }
     inputTextField.text = nil
@@ -444,7 +443,7 @@ public class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDele
   }
 
   /// Removes the input text and all displayed tokens.
-  public func resetTokens() {
+  open func resetTokens() {
     inputTextField.text = nil
     tokens.removeAll()
     layoutTokenTextField()

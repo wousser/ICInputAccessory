@@ -1,3 +1,8 @@
+## v1.3.0
+
+* Swift 3.0
+* Support `pod try ICInputAccessory`
+
 ## v1.2.1
 
 * Update to Xcode 8.2
@@ -8,10 +13,9 @@
 
 ## v1.1.0
 
+* Swift 2.2
 * Support storyboard
 * Support subspecs
-* Upgrade to Swift 2.2
-* Use CocoaPods (1.0.1)
 
 ## v1.0.0
 

@@ -19,7 +19,7 @@
         <a class="header-link" href="index.html">
           ICInputAccessory Docs
         </a>
-         (69% documented)
+         (71% documented)
       </p>
 
         <p class="header-col header-col--secondary">
@@ -78,8 +78,8 @@ Try <a href="https://testflight.icook.tw">https://testflight.icook.tw</a>.</p>
 <a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg" alt="Carthage compatible"></a>
 <a href="https://cocoapods.org/pods/ICInputAccessory"><img src="https://img.shields.io/cocoapods/v/ICInputAccessory.svg" alt="CocoaPods Compatible"></a>
 <img src="https://img.shields.io/cocoapods/p/ICInputAccessory.svg" alt="Platform">
-<a href="http://cocoadocs.org/docsets/ICInputAccessory/"><img src="https://img.shields.io/cocoapods/metrics/doc-percent/ICInputAccessory.svg" alt="Docs"></a>
-<img src="https://img.shields.io/badge/Swift-2.3-orange.svg" alt="Swift 2.3"></p>
+<a href="http://cocoadocs.org/docsets/ICInputAccessory/"><img src="https://img.shields.io/cocoapods/metrics/doc-percent/ICInputAccessory.svg" alt="CocoaDocs"></a>
+<img src="https://img.shields.io/badge/Swift-3.0-orange.svg" alt="Swift 3.0"></p>
 <a href='#ickeyboarddismisstextfield' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='ickeyboarddismisstextfield'>ICKeyboardDismissTextField</h3>
 
 <ul>
@@ -124,39 +124,34 @@ Try <a href="https://testflight.icook.tw">https://testflight.icook.tw</a>.</p>
 <td><img src="https://img.shields.io/badge/Swift-2.3-orange.svg" alt="Swift 2.3"></td>
 </tr>
 <tr>
-<td><code>feature/swift-3</code></td>
+<td><code>~&gt; 1.3.0</code></td>
 <td style="text-align: center">8.0+</td>
 <td style="text-align: center">8.0</td>
 <td><img src="https://img.shields.io/badge/Swift-3.0-orange.svg" alt="Swift 3.0"></td>
 </tr>
 </tbody></table>
 <a href='#installation' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='installation'>Installation</h2>
-<a href='#install-via-a-href-https-github-com-carthage-carthage-carthage-a' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='install-via-a-href-https-github-com-carthage-carthage-carthage-a'>Install via <a href="https://github.com/Carthage/Carthage">Carthage</a></h3>
+<a href='#use-a-href-https-github-com-carthage-carthage-carthage-a' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='use-a-href-https-github-com-carthage-carthage-carthage-a'>Use <a href="https://github.com/Carthage/Carthage">Carthage</a></h3>
 
-<ul>
-<li>Create a <code>Cartfile</code> with the following specification and run <code>carthage update</code>.</li>
-</ul>
-<pre class="highlight plaintext"><code>  github "polydice/ICInputAccessory"
+<p>Create a <code>Cartfile</code> with the following specification and run <code>carthage update ICInputAccessory</code>. Follow the <a href="https://github.com/Carthage/Carthage#if-youre-building-for-ios">instructions</a> to add the framework to an iOS project.</p>
+<pre class="highlight plaintext"><code>github "polydice/ICInputAccessory"
+</code></pre>
+<a href='#use-a-href-http-guides-cocoapods-org-cocoapods-a' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='use-a-href-http-guides-cocoapods-org-cocoapods-a'>Use <a href="http://guides.cocoapods.org/">CocoaPods</a></h3>
+
+<p><strong>ICInputAccessory</strong> supports subspecs. Create a <code>Podfile</code> with the following specification and run <code>pod install</code>.</p>
+<pre class="highlight ruby"><code><span class="n">platform</span> <span class="ss">:ios</span><span class="p">,</span> <span class="s1">'8.0'</span>
+<span class="n">use_frameworks!</span>
+
+<span class="n">pod</span> <span class="s1">'ICInputAccessory/TokenField'</span>
+<span class="n">pod</span> <span class="s1">'ICInputAccessory/KeyboardDismissTextField'</span>
+</code></pre>
+<a href='#use-git-submodule' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='use-git-submodule'>Use Git Submodule</h3>
+<pre class="highlight plaintext"><code>git submodule add -b master git@github.com:polydice/ICInputAccessory.git Dependencies/ICInputAccessory
 </code></pre>
 
 <ul>
-<li>Follow the <a href="https://github.com/Carthage/Carthage#if-youre-building-for-ios">instruction</a> to add the framework to an iOS project.</li>
-</ul>
-<a href='#install-via-a-href-http-guides-cocoapods-org-cocoapods-a' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='install-via-a-href-http-guides-cocoapods-org-cocoapods-a'>Install via <a href="http://guides.cocoapods.org/">CocoaPods</a></h3>
-
-<ul>
-<li><strong>ICInputAccessory</strong> supports subspecs. Create a <code>Podfile</code> with the following specification and run <code>pod install</code>.</li>
-</ul>
-<pre class="highlight ruby"><code>  <span class="n">platform</span> <span class="ss">:ios</span><span class="p">,</span> <span class="s1">'8.0'</span>
-  <span class="n">use_frameworks!</span>
-
-  <span class="n">pod</span> <span class="s1">'ICInputAccessory/TokenField'</span>
-  <span class="n">pod</span> <span class="s1">'ICInputAccessory/KeyboardDismissTextField'</span>
-</code></pre>
-<a href='#install-manually' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='install-manually'>Install Manually</h3>
-
-<ul>
-<li>Everything you need resides in the <code>Source</code> directory. Drag those files to a project.</li>
+<li>Everything you need resides in the <code>Source</code> directory. Add those files to your project.</li>
+<li>Alternatively, drag <strong>ICInputAccessory.xcodeproj</strong> to your app project as a subproject. Add <strong>ICInputAccessory-iOS</strong> to the <strong>Target Dependencies</strong> in the application target&rsquo;s <strong>Build Phases</strong> settings.</li>
 </ul>
 <a href='#usage' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='usage'>Usage</h2>
 <a href='#ickeyboarddismisstextfield' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='ickeyboarddismisstextfield'>ICKeyboardDismissTextField</h3>
@@ -224,7 +219,9 @@ Try <a href="https://testflight.icook.tw">https://testflight.icook.tw</a>.</p>
 <li><code>tokenFieldDidBeginEditing(_:)</code></li>
 <li><code>tokenFieldDidEndEditing(_:)</code></li>
 <li><code>tokenFieldWillReturn(_:)</code></li>
-<li><code>tokenField(_:didEnterText:)</code></li>
+<li><code>tokenField(_:didChangeInputText:)</code></li>
+<li><code>tokenField(_:shouldCompleteText:)</code></li>
+<li><code>tokenField(_:didCompleteText:)</code></li>
 <li><code>tokenField(_:didDeleteText:atIndex:)</code></li>
 </ul>
 <a href='#development' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='development'>Development</h2>
@@ -251,7 +248,8 @@ Try <a href="https://testflight.icook.tw">https://testflight.icook.tw</a>.</p>
 <p>Please fork this repository, create a branch named like <code>feature/some-new-feature</code> and send us a pull request to make this project better.</p>
 <a href='#contact' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='contact'>Contact</h2>
 
-<p><a href="https://twitter.com/polydice"><img src="https://img.shields.io/badge/twitter-@polydice-blue.svg?style=flat" alt="Twitter"></a></p>
+<p><a href="https://twitter.com/polydice"><img src="https://img.shields.io/badge/twitter-@polydice-blue.svg?style=flat" alt="Twitter"></a>
+<a href="https://gitter.im/polydice/ICInputAccessory"><img src="https://badges.gitter.im/polydice/ICInputAccessory.svg" alt="Join the chat at https://gitter.im/polydice/ICInputAccessory"></a></p>
 <a href='#license' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='license'>License</h2>
 
 <p>Copyright &copy; 2016 <a href="https://polydice.com">Polydice, Inc.</a></p>
@@ -265,8 +263,8 @@ Try <a href="https://testflight.icook.tw">https://testflight.icook.tw</a>.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2016 <a class="link" href="https://github.com/polydice" target="_blank" rel="external">polydice</a>. All rights reserved. (Last updated: 2016-10-05)</p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+      <p>&copy; 2017 <a class="link" href="https://github.com/polydice" target="_blank" rel="external">polydice</a>. All rights reserved. (Last updated: 2017-02-04)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
 </div>

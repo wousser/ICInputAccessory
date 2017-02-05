@@ -5,6 +5,7 @@
   ```swift
 @objc optional func tokenField(_ tokenField: ICTokenField, didChangeInputText text: String)
 @objc optional func tokenField(_ tokenField: ICTokenField, shouldCompleteText text: String) -> Bool
+@objc optional func tokenField(_ tokenField: ICTokenField, subsequentDelimiterForCompletedText text: String) -> String
 ```
 
 * Changed delegate method:

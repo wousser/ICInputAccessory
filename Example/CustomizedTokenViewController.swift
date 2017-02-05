@@ -37,6 +37,8 @@ class CustomizedTokenViewController: UIViewController, ICTokenFieldDelegate {
   override func loadView() {
     super.loadView()
     view.backgroundColor = UIColor.white
+    textView.isEditable = false
+    textView.isSelectable = false
     textView.text = "[\n\n]"
     textView.font = UIFont.preferredFont(forTextStyle: .subheadline)
     textView.frame = view.bounds.insetBy(dx: 10, dy: 10)
@@ -100,6 +102,10 @@ class CustomizedTokenViewController: UIViewController, ICTokenFieldDelegate {
   func tokenField(_ tokenField: ICTokenField, didDeleteText text: String, atIndex index: Int) {
     print("Deleted \"\(text)\"")
     updateTexts()
+  }
+
+  func tokenField(_ tokenField: ICTokenField, subsequentDelimiterForCompletedText text: String) -> String {
+    return " ,"
   }
 
   // MARK: - UIResponder Callbacks

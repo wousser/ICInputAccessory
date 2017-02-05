@@ -94,12 +94,10 @@ class ICToken: UIView {
     self.init()
     if let attributes = normalAttributes { normalTextAttributes = attributes }
     if let attributes = highlightedAttributes { highlightedTextAttributes = attributes }
-    // didSet is not called within the initializer
-    setText(text)
-  }
-
-  private func setText(_ text: String) {
-    self.text = text
+    ({
+      // Workaround to trigger didSet inside the initializer
+      self.text = text
+    })()
   }
 
   // MARK: - Private Methods

@@ -132,13 +132,21 @@ See `Example/CustomizedTokenField.swift` for more details.
 
 `ICTokenField` currently notifies its delegate the following events:
 
-* `tokenFieldDidBeginEditing(_:)`
-* `tokenFieldDidEndEditing(_:)`
-* `tokenFieldWillReturn(_:)`
-* `tokenField(_:didChangeInputText:)`
-* `tokenField(_:shouldCompleteText:)`
-* `tokenField(_:didCompleteText:)`
-* `tokenField(_:didDeleteText:atIndex:)`
+```swift
+@objc optional func tokenFieldDidBeginEditing(_ tokenField: ICTokenField)
+@objc optional func tokenFieldDidEndEditing(_ tokenField: ICTokenField)
+@objc optional func tokenFieldWillReturn(_ tokenField: ICTokenField)
+@objc optional func tokenField(_ tokenField: ICTokenField, didChangeInputText text: String)
+@objc optional func tokenField(_ tokenField: ICTokenField, shouldCompleteText text: String) -> Bool
+@objc optional func tokenField(_ tokenField: ICTokenField, didCompleteText text: String)
+@objc optional func tokenField(_ tokenField: ICTokenField, didDeleteText text: String, atIndex index: Int)
+```
+
+The displayed delimiter string can be customized by:
+
+```swift
+@objc optional func tokenField(_ tokenField: ICTokenField, subsequentDelimiterForCompletedText text: String) -> String
+```
 
 ## Development
 

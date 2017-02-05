@@ -42,6 +42,8 @@ import UIKit
   @objc optional func tokenField(_ tokenField: ICTokenField, didCompleteText text: String)
   /// Tells the delegate that the token at certain index is removed from the token field.
   @objc optional func tokenField(_ tokenField: ICTokenField, didDeleteText text: String, atIndex index: Int)
+  /// Asks the delegate for the subsequent delimiter string for a completed text in the token field.
+  @objc optional func tokenField(_ tokenField: ICTokenField, subsequentDelimiterForCompletedText text: String) -> String
 }
 
 
@@ -299,12 +301,12 @@ open class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDelega
       }
 
       let index = text.index(text.endIndex, offsetBy: -delimiter.characters.count)
-      let newToken = text.substring(to: index)
+      let newText = text.substring(to: index)
 
-      if !newToken.isEmpty && newToken != delimiter && (delegate?.tokenField?(self, shouldCompleteText: newToken) ?? true) {
-        tokens.append(ICToken(text: newToken, normalAttributes: normalTokenAttributes, highlightedAttributes: highlightedTokenAttributes))
+      if !newText.isEmpty && newText != delimiter && (delegate?.tokenField?(self, shouldCompleteText: newText) ?? true) {
+        tokens.append(customizedToken(with: newText))
         layoutTokenTextField()
-        delegate?.tokenField?(self, didCompleteText: newToken)
+        delegate?.tokenField?(self, didCompleteText: newText)
       }
 
       textField.text = nil
@@ -372,6 +374,14 @@ open class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDelega
   }
 
   // MARK: - Private Methods
+
+  private func customizedToken(with text: String) -> ICToken {
+    if let string = delegate?.tokenField?(self, subsequentDelimiterForCompletedText: text) {
+      return ICToken(text: text, delimiter: string, normalAttributes: normalTokenAttributes, highlightedAttributes: highlightedTokenAttributes)
+    } else {
+      return ICToken(text: text, normalAttributes: normalTokenAttributes, highlightedAttributes: highlightedTokenAttributes)
+    }
+  }
 
   /// Returns true if any highlighted token is found and removed, otherwise false.
   private func removeHighlightedToken() -> Bool {
@@ -452,7 +462,7 @@ open class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDelega
     }
 
     inputTextField.text = nil
-    tokens.append(ICToken(text: text, normalAttributes: normalTokenAttributes, highlightedAttributes: highlightedTokenAttributes))
+    tokens.append(customizedToken(with: text))
     layoutTokenTextField()
     delegate?.tokenField?(self, didCompleteText: text)
   }

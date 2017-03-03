@@ -78,10 +78,10 @@ let tokenField = ICTokenField(frame: rect)
 tokenField.delegate = self as? ICTokenFieldDelegate
 ```
 
-* The characters that completes a token:
+* The characters that complete a token:
 
 ```swift
-/// Characters that completes a new token, defaults are whitespace and commas.
+/// Characters that complete a new token, defaults are whitespace and commas.
 public var delimiters: [String]
 ```
 
@@ -150,7 +150,7 @@ The displayed delimiter string can be customized by:
 
 ## Development
 
-* Meke sure [Homebrew](http://brew.sh/) is installed.
+* Make sure [Homebrew](http://brew.sh/) is installed.
 * Current `develop` branch requires Ruby `2.3.1`.
 * Set up dependencies by running the following command in the project root:
 

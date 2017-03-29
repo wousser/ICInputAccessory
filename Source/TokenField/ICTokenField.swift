@@ -327,7 +327,7 @@ open class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDelega
 
   // MARK: - ICBackspaceTextFieldDelegate
 
-  func textFieldShouldDelete(_ textField: ICBackspaceTextField) -> Bool {
+  @nonobjc func textFieldShouldDelete(_ textField: ICBackspaceTextField) -> Bool {
     if tokens.isEmpty {
       return true
     }

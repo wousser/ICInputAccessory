@@ -7,7 +7,7 @@ Try <https://testflight.icook.tw>.
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg)](https://github.com/Carthage/Carthage)
 [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/ICInputAccessory.svg)](https://cocoapods.org/pods/ICInputAccessory)
 ![Platform](https://img.shields.io/cocoapods/p/ICInputAccessory.svg)
-[![CocoaDocs](https://img.shields.io/cocoapods/metrics/doc-percent/ICInputAccessory.svg)](http://cocoadocs.org/docsets/ICInputAccessory/)
+[![CocoaDocs](https://img.shields.io/cocoapods/metrics/doc-percent/ICInputAccessory.svg)](https://polydice.github.io/ICInputAccessory)
 ![Swift 3.0](https://img.shields.io/badge/Swift-3.0-orange.svg)
 
 ### ICKeyboardDismissTextField
@@ -30,7 +30,7 @@ ICInputAccessory | iOS  | Xcode | Swift
 `~> 1.0.0`       | 8.0+ | 7.2   | ![Swift 2.1.1](https://img.shields.io/badge/Swift-2.1.1-orange.svg)
 `~> 1.1.0`       | 8.0+ | 7.3   | ![Swift 2.2](https://img.shields.io/badge/Swift-2.2-orange.svg)
 `~> 1.2.0`       | 8.0+ | 8.0   | ![Swift 2.3](https://img.shields.io/badge/Swift-2.3-orange.svg)
-`~> 1.3.0`       | 8.0+ | 8.0   | ![Swift 3.0](https://img.shields.io/badge/Swift-3.0-orange.svg)
+`>= 1.3.0`       | 8.0+ | 8.0   | ![Swift 3.0](https://img.shields.io/badge/Swift-3.0-orange.svg)
 
 ## Installation
 
@@ -155,16 +155,16 @@ The displayed delimiter string can be customized by:
 * Set up dependencies by running the following command in the project root:
 
   ```
-make setup
-```
+  make bootstrap
+  ```
 
 * Open **ICInputAccessory.xcworkspace** and run the demo app with the `Example` scheme.
 
 * See more tasks for building and testing:
 
   ```
-rake -T
-```
+  rake -T
+  ```
 
 ## Contributing
 

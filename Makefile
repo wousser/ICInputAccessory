@@ -1,7 +1,6 @@
 install: brew-install bundle-install pod-install
 
 brew-install:
-	brew update
 	brew tap homebrew/bundle
 	brew bundle
 
@@ -11,7 +10,10 @@ bundle-install:
 pod-install:
 	bundle exec pod install --no-repo-update
 
-setup: brew-install
+bootstrap:
+	brew tap homebrew/bundle
+	brew bundle
+	gem install bundler
 	bundle install
 	bundle exec pod install --no-repo-update
 

@@ -7,7 +7,7 @@ Try <https://testflight.icook.tw>.
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg)](https://github.com/Carthage/Carthage)
 [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/ICInputAccessory.svg)](https://cocoapods.org/pods/ICInputAccessory)
 ![Platform](https://img.shields.io/cocoapods/p/ICInputAccessory.svg)
-[![CocoaDocs](https://img.shields.io/cocoapods/metrics/doc-percent/ICInputAccessory.svg)](http://cocoadocs.org/docsets/ICInputAccessory/)
+[![CocoaDocs](https://img.shields.io/cocoapods/metrics/doc-percent/ICInputAccessory.svg)](https://polydice.github.io/ICInputAccessory)
 ![Swift 3.0](https://img.shields.io/badge/Swift-3.0-orange.svg)
 
 ### ICKeyboardDismissTextField
@@ -30,7 +30,7 @@ ICInputAccessory | iOS  | Xcode | Swift
 `~> 1.0.0`       | 8.0+ | 7.2   | ![Swift 2.1.1](https://img.shields.io/badge/Swift-2.1.1-orange.svg)
 `~> 1.1.0`       | 8.0+ | 7.3   | ![Swift 2.2](https://img.shields.io/badge/Swift-2.2-orange.svg)
 `~> 1.2.0`       | 8.0+ | 8.0   | ![Swift 2.3](https://img.shields.io/badge/Swift-2.3-orange.svg)
-`~> 1.3.0`       | 8.0+ | 8.0   | ![Swift 3.0](https://img.shields.io/badge/Swift-3.0-orange.svg)
+`>= 1.3.0`       | 8.0+ | 8.0   | ![Swift 3.0](https://img.shields.io/badge/Swift-3.0-orange.svg)
 
 ## Installation
 
@@ -78,10 +78,10 @@ let tokenField = ICTokenField(frame: rect)
 tokenField.delegate = self as? ICTokenFieldDelegate
 ```
 
-* The characters that completes a token:
+* The characters that complete a token:
 
 ```swift
-/// Characters that completes a new token, defaults are whitespace and commas.
+/// Characters that complete a new token, defaults are whitespace and commas.
 public var delimiters: [String]
 ```
 
@@ -132,29 +132,39 @@ See `Example/CustomizedTokenField.swift` for more details.
 
 `ICTokenField` currently notifies its delegate the following events:
 
-* `tokenFieldDidBeginEditing(_:)`
-* `tokenFieldDidEndEditing(_:)`
-* `tokenFieldWillReturn(_:)`
-* `tokenField(_:didEnterText:)`
-* `tokenField(_:didDeleteText:atIndex:)`
+```swift
+@objc optional func tokenFieldDidBeginEditing(_ tokenField: ICTokenField)
+@objc optional func tokenFieldDidEndEditing(_ tokenField: ICTokenField)
+@objc optional func tokenFieldWillReturn(_ tokenField: ICTokenField)
+@objc optional func tokenField(_ tokenField: ICTokenField, didChangeInputText text: String)
+@objc optional func tokenField(_ tokenField: ICTokenField, shouldCompleteText text: String) -> Bool
+@objc optional func tokenField(_ tokenField: ICTokenField, didCompleteText text: String)
+@objc optional func tokenField(_ tokenField: ICTokenField, didDeleteText text: String, atIndex index: Int)
+```
+
+The displayed delimiter string can be customized by:
+
+```swift
+@objc optional func tokenField(_ tokenField: ICTokenField, subsequentDelimiterForCompletedText text: String) -> String
+```
 
 ## Development
 
-* Meke sure [Homebrew](http://brew.sh/) is installed.
+* Make sure [Homebrew](http://brew.sh/) is installed.
 * Current `develop` branch requires Ruby `2.3.1`.
 * Set up dependencies by running the following command in the project root:
 
   ```
-make setup
-```
+  make bootstrap
+  ```
 
 * Open **ICInputAccessory.xcworkspace** and run the demo app with the `Example` scheme.
 
 * See more tasks for building and testing:
 
   ```
-rake -T
-```
+  rake -T
+  ```
 
 ## Contributing
 

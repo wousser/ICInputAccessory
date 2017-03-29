@@ -63,10 +63,10 @@ class ICToken: UIView {
   // MARK: - Private Properties
 
   private(set) lazy var delimiterLabel: UILabel = {
-    let _delimiter = UILabel()
-    _delimiter.text = " , "
-    _delimiter.textColor = self.normalTextAttributes[NSForegroundColorAttributeName] as? UIColor
-    return _delimiter
+    let _label = UILabel()
+    _label.textColor = self.normalTextAttributes[NSForegroundColorAttributeName] as? UIColor
+    _label.textAlignment = .right
+    return _label
   }()
 
   private(set) lazy var textLabel: UILabel = {
@@ -90,16 +90,15 @@ class ICToken: UIView {
     setUpSubviews()
   }
 
-  convenience init(text: String, normalAttributes: [String: NSObject]? = nil, highlightedAttributes: [String: NSObject]? = nil) {
+  convenience init(text: String, delimiter: String = ",", normalAttributes: [String: NSObject]? = nil, highlightedAttributes: [String: NSObject]? = nil) {
     self.init()
     if let attributes = normalAttributes { normalTextAttributes = attributes }
     if let attributes = highlightedAttributes { highlightedTextAttributes = attributes }
-    // didSet is not called within the initializer
-    setText(text)
-  }
-
-  private func setText(_ text: String) {
-    self.text = text
+    delimiterLabel.text = delimiter
+    ({
+      // Workaround to trigger didSet inside the initializer
+      self.text = text
+    })()
   }
 
   // MARK: - Private Methods
@@ -127,7 +126,7 @@ class ICToken: UIView {
       "text": textLabel,
       "delimiter": delimiterLabel
     ]
-    addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[text][delimiter]|",
+    addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[text][delimiter]-5-|",
       options: [.alignAllCenterY],
       metrics: nil,
       views: views

@@ -3,16 +3,16 @@
 * Added delegate methods:
 
   ```swift
-@objc optional func tokenField(_ tokenField: ICTokenField, didChangeInputText text: String)
-@objc optional func tokenField(_ tokenField: ICTokenField, shouldCompleteText text: String) -> Bool
-@objc optional func tokenField(_ tokenField: ICTokenField, subsequentDelimiterForCompletedText text: String) -> String
-```
+  @objc optional func tokenField(_ tokenField: ICTokenField, didChangeInputText text: String)
+  @objc optional func tokenField(_ tokenField: ICTokenField, shouldCompleteText text: String) -> Bool
+  @objc optional func tokenField(_ tokenField: ICTokenField, subsequentDelimiterForCompletedText text: String) -> String
+  ```
 
-* Changed delegate method:
+* Renamed delegate method:
 
   ```swift
-@objc optional func tokenField(_ tokenField: ICTokenField, didCompleteText text: String)
-```
+  @objc optional func tokenField(_ tokenField: ICTokenField, didCompleteText text: String)
+  ```
 
 ## v1.3.0
 

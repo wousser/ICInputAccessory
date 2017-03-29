@@ -155,7 +155,7 @@ The displayed delimiter string can be customized by:
 * Set up dependencies by running the following command in the project root:
 
   ```
-  make setup
+  make bootstrap
   ```
 
 * Open **ICInputAccessory.xcworkspace** and run the demo app with the `Example` scheme.

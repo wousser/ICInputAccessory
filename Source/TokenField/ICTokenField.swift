@@ -385,15 +385,13 @@ open class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDelega
 
   /// Returns true if any highlighted token is found and removed, otherwise false.
   private func removeHighlightedToken() -> Bool {
-    for (index, token) in tokens.enumerated() {
-      if token.highlighted {
-        tokens.remove(at: index)
-        layoutTokenTextField()
-        togglePlaceholderIfNeeded()
-        inputTextField.showsCursor = true
-        delegate?.tokenField?(self, didDeleteText: token.text, atIndex: index)
-        return true
-      }
+    for (index, token) in tokens.enumerated() where token.highlighted {
+      tokens.remove(at: index)
+      layoutTokenTextField()
+      togglePlaceholderIfNeeded()
+      inputTextField.showsCursor = true
+      delegate?.tokenField?(self, didDeleteText: token.text, atIndex: index)
+      return true
     }
     return false
   }

@@ -1,4 +1,9 @@
-install: brew-install bundle-install pod-install
+bootstrap:
+	gem install bundler
+	bundle install
+	bundle exec pod install
+
+install: bundle-install pod-install
 
 brew-install:
 	brew tap homebrew/bundle
@@ -8,14 +13,7 @@ bundle-install:
 	bundle install --without development --deployment --jobs=3 --retry=3
 
 pod-install:
-	bundle exec pod install --no-repo-update
-
-bootstrap:
-	brew tap homebrew/bundle
-	brew bundle
-	gem install bundler
-	bundle install
-	bundle exec pod install --no-repo-update
+	bundle exec pod install
 
 carthage:
 	set -o pipefail && carthage build --no-skip-current --verbose | bundle exec xcpretty

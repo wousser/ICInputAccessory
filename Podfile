@@ -8,6 +8,7 @@ project "Example"
 target "Example" do
   pod "ICInputAccessory/KeyboardDismissTextField", path: "./"
   pod "ICInputAccessory/TokenField", path: "./"
+  pod "SwiftLint", "0.19.0"
 end
 
 post_install do |installer|

@@ -192,12 +192,12 @@
 				TargetAttributes = {
 					B548C5C11C8E91B0009D5AEE = {
 						CreatedOnToolsVersion = 7.2.1;
-						LastSwiftMigration = 0820;
+						LastSwiftMigration = 0830;
 						TestTargetID = B5E9F8FA1C8D3B6E00443DC7;
 					};
 					B5E9F8FA1C8D3B6E00443DC7 = {
 						CreatedOnToolsVersion = 7.2.1;
-						LastSwiftMigration = 0820;
+						LastSwiftMigration = 0830;
 					};
 				};
 			};

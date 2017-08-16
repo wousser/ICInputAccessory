@@ -1,21 +1,12 @@
 PODS:
-  - ICInputAccessory/KeyboardDismissTextField (1.4.0)
-  - ICInputAccessory/TokenField (1.4.0)
   - SwiftLint (0.19.0)
 
 DEPENDENCIES:
-  - ICInputAccessory/KeyboardDismissTextField (from `./`)
-  - ICInputAccessory/TokenField (from `./`)
   - SwiftLint (= 0.19.0)
 
-EXTERNAL SOURCES:
-  ICInputAccessory:
-    :path: ./
-
 SPEC CHECKSUMS:
-  ICInputAccessory: dace41bea1ed8b0368bf8ffd439a215efa8effd3
   SwiftLint: 3537a05b34060e78e7510f04fb7537d738247803
 
-PODFILE CHECKSUM: 400449a0f6672fe2c72f4d91409a3e8abccb8fab
+PODFILE CHECKSUM: 0709dcae81d808b2c03cbe4911faac9680768b93
 
 COCOAPODS: 1.3.1

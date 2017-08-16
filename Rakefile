@@ -1,52 +1,44 @@
 task default: "ci:test"
 
-latest = "10.1"
-
 namespace :ci do
-  desc "Build targets on Travis CI with a specified OS version, default OS=#{latest}"
+  desc "Build targets on Travis CI with a specified OS version, default OS=latest"
   task :build, [:os] do |t, args|
-    version = args[:os] || latest
-    Rake::Task["framework:build"].invoke version
-    Rake::Task["example:build"].invoke version
+    Rake::Task["build"].execute os: args[:os], scheme: "ICInputAccessory-iOS"
+    Rake::Task["build"].execute os: args[:os], scheme: "Example"
   end
 
-  desc "Run tests on Travis CI with a specified OS version, default OS=#{latest}"
+  desc "Run tests on Travis CI with a specified OS version, default OS=latest"
   task :test, [:os] do |t, args|
-    version = args[:os] || latest
-    Rake::Task["framework:build"].invoke version
     # UI Testing requires iOS Simulator 9.0 or later.
-    if Gem::Version.new("9.0") <= Gem::Version.new(version)
-      Rake::Task["example:test"].invoke version
-    else
-      Rake::Task["example:build"].invoke version
-    end
+    action = !args[:os] || Gem::Version.new("9.0") <= Gem::Version.new(args[:os]) ? "test" : "build"
+    Rake::Task[action].execute os: args[:os], scheme: "Example"
   end
 end
 
 
-namespace :example do
-  desc "Build the example project"
-  task :build, [:os] do |t, args|
-    version = args[:os] || latest
-    sh %(xcodebuild -workspace ICInputAccessory.xcworkspace -scheme Example -sdk iphonesimulator -destination "name=iPhone 6s,OS=#{version}" clean build | xcpretty -c && exit ${PIPESTATUS[0]})
-    exit $?.exitstatus if not $?.success?
-  end
-
-  desc "Run the UI tests in the example project"
-  task :test, [:os] do |t, args|
-    version = args[:os] || latest
-    sh %(xcodebuild -workspace ICInputAccessory.xcworkspace -scheme Example -sdk iphonesimulator -destination "name=iPhone 6s,OS=#{version}" clean test | xcpretty -c && exit ${PIPESTATUS[0]})
-    exit $?.exitstatus if not $?.success?
-  end
+def xcodebuild(params)
+  [
+    %(xcodebuild),
+    %(-workspace ICInputAccessory.xcworkspace),
+    %(-scheme #{params[:scheme]}),
+    %(-sdk iphonesimulator),
+    %(-destination 'name=iPhone 7,OS=#{params[:version] || "latest"}'),
+    %(#{params[:action]} | xcpretty -c && exit ${PIPESTATUS[0]})
+  ].join " "
 end
 
-namespace :framework do
-  desc "Build the framework project"
-  task :build, [:os] do |t, args|
-    version = args[:os] || "latest"
-    sh %(xcodebuild -project ICInputAccessory.xcodeproj -scheme ICInputAccessory-iOS -sdk iphonesimulator -destination "name=iPhone 6s,OS=#{version}" clean build | xcpretty -c && exit ${PIPESTATUS[0]})
-    exit $?.exitstatus if not $?.success?
-  end
+
+desc "Build the target with the specified scheme"
+task :build, [:os, :scheme] do |t, args|
+  sh xcodebuild(scheme: args[:scheme], version: args[:os], action: "clean build")
+  exit $?.exitstatus if not $?.success?
+end
+
+
+desc "Run the UI tests in the example project"
+task :test, [:os] do |t, args|
+  sh xcodebuild(scheme: "Example", version: args[:os], action: "clean test")
+  exit $?.exitstatus if not $?.success?
 end
 
 

@@ -35,7 +35,7 @@ class ICToken: UIView {
     }
   }
 
-  var highlighted = false {
+  var isHighlighted = false {
     didSet {
       updateTextLabel()
     }
@@ -46,7 +46,7 @@ class ICToken: UIView {
     NSBackgroundColorAttributeName: UIColor.clear
   ] {
     didSet {
-      if !highlighted { updateTextLabel() }
+      if !isHighlighted { updateTextLabel() }
       delimiterLabel.textColor = self.normalTextAttributes[NSForegroundColorAttributeName] as? UIColor
     }
   }
@@ -56,7 +56,7 @@ class ICToken: UIView {
     NSBackgroundColorAttributeName: UIColor(red:0.14, green:0.38, blue:0.95, alpha:1)
   ] {
     didSet {
-      if highlighted { updateTextLabel() }
+      if isHighlighted { updateTextLabel() }
     }
   }
 
@@ -104,7 +104,7 @@ class ICToken: UIView {
   // MARK: - Private Methods
 
   private func updateTextLabel() {
-    var attributes = highlighted ? highlightedTextAttributes : normalTextAttributes
+    var attributes = isHighlighted ? highlightedTextAttributes : normalTextAttributes
     if let color = attributes[NSBackgroundColorAttributeName] as? UIColor {
       textLabel.backgroundColor = color
     }

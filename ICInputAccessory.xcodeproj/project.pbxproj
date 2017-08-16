@@ -28,6 +28,7 @@
 		B548C5EE1C8EB9E2009D5AEE /* ICKeyboardDismissTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B548C5ED1C8EB9E2009D5AEE /* ICKeyboardDismissTextField.swift */; };
 		B56BC42E1C89A7EA00C20AD6 /* ICInputAccessory.h in Headers */ = {isa = PBXBuildFile; fileRef = B56BC42D1C89A7EA00C20AD6 /* ICInputAccessory.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B56BC4361C89A8D800C20AD6 /* ICKeyboardDismissAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56BC4351C89A8D800C20AD6 /* ICKeyboardDismissAccessoryView.swift */; };
+		B5E619CB1F44A05B005200E1 /* ICInputAccessory.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B56BC42A1C89A7EA00C20AD6 /* ICInputAccessory.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,20 @@
 			remoteInfo = "ICInputAccessory-iOS";
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B5E619CA1F44A04A005200E1 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B5E619CB1F44A05B005200E1 /* ICInputAccessory.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		05C165FF29CCF16E184D992C /* Pods-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Example/Pods-Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -229,6 +244,7 @@
 				B53376861F4436D000230739 /* Resources */,
 				9192772A7DBF8B1D3D564448 /* [CP] Embed Pods Frameworks */,
 				B00B735ECB485DFE7B769A68 /* [CP] Copy Pods Resources */,
+				B5E619CA1F44A04A005200E1 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

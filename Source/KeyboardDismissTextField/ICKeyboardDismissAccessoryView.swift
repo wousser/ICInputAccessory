@@ -48,6 +48,7 @@ open class ICKeyboardDismissAccessoryView: UIView {
     _button.layer.cornerRadius = 4
     _button.layer.shouldRasterize = true
     _button.layer.rasterizationScale = UIScreen.main.scale
+    _button.accessibilityLabel = "Dismiss Keyboard"
     return _button
   }()
 

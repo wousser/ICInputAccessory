@@ -7,12 +7,14 @@ cache:
     - Pods
 before_install:
   - export LANG=en_US.UTF-8
+  - xcrun instruments -s devices
+  - xcrun instruments -w "iPhone 7 (10.3.1) [" || true
 install:
   - make install
 before_script:
   - xcodebuild -workspace ICInputAccessory.xcworkspace -list
 script:
-  - bundle exec rake ci:build
+  - bundle exec rake ci:test
   - make -B carthage
   - make -B docs
 after_script:

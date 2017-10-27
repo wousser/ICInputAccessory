@@ -56,7 +56,7 @@ class ICBackspaceTextField: UITextField {
 
   // MARK: - UITextField
 
-  func keyboardInputShouldDelete(_ textField: UITextField) -> Bool {
+  @objc func keyboardInputShouldDelete(_ textField: UITextField) -> Bool {
     return backspaceDelegate?.textFieldShouldDelete(self) ?? true
   }
 

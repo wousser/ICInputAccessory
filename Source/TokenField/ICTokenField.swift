@@ -328,19 +328,25 @@ open class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDelega
   // MARK: - ICBackspaceTextFieldDelegate
 
   @nonobjc func textFieldShouldDelete(_ textField: ICBackspaceTextField) -> Bool {
-    if tokens.isEmpty {
-      return true
-    }
-
     if !textField.showsCursor {
       _ = removeHighlightedToken()
       return true
     }
 
-    if let text = textField.text, text.isEmpty {
+    guard let text = textField.text else {
+      return true
+    }
+
+    if text.isEmpty {
       textField.showsCursor = false
       tokens.last?.isHighlighted = true
+    } else {
+      // textField(_:shouldChangeCharactersIn:replacementString:) is skipped when the delete key is pressed.
+      // Notify the delegate of the changed input text manually.
+      let index = text.index(text.endIndex, offsetBy: -1)
+      delegate?.tokenField?(self, didChangeInputText: text.substring(to: index))
     }
+
     return true
   }
 

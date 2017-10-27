@@ -1,3 +1,7 @@
+## v1.5.0
+
+* Swift 4.0
+
 ## v1.4.1
 
 * Fix `tokenField(_:didChangeInputText:)` with the delete key [#20](https://github.com/polydice/ICInputAccessory/pull/20)

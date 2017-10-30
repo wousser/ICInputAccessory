@@ -7,8 +7,7 @@ Try <https://testflight.icook.tw>.
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg)](https://github.com/Carthage/Carthage)
 [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/ICInputAccessory.svg)](https://cocoapods.org/pods/ICInputAccessory)
 ![Platform](https://img.shields.io/cocoapods/p/ICInputAccessory.svg)
-[![CocoaDocs](https://img.shields.io/cocoapods/metrics/doc-percent/ICInputAccessory.svg)](https://polydice.github.io/ICInputAccessory)
-![Swift 3.0](https://img.shields.io/badge/Swift-3.0-orange.svg)
+![Swift 3.1](https://img.shields.io/badge/Swift-3.1-orange.svg)
 
 ### ICKeyboardDismissTextField
 
@@ -149,10 +148,13 @@ The displayed delimiter string can be customized by:
 @objc optional func tokenField(_ tokenField: ICTokenField, subsequentDelimiterForCompletedText text: String) -> String
 ```
 
+### Documentation
+
+* [ICInputAccessory Reference](https://polydice.github.io/ICInputAccessory)
+* [Example Project](https://github.com/polydice/ICInputAccessory/tree/develop/Example)
+
 ## Development
 
-* Make sure [Homebrew](http://brew.sh/) is installed.
-* Current `develop` branch requires Ruby `2.3.1`.
 * Set up dependencies by running the following command in the project root:
 
   ```

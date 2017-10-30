@@ -5,15 +5,20 @@ bootstrap:
 
 install: bundle-install pod-install
 
-brew-install:
-	brew tap homebrew/bundle
-	brew bundle
-
 bundle-install:
 	bundle install --without development --deployment --jobs=3 --retry=3
 
 pod-install:
 	bundle exec pod install
+
+bump:
+ifeq (,$(strip $(version)))
+	# Usage: make bump version=<number>
+else
+	ruby -pi -e "gsub(/\d+\.\d+\.\d+/i, \""$(version)"\")" ICInputAccessory.podspec
+	ruby -pi -e "gsub(/:\s\d+\.\d+\.\d+/i, \": "$(version)"\")" .jazzy.yml
+	xcrun agvtool new-marketing-version $(version)
+endif
 
 carthage:
 	set -o pipefail && carthage build --no-skip-current --verbose | bundle exec xcpretty

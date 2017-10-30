@@ -54,6 +54,7 @@ class ExampleViewController: UITableViewController {
 
   override func loadView() {
     super.loadView()
+    tableView.rowHeight = 44
     tableView.register(ExampleCell.self, forCellReuseIdentifier: String(describing: ExampleCell.self))
     tableView.tableFooterView = flipButton
     tableView.tableFooterView?.isUserInteractionEnabled = true

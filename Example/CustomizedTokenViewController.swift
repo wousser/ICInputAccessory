@@ -56,7 +56,20 @@ class CustomizedTokenViewController: UIViewController, ICTokenFieldDelegate {
     cancelBarButton.tintColor = UIColor.white
     navigationItem.rightBarButtonItem = cancelBarButton
 
-    navigationItem.titleView = tokenField
+    navigationItem.titleView = {
+      if #available(iOS 11, *) {
+        tokenField.translatesAutoresizingMaskIntoConstraints = false
+        let views = ["field": tokenField]
+        let metrics = ["padding": 7]
+        let containerView = UIView()
+        containerView.addSubview(tokenField)
+        containerView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[field]-padding-|", options: [], metrics: metrics, views: views))
+        containerView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-padding-[field]-padding-|", options: [], metrics: metrics, views: views))
+        return containerView
+      } else {
+        return tokenField
+      }
+    }()
     tokenField.delegate = self
   }
 

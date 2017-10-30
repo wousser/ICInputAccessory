@@ -40,33 +40,3 @@ task :test, [:os] do |t, args|
   sh xcodebuild(scheme: "Example", version: args[:os], action: "clean test")
   exit $?.exitstatus if not $?.success?
 end
-
-
-desc "Bump versions"
-task :bump, [:version] do |t, args|
-  version = args[:version]
-  unless version
-    puts %(Usage: rake "bump[version]")
-    next
-  end
-
-  FileUtils.mv "ICInputAccessory.xcodeproj", "ICInputAccessory.tmp"
-  sh %(xcrun agvtool new-marketing-version #{version})
-  FileUtils.mv "ICInputAccessory.tmp", "ICInputAccessory.xcodeproj"
-
-  FileUtils.mv "Example.xcodeproj", "Example.tmp"
-  sh %(xcrun agvtool new-marketing-version #{version})
-  FileUtils.mv "Example.tmp", "Example.xcodeproj"
-
-  podspec = "ICInputAccessory.podspec"
-  text = File.read podspec
-  File.write podspec, text.gsub(%r(\"\d+\.\d+\.\d+\"), "\"#{version}\"")
-  puts "Updated #{podspec} to #{version}"
-
-  jazzy = ".jazzy.yml"
-  text = File.read jazzy
-  File.write jazzy, text.gsub(%r(:\s\d+\.\d+\.\d+), ": #{version}")
-  puts "Updated #{jazzy} to #{version}"
-
-  sh %(bundle exec pod install)
-end

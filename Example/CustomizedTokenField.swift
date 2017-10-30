@@ -39,6 +39,10 @@ class CustomizedTokenField: ICTokenField {
     applyCustomizedStyle()
   }
 
+  override var intrinsicContentSize: CGSize {
+    return UILayoutFittingExpandedSize
+  }
+
 }
 
 

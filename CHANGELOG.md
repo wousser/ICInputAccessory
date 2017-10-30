@@ -1,3 +1,13 @@
+## v1.4.1
+
+* Fix `tokenField(_:didChangeInputText:)` with the delete key [#20](https://github.com/polydice/ICInputAccessory/pull/20)
+
+#### Project Updates
+
+* Reenable UI tests
+* Combine the framework and example projects
+* Specify SwiftLint version via CocoaPods
+
 ## v1.4.0
 
 * Added delegate methods:

@@ -73,7 +73,9 @@ open class ICKeyboardDismissTextField: UITextField {
 
   private func setUpAccessoryView() {
     if keyboardAccessoryView == nil {
-      keyboardAccessoryView = ICKeyboardDismissAccessoryView()
+      // Set an initial frame for the button to appear during UI testing.
+      let frame = CGRect(x: 0, y: 0, width: 320, height: 60)
+      keyboardAccessoryView = ICKeyboardDismissAccessoryView(frame: frame)
     }
   }
 

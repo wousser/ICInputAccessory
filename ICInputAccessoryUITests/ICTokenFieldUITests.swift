@@ -28,24 +28,15 @@ import XCTest
 
 class ICTokenFieldUITests: XCTestCase {
 
+  private lazy var app = XCUIApplication()
+
   override func setUp() {
     super.setUp()
-    // In UI tests it is usually best to stop immediately when a failure occurs.
     continueAfterFailure = false
-    // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
-    XCUIApplication().launch()
+    app.launch()
   }
 
-  override func tearDown() {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
-    super.tearDown()
-  }
-
-  func testTokenField() {
-    let app = XCUIApplication()
-    let tablesQuery = app.tables
-    let textField = tablesQuery.cells.containing(.staticText, identifier:"ICTokenField").children(matching: .textField).element
-
+  private func typeTexts(in textField: XCUIElement) {
     textField.tap()
     textField.typeText("Try")
     textField.typeText(" ")
@@ -61,58 +52,25 @@ class ICTokenFieldUITests: XCTestCase {
     textField.typeText("TestFlight")
     textField.typeText(",")
 
-    let searchButton = app.buttons["Search"]
-    searchButton.tap()
+    app.buttons["Search"].tap()
+  }
+
+  func testTokenField() {
+    let textField = app.tables.cells.containing(.staticText, identifier:"ICTokenField").children(matching: .textField).element
+    typeTexts(in: textField)
   }
 
   func testCustomizedTokenField() {
-    let app = XCUIApplication()
     app.tables.staticTexts["CustomizedTokenField"].tap()
-
     let tokenField = app.navigationBars["Example.CustomizedTokenView"].scrollViews.children(matching: .textField).element
-    tokenField.typeText("Try")
-    tokenField.typeText(" ")
-    tokenField.typeText("iCook")
-    tokenField.typeText(",")
-    tokenField.typeText("beta")
-    tokenField.typeText(" ")
-
-    let deleteKey = app.keys["delete"]
-    deleteKey.tap()
-    deleteKey.tap()
-
-    tokenField.typeText("TestFlight")
-    tokenField.typeText(",")
-
-    let searchButton = app.buttons["Search"]
-    searchButton.tap()
+    typeTexts(in: tokenField)
   }
 
   func testStoryboard() {
-    let app = XCUIApplication()
-    let tablesQuery = app.tables
-    tablesQuery.buttons["Storyboard"].tap()
-
-    let tokenField = tablesQuery.cells.containing(.staticText, identifier:"Storyboard ICTokenField").children(matching: .textField).element
-    tokenField.tap()
-    tokenField.typeText("Try")
-    tokenField.typeText(" ")
-    tokenField.typeText("iCook")
-    tokenField.typeText(",")
-    tokenField.typeText("beta")
-    tokenField.typeText(" ")
-
-    let deleteKey = app.keys["delete"]
-    deleteKey.tap()
-    deleteKey.tap()
-
-    tokenField.typeText("TestFlight")
-    tokenField.typeText(",")
-
-    let searchButton = app.buttons["Search"]
-    searchButton.tap()
-
-    tablesQuery.buttons["Back to Code"].tap()
+    app.tables.buttons["Storyboard"].tap()
+    let tokenField = app.tables.cells.containing(.staticText, identifier:"Storyboard ICTokenField").children(matching: .textField).element
+    typeTexts(in: tokenField)
+    app.tables.buttons["Back to Code"].tap()
   }
 
 }

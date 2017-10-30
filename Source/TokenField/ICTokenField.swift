@@ -269,7 +269,7 @@ open class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDelega
   // MARK: - UITextFieldDelegate
 
   open func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-    tokens.forEach { $0.highlighted = false }
+    tokens.forEach { $0.isHighlighted = false }
     return true
   }
 
@@ -280,7 +280,7 @@ open class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDelega
   open func textFieldDidEndEditing(_ textField: UITextField) {
     completeCurrentInputText()
     togglePlaceholderIfNeeded()
-    tokens.forEach { $0.highlighted = false }
+    tokens.forEach { $0.isHighlighted = false }
     delegate?.tokenFieldDidEndEditing?(self)
   }
 
@@ -328,19 +328,25 @@ open class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDelega
   // MARK: - ICBackspaceTextFieldDelegate
 
   @nonobjc func textFieldShouldDelete(_ textField: ICBackspaceTextField) -> Bool {
-    if tokens.isEmpty {
-      return true
-    }
-
     if !textField.showsCursor {
       _ = removeHighlightedToken()
       return true
     }
 
-    if let text = textField.text, text.isEmpty {
-      textField.showsCursor = false
-      tokens.last?.highlighted = true
+    guard let text = textField.text else {
+      return true
     }
+
+    if text.isEmpty {
+      textField.showsCursor = false
+      tokens.last?.isHighlighted = true
+    } else {
+      // textField(_:shouldChangeCharactersIn:replacementString:) is skipped when the delete key is pressed.
+      // Notify the delegate of the changed input text manually.
+      let index = text.index(text.endIndex, offsetBy: -1)
+      delegate?.tokenField?(self, didChangeInputText: text.substring(to: index))
+    }
+
     return true
   }
 
@@ -363,10 +369,10 @@ open class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDelega
     for token in tokens {
       if token.frame.contains(touch) {
         scrollView.scrollRectToVisible(token.frame, animated: true)
-        token.highlighted = true
+        token.isHighlighted = true
         shouldFocusInputTextField = false
       } else {
-        token.highlighted = false
+        token.isHighlighted = false
       }
     }
 
@@ -385,15 +391,13 @@ open class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDelega
 
   /// Returns true if any highlighted token is found and removed, otherwise false.
   private func removeHighlightedToken() -> Bool {
-    for (index, token) in tokens.enumerated() {
-      if token.highlighted {
-        tokens.remove(at: index)
-        layoutTokenTextField()
-        togglePlaceholderIfNeeded()
-        inputTextField.showsCursor = true
-        delegate?.tokenField?(self, didDeleteText: token.text, atIndex: index)
-        return true
-      }
+    for (index, token) in tokens.enumerated() where token.isHighlighted {
+      tokens.remove(at: index)
+      layoutTokenTextField()
+      togglePlaceholderIfNeeded()
+      inputTextField.showsCursor = true
+      delegate?.tokenField?(self, didDeleteText: token.text, atIndex: index)
+      return true
     }
     return false
   }

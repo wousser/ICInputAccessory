@@ -151,8 +151,6 @@ The displayed delimiter string can be customized by:
 
 ## Development
 
-* Make sure [Homebrew](http://brew.sh/) is installed.
-* Current `develop` branch requires Ruby `2.3.1`.
 * Set up dependencies by running the following command in the project root:
 
   ```

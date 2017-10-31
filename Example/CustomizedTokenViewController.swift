@@ -48,7 +48,7 @@ class CustomizedTokenViewController: UIViewController, ICTokenFieldDelegate {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    navigationController?.navigationBar.barTintColor = UIColor(red:0.96, green:0.48, blue:0.4, alpha:1)
+    navigationController?.navigationBar.barTintColor = UIColor(red: 0.96, green: 0.48, blue: 0.4, alpha: 1)
     navigationController?.navigationBar.isTranslucent = false
     navigationController?.navigationBar.barStyle = .black
 

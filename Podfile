@@ -5,5 +5,5 @@ workspace "ICInputAccessory"
 project "ICInputAccessory"
 
 target "Example" do
-  pod "SwiftLint", "0.19.0"
+  pod "SwiftLint", "0.23.1"
 end

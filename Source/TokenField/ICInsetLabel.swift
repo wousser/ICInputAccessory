@@ -44,7 +44,7 @@ class ICInsetLabel: UILabel {
     switch cornerRadius {
     case let .constant(radius) where radius > 0:
       layer.cornerRadius = radius
-      fallthrough
+      fallthrough // swiftlint:disable:this fallthrough
     case .dynamic:
       layer.masksToBounds = true
       layer.shouldRasterize = true

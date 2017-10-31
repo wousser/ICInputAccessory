@@ -42,7 +42,7 @@ class ICToken: UIView {
   }
 
   var normalTextAttributes: [NSAttributedStringKey: NSObject] = [
-    .foregroundColor: UIColor(red:0.14, green:0.38, blue:0.95, alpha:1),
+    .foregroundColor: UIColor(red: 0.14, green: 0.38, blue: 0.95, alpha: 1),
     .backgroundColor: UIColor.clear
   ] {
     didSet {
@@ -53,7 +53,7 @@ class ICToken: UIView {
 
   var highlightedTextAttributes: [NSAttributedStringKey: NSObject] = [
     .foregroundColor: UIColor.white,
-    .backgroundColor: UIColor(red:0.14, green:0.38, blue:0.95, alpha:1)
+    .backgroundColor: UIColor(red: 0.14, green: 0.38, blue: 0.95, alpha: 1)
   ] {
     didSet {
       if isHighlighted { updateTextLabel() }

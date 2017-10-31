@@ -57,7 +57,7 @@ extension ICTokenField {
     layer.cornerRadius = 5
     layer.shouldRasterize = true
     layer.rasterizationScale = UIScreen.main.scale
-    backgroundColor = UIColor(red:0.8, green:0.32, blue:0.24, alpha:1)
+    backgroundColor = UIColor(red: 0.8, green: 0.32, blue: 0.24, alpha: 1)
 
     textField.textColor = UIColor.white
     textField.tintColor = UIColor.white
@@ -78,7 +78,7 @@ extension ICTokenField {
     ]
 
     highlightedTokenAttributes = [
-      .foregroundColor: UIColor(red:0.8, green:0.32, blue:0.24, alpha:1),
+      .foregroundColor: UIColor(red: 0.8, green: 0.32, blue: 0.24, alpha: 1),
       .backgroundColor: UIColor.white,
       .font: UIFont.boldSystemFont(ofSize: 14)
     ]

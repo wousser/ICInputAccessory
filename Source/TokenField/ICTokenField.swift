@@ -114,7 +114,7 @@ open class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDelega
       if placeholderLabel.superview != nil { return }
       insertSubview(placeholderLabel, belowSubview: scrollView)
       placeholderLabel.translatesAutoresizingMaskIntoConstraints = false
-      placeholderLabel.setContentHuggingPriority(UILayoutPriority(rawValue: UILayoutPriority.RawValue(Int(UILayoutPriority.defaultLow.rawValue) - 1)), for: .horizontal)
+      placeholderLabel.setContentHuggingPriority(UILayoutPriority(rawValue: UILayoutPriority.defaultLow.rawValue - 1), for: .horizontal)
       addConstraint(NSLayoutConstraint(item: placeholderLabel, attribute: .leading, relatedBy: .equal, toItem: scrollView, attribute: .leading, multiplier: 1, constant: 0))
       addConstraint(NSLayoutConstraint(item: placeholderLabel, attribute: .trailing, relatedBy: .greaterThanOrEqual, toItem: scrollView, attribute: .trailing, multiplier: 1, constant: 10))
       addConstraint(NSLayoutConstraint(item: placeholderLabel, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1, constant: 0))

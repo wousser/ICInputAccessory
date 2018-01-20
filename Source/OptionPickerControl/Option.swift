@@ -1,6 +1,6 @@
 //
 //  Option.swift
-//  Flashcards
+//  ICInputAccessory
 //
 //  Created by Ben on 22/11/2017.
 //  Copyright © 2017 bcylin.
@@ -26,32 +26,38 @@
 
 import Foundation
 
+/// The protocol defines the required variables to be displayed in a `UIPickerView` via `OptionPickerControl`.
 public protocol OptionDescriptive: Equatable {
+  /// The text for the row in the `UIPickerView`.
   var title: String { get }
-  static var optionalText: String { get }
+  /// The text for a placeholder row when the picker selection is optional.
+  static var titleForOptionalValue: String { get }
 }
 
-////////////////////////////////////////////////////////////////////////////////
 
-
+/// An option struct that carries the `OptionDescriptive`
 public struct Option<T: OptionDescriptive>: Equatable {
 
   // MARK: - Initialization
 
+  /// Returns an option that displays the optional value of an `OptionDescriptive` type.
   public static func optional() -> Option<T> {
     return Option<T>()
   }
 
+  /// Returns an initialized option with an instance of an `OptionDescriptive` type.
   public init(_ value: T) {
     self.value = value
   }
 
   // MARK: - Properties
 
+  /// Conformance to `OptionDescriptive`.
   public var title: String {
-    return value?.title ?? T.optionalText
+    return value?.title ?? T.titleForOptionalValue
   }
 
+  /// The `OptionDescriptive` value of the option. Returns `nil` when it's the `optional` placeholder.
   public let value: T?
 
   // MARK: - Private
@@ -62,6 +68,7 @@ public struct Option<T: OptionDescriptive>: Equatable {
 
   // MARK: - Equatable
 
+  /// Returns true when two options' values are equal.
   public static func == (lhs: Option<T>, rhs: Option<T>) -> Bool {
     return lhs.value == rhs.value
   }

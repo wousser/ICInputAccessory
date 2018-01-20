@@ -1,6 +1,6 @@
 //
 //  OptionPickerControl.swift
-//  Flashcards
+//  ICInputAccessory
 //
 //  Created by Ben on 27/11/2017.
 //  Copyright © 2017 bcylin.
@@ -26,24 +26,28 @@
 
 import UIKit
 
-open class OptionPickerControl<T: OptionDescriptive>: UIControl,
-  UIPickerViewDataSource,
-  UIPickerViewDelegate {
+/// A `UIControl` that displays a `UIPickerView` and notifies changed selection and via `UIControlEvents` `.valueChanged`.
+open class OptionPickerControl<T: OptionDescriptive>: UIControl, UIPickerViewDataSource, UIPickerViewDelegate {
 
   // MARK: - Initialization
 
+  /// Returns an initialized `OptionPickerControl`.
   public init() {
     super.init(frame: .zero)
     addSubview(hiddenTextField)
   }
 
+  /// Not supported. `OptionPickerControl` is not compatible with storyboards.
   required public init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) is not supported")
   }
 
   // MARK: - Properties
 
+  /// Options that shows in the `UIPickerView`.
   public var options: [Option<T>] = [Option<T>.optional()]
+
+  /// The currently selected item in the options.
   public var selectedOption: Option<T> = Option<T>.optional() {
     didSet {
       if hiddenTextField.isFirstResponder {
@@ -53,6 +57,14 @@ open class OptionPickerControl<T: OptionDescriptive>: UIControl,
       }
     }
   }
+
+  /// A reference to the displayed `UIPickerView` for customization.
+  public private(set) lazy var picker: UIPickerView = {
+    let picker = UIPickerView()
+    picker.dataSource = self
+    picker.delegate = self
+    return picker
+  }()
 
   // MARK: - Lazy Instantiation
 
@@ -66,13 +78,6 @@ open class OptionPickerControl<T: OptionDescriptive>: UIControl,
       self.doneBarButton
     ]
     return toolbar
-  }()
-
-  private lazy var picker: UIPickerView = {
-    let picker = UIPickerView()
-    picker.dataSource = self
-    picker.delegate = self
-    return picker
   }()
 
   private lazy var hiddenTextField: UITextField = {
@@ -96,6 +101,7 @@ open class OptionPickerControl<T: OptionDescriptive>: UIControl,
 
   // MARK: - UIPickerViewDataSource
 
+  /// Currently `OptionPickerControl` only supports one component.
   open func numberOfComponents(in pickerView: UIPickerView) -> Int {
     return 1
   }

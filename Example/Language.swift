@@ -51,7 +51,7 @@ enum Language: String, OptionDescriptive {
     return rawValue.capitalized
   }
 
-  static var optionalText: String {
+  static var titleForOptionalValue: String {
     return "(Optional)"
   }
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Protocols  Reference</title>
+    <title>Structs  Reference</title>
     <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="css/highlight.css" />
     <meta charset="utf-8">
@@ -15,7 +15,7 @@
   <body>
 
 
-    <a title="Protocols  Reference"></a>
+    <a title="Structs  Reference"></a>
 
     <header class="header">
       <p class="header-col header-col--primary">
@@ -43,7 +43,7 @@
     <p class="breadcrumbs">
       <a class="breadcrumb" href="index.html">ICInputAccessory Reference</a>
       <img class="carat" src="img/carat.png" />
-      Protocols  Reference
+      Structs  Reference
     </p>
 
     <div class="content-wrapper">
@@ -91,8 +91,8 @@
 
         <section class="section">
           <div class="section-content">
-            <h1>Protocols</h1>
-            <p>The following protocols are available globally.</p>
+            <h1>Structs</h1>
+            <p>The following structs are available globally.</p>
 
           </div>
         </section>
@@ -104,9 +104,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@ICInputAccessory@objc(pl)ICTokenFieldDelegate"></a>
-                    <a name="//apple_ref/swift/Protocol/ICTokenFieldDelegate" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@ICInputAccessory@objc(pl)ICTokenFieldDelegate">ICTokenFieldDelegate</a>
+                    <a name="/s:16ICInputAccessory6OptionV"></a>
+                    <a name="//apple_ref/swift/Struct/Option" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16ICInputAccessory6OptionV">Option</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -114,55 +114,20 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The protocol defines the messages sent to a delegate. All the methods are optional.</p>
+                        <p>An option struct that carries the <code><a href="Protocols/OptionDescriptive.html">OptionDescriptive</a></code></p>
 
-                        <a href="Protocols/ICTokenFieldDelegate.html" class="slightly-smaller">See more</a>
+                        <a href="Structs/Option.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">ICTokenFieldDelegate</span><span class="p">:</span> <span class="kt">NSObjectProtocol</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Option</span><span class="o">&lt;</span><span class="kt">T</span><span class="p">:</span> <span class="kt"><a href="Protocols/OptionDescriptive.html">OptionDescriptive</a></span><span class="o">&gt;</span><span class="p">:</span> <span class="kt">Equatable</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/polydice/ICInputAccessory/blob/develop/Source/TokenField/ICTokenField.swift#L30-L47">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul class="item-container">
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:16ICInputAccessory17OptionDescriptiveP"></a>
-                    <a name="//apple_ref/swift/Protocol/OptionDescriptive" class="dashAnchor"></a>
-                    <a class="token" href="#/s:16ICInputAccessory17OptionDescriptiveP">OptionDescriptive</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>The protocol defines the required variables to be displayed in a <code>UIPickerView</code> via <code><a href="Classes/OptionPickerControl.html">OptionPickerControl</a></code>.</p>
-
-                        <a href="Protocols/OptionDescriptive.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">OptionDescriptive</span><span class="p">:</span> <span class="kt">Equatable</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/polydice/ICInputAccessory/blob/develop/Source/OptionPickerControl/Option.swift#L30-L35">Show on GitHub</a>
+                        <a href="https://github.com/polydice/ICInputAccessory/blob/develop/Source/OptionPickerControl/Option.swift#L39-L76">Show on GitHub</a>
                       </div>
                     </section>
                   </div>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>ICKeyboardDismissAccessoryView Class Reference</title>
+    <title>Option Struct Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset="utf-8">
@@ -14,9 +14,9 @@
   </head>
   <body>
 
-    <a name="//apple_ref/swift/Class/ICKeyboardDismissAccessoryView" class="dashAnchor"></a>
+    <a name="//apple_ref/swift/Struct/Option" class="dashAnchor"></a>
 
-    <a title="ICKeyboardDismissAccessoryView Class Reference"></a>
+    <a title="Option Struct Reference"></a>
 
     <header class="header">
       <p class="header-col header-col--primary">
@@ -44,7 +44,7 @@
     <p class="breadcrumbs">
       <a class="breadcrumb" href="../index.html">ICInputAccessory Reference</a>
       <img class="carat" src="../img/carat.png" />
-      ICKeyboardDismissAccessoryView Class Reference
+      Option Struct Reference
     </p>
 
     <div class="content-wrapper">
@@ -92,84 +92,20 @@
 
         <section class="section">
           <div class="section-content">
-            <h1>ICKeyboardDismissAccessoryView</h1>
+            <h1>Option</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">ICKeyboardDismissAccessoryView</span><span class="p">:</span> <span class="kt">UIView</span></code></pre>
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Option</span><span class="o">&lt;</span><span class="kt">T</span><span class="p">:</span> <span class="kt"><a href="../Protocols/OptionDescriptive.html">OptionDescriptive</a></span><span class="o">&gt;</span><span class="p">:</span> <span class="kt">Equatable</span></code></pre>
 
                 </div>
               </div>
-            <p>A customized keyboard accessory view with a dismiss button.</p>
+            <p>An option struct that carries the <code><a href="../Protocols/OptionDescriptive.html">OptionDescriptive</a></code></p>
 
           </div>
         </section>
 
         <section class="section">
           <div class="section-content">
-            <div class="task-group">
-              <ul class="item-container">
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:@M@ICInputAccessory@objc(cs)ICKeyboardDismissAccessoryView(py)buttonColor"></a>
-                    <a name="//apple_ref/swift/Property/buttonColor" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@ICInputAccessory@objc(cs)ICKeyboardDismissAccessoryView(py)buttonColor">buttonColor</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>The background color of the button to dismiss keyboard.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">@IBInspectable</span> <span class="kd">public</span> <span class="k">var</span> <span class="nv">buttonColor</span><span class="p">:</span> <span class="kt">UIColor</span> <span class="o">=</span> <span class="kt">Constants</span><span class="o">.</span><span class="kt">ButtonColor</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/polydice/ICInputAccessory/blob/develop/Source/KeyboardDismissTextField/ICKeyboardDismissAccessoryView.swift#L34-L38">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:@M@ICInputAccessory@objc(cs)ICKeyboardDismissAccessoryView(py)dismissButton"></a>
-                    <a name="//apple_ref/swift/Property/dismissButton" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@ICInputAccessory@objc(cs)ICKeyboardDismissAccessoryView(py)dismissButton">dismissButton</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>The button to dismiss keyboard.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">private(set)</span> <span class="kd">lazy</span> <span class="k">var</span> <span class="nv">dismissButton</span><span class="p">:</span> <span class="kt">UIButton</span> <span class="o">=</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/polydice/ICInputAccessory/blob/develop/Source/KeyboardDismissTextField/ICKeyboardDismissAccessoryView.swift#L41">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
             <div class="task-group">
               <div class="task-name-container">
                 <a name="/Initialization"></a>
@@ -182,9 +118,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@ICInputAccessory@objc(cs)ICKeyboardDismissAccessoryView(im)initWithFrame:"></a>
-                    <a name="//apple_ref/swift/Method/init(frame:)" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@ICInputAccessory@objc(cs)ICKeyboardDismissAccessoryView(im)initWithFrame:">init(frame:)</a>
+                    <a name="/s:16ICInputAccessory6OptionV8optionalACyxGyFZ"></a>
+                    <a name="//apple_ref/swift/Method/optional()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16ICInputAccessory6OptionV8optionalACyxGyFZ">optional()</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -192,19 +128,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Initializes and returns a newly allocated view object with the specified frame rectangle.</p>
+                        <p>Returns an option that displays the optional value of an <code><a href="../Protocols/OptionDescriptive.html">OptionDescriptive</a></code> type.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">override</span> <span class="nf">init</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="kt">CGRect</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">optional</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Option</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/polydice/ICInputAccessory/blob/develop/Source/KeyboardDismissTextField/ICKeyboardDismissAccessoryView.swift#L64-L67">Show on GitHub</a>
+                        <a href="https://github.com/polydice/ICInputAccessory/blob/develop/Source/OptionPickerControl/Option.swift#L44-L46">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -212,9 +148,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@ICInputAccessory@objc(cs)ICKeyboardDismissAccessoryView(im)initWithCoder:"></a>
-                    <a name="//apple_ref/swift/Method/init(coder:)" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@ICInputAccessory@objc(cs)ICKeyboardDismissAccessoryView(im)initWithCoder:">init(coder:)</a>
+                    <a name="/s:16ICInputAccessory6OptionVACyxGxcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16ICInputAccessory6OptionVACyxGxcfc">init(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -222,19 +158,131 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Returns an object initialized from data in a given unarchiver.</p>
+                        <p>Returns an initialized option with an instance of an <code><a href="../Protocols/OptionDescriptive.html">OptionDescriptive</a></code> type.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">required</span> <span class="nf">init</span><span class="p">?(</span><span class="n">coder</span> <span class="nv">aDecoder</span><span class="p">:</span> <span class="kt">NSCoder</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">_</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">T</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/polydice/ICInputAccessory/blob/develop/Source/KeyboardDismissTextField/ICKeyboardDismissAccessoryView.swift#L70-L73">Show on GitHub</a>
+                        <a href="https://github.com/polydice/ICInputAccessory/blob/develop/Source/OptionPickerControl/Option.swift#L49-L51">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Properties"></a>
+                <a name="//apple_ref/swift/Section/Properties" class="dashAnchor"></a>
+                <a href="#/Properties">
+                  <h3 class="section-name">Properties</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16ICInputAccessory6OptionV5titleSSv"></a>
+                    <a name="//apple_ref/swift/Property/title" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16ICInputAccessory6OptionV5titleSSv">title</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Conformance to <code><a href="../Protocols/OptionDescriptive.html">OptionDescriptive</a></code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">title</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/polydice/ICInputAccessory/blob/develop/Source/OptionPickerControl/Option.swift#L56-L58">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16ICInputAccessory6OptionV5valuexSgv"></a>
+                    <a name="//apple_ref/swift/Property/value" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16ICInputAccessory6OptionV5valuexSgv">value</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The <code><a href="../Protocols/OptionDescriptive.html">OptionDescriptive</a></code> value of the option. Returns <code>nil</code> when it&rsquo;s the <code>optional</code> placeholder.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">T</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/polydice/ICInputAccessory/blob/develop/Source/OptionPickerControl/Option.swift#L61">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Equatable"></a>
+                <a name="//apple_ref/swift/Section/Equatable" class="dashAnchor"></a>
+                <a href="#/Equatable">
+                  <h3 class="section-name">Equatable</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16ICInputAccessory6OptionV2eeoiSbACyxG_AEtFZ"></a>
+                    <a name="//apple_ref/swift/Method/==(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16ICInputAccessory6OptionV2eeoiSbACyxG_AEtFZ">==(_:_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns true when two options&rsquo; values are equal.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="o">==</span> <span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="kt">Option</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">rhs</span><span class="p">:</span> <span class="kt">Option</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/polydice/ICInputAccessory/blob/develop/Source/OptionPickerControl/Option.swift#L72-L74">Show on GitHub</a>
                       </div>
                     </section>
                   </div>

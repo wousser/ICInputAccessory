@@ -15,6 +15,7 @@
 		B52ADB1920132F0C00D96B87 /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52ADB1720132F0C00D96B87 /* Option.swift */; };
 		B52ADB1A20132F0C00D96B87 /* OptionPickerControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52ADB1820132F0C00D96B87 /* OptionPickerControl.swift */; };
 		B52ADB1C201332E400D96B87 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52ADB1B201332E400D96B87 /* Language.swift */; };
+		B52ADB1F201485B800D96B87 /* OptionPickerControlUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52ADB1D201485A700D96B87 /* OptionPickerControlUITests.swift */; };
 		B533768B1F4436D000230739 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B533768A1F4436D000230739 /* AppDelegate.swift */; };
 		B53376921F4436D000230739 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B53376911F4436D000230739 /* Assets.xcassets */; };
 		B53376951F4436D000230739 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B53376931F4436D000230739 /* LaunchScreen.storyboard */; };
@@ -76,6 +77,7 @@
 		B52ADB1720132F0C00D96B87 /* Option.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Option.swift; path = Source/OptionPickerControl/Option.swift; sourceTree = SOURCE_ROOT; };
 		B52ADB1820132F0C00D96B87 /* OptionPickerControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OptionPickerControl.swift; path = Source/OptionPickerControl/OptionPickerControl.swift; sourceTree = SOURCE_ROOT; };
 		B52ADB1B201332E400D96B87 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
+		B52ADB1D201485A700D96B87 /* OptionPickerControlUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OptionPickerControlUITests.swift; path = ICInputAccessoryUITests/OptionPickerControlUITests.swift; sourceTree = SOURCE_ROOT; };
 		B53376881F4436D000230739 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B533768A1F4436D000230739 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B53376911F4436D000230739 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 			children = (
 				B53376A11F4436D000230739 /* Info.plist */,
 				B53376A91F4437D900230739 /* KeyboardDismissTextFieldUITests.swift */,
+				B52ADB1D201485A700D96B87 /* OptionPickerControlUITests.swift */,
 				B53376AA1F4437D900230739 /* TokenFieldUITests.swift */,
 			);
 			name = ICInputAccessoryUITests;
@@ -437,6 +440,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B53376AB1F4437D900230739 /* KeyboardDismissTextFieldUITests.swift in Sources */,
+				B52ADB1F201485B800D96B87 /* OptionPickerControlUITests.swift in Sources */,
 				B53376AC1F4437D900230739 /* TokenFieldUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

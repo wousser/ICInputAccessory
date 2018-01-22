@@ -22,7 +22,7 @@
         <a class="header-link" href="index.html">
           ICInputAccessory Docs
         </a>
-         (73% documented)
+         (71% documented)
       </p>
 
       <p class="header-col--secondary">
@@ -61,9 +61,6 @@
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Classes/ICTokenField.html">ICTokenField</a>
               </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Classes/OptionPickerControl.html">OptionPickerControl</a>
-              </li>
             </ul>
           </li>
           <li class="nav-group-name">
@@ -71,17 +68,6 @@
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Protocols/ICTokenFieldDelegate.html">ICTokenFieldDelegate</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Protocols/OptionDescriptive.html">OptionDescriptive</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
-            <a class="nav-group-name-link" href="Structs.html">Structs</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Structs/Option.html">Option</a>
               </li>
             </ul>
           </li>
@@ -101,13 +87,12 @@ Try <a href="https://testflight.icook.tw">https://testflight.icook.tw</a>.</p>
 <a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg" alt="Carthage compatible"></a>
 <a href="https://cocoapods.org/pods/ICInputAccessory"><img src="https://img.shields.io/cocoapods/v/ICInputAccessory.svg" alt="CocoaPods Compatible"></a>
 <img src="https://img.shields.io/cocoapods/p/ICInputAccessory.svg" alt="Platform">
-<img src="https://img.shields.io/badge/Swift-3.1-orange.svg" alt="Swift 3.1"></p>
+<img src="https://img.shields.io/badge/Swift-4.0-orange.svg" alt="Swift 4"></p>
 <h3 id='ickeyboarddismisstextfield' class='heading'>ICKeyboardDismissTextField</h3>
 
-<p>A text field that has a button to dismiss keyboard on the input accessory view.</p>
-<h3 id='optionpickercontrol' class='heading'>OptionPickerControl</h3>
-
-<p>An easy to use <code>UIControl</code> that displays a <code>UIPickerView</code> with given options.</p>
+<ul>
+<li>A text field that has a button to dismiss keyboard on the input accessory view.</li>
+</ul>
 <h3 id='ictokenfield' class='heading'>ICTokenField</h3>
 
 <ul>
@@ -158,6 +143,12 @@ Try <a href="https://testflight.icook.tw">https://testflight.icook.tw</a>.</p>
 <td style="text-align: center">8.3</td>
 <td><img src="https://img.shields.io/badge/Swift-3.1-orange.svg" alt="Swift 3.1"></td>
 </tr>
+<tr>
+<td><code>develop</code></td>
+<td style="text-align: center">8.0+</td>
+<td style="text-align: center">9.0</td>
+<td><img src="https://img.shields.io/badge/Swift-4.0-orange.svg" alt="Swift 4.0"></td>
+</tr>
 </tbody></table>
 <h2 id='installation' class='heading'>Installation</h2>
 <h3 id='use-a-href-https-github-com-carthage-carthage-carthage-a' class='heading'>Use <a href="https://github.com/Carthage/Carthage">Carthage</a></h3>
@@ -186,43 +177,21 @@ Try <a href="https://testflight.icook.tw">https://testflight.icook.tw</a>.</p>
 <h3 id='ickeyboarddismisstextfield' class='heading'>ICKeyboardDismissTextField</h3>
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">textField</span> <span class="o">=</span> <span class="kt">ICKeyboardDismissTextField</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="n">rect</span><span class="p">)</span>
 </code></pre>
-<h3 id='optionpickercontrol' class='heading'>OptionPickerControl</h3>
-
-<p>Example option type that conforms to <code>OptionDescriptive</code>:</p>
-<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">String</span><span class="p">:</span> <span class="kt">OptionDescriptive</span> <span class="p">{</span>
-
-  <span class="k">var</span> <span class="nv">title</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="k">self</span>
-  <span class="p">}</span>
-
-  <span class="kd">static</span> <span class="k">var</span> <span class="nv">titleForOptionalValue</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="s">"(optional)"</span>
-  <span class="p">}</span>
-
-<span class="p">}</span>
-</code></pre>
-
-<p>To initialize <code>OptionPickerControl</code> with <code>CGRect.zero</code> and add it to the view hierarchy:</p>
-<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">optionPicker</span> <span class="o">=</span> <span class="kt">OptionPickerControl</span><span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;</span><span class="p">()</span>
-<span class="n">optionPicker</span> <span class="o">=</span> <span class="p">[</span><span class="kt">Option</span><span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;.</span><span class="nf">optional</span><span class="p">(),</span> <span class="kt">Option</span><span class="p">(</span><span class="s">"Option 1"</span><span class="p">),</span> <span class="kt">Option</span><span class="p">(</span><span class="s">"Option 2"</span><span class="p">)]</span>
-<span class="n">optionPicker</span><span class="o">.</span><span class="nf">addTarget</span><span class="p">(</span><span class="k">self</span><span class="p">,</span> <span class="nv">action</span><span class="p">:</span> <span class="kd">#selector(</span><span class="nf">didChangeOption(_:)</span><span class="kd">)</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="o">.</span><span class="n">valueChanged</span><span class="p">)</span>
-<span class="n">view</span><span class="o">.</span><span class="nf">addSubview</span><span class="p">(</span><span class="n">optionPicker</span><span class="p">)</span>
-</code></pre>
-
-<p>To show the <code>UIPickerView</code>:</p>
-<pre class="highlight swift"><code><span class="n">optionPicker</span><span class="o">.</span><span class="nf">becomeFirstResponder</span><span class="p">()</span>
-</code></pre>
 <h3 id='ictokenfield' class='heading'>ICTokenField</h3>
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">tokenField</span> <span class="o">=</span> <span class="kt">ICTokenField</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="n">rect</span><span class="p">)</span>
 <span class="n">tokenField</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="k">self</span> <span class="k">as?</span> <span class="kt">ICTokenFieldDelegate</span>
 </code></pre>
 
-<p>The characters that complete a token:</p>
+<ul>
+<li>The characters that complete a token:</li>
+</ul>
 <pre class="highlight swift"><code><span class="c1">/// Characters that complete a new token, defaults are whitespace and commas.</span>
 <span class="kd">public</span> <span class="k">var</span> <span class="nv">delimiters</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span>
 </code></pre>
 
-<p>Tokens:</p>
+<ul>
+<li>Tokens:</li>
+</ul>
 <pre class="highlight swift"><code><span class="c1">/// Texts of each created token.</span>
 <span class="kd">public</span> <span class="k">var</span> <span class="nv">texts</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span>
 
@@ -233,7 +202,9 @@ Try <a href="https://testflight.icook.tw">https://testflight.icook.tw</a>.</p>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">resetTokens</span><span class="p">()</span>
 </code></pre>
 
-<p>UI customization:</p>
+<ul>
+<li>UI customization:</li>
+</ul>
 <pre class="highlight swift"><code><span class="c1">/// The image on the left of text field.</span>
 <span class="kd">public</span> <span class="k">var</span> <span class="nv">icon</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span>
 
@@ -250,7 +221,9 @@ Try <a href="https://testflight.icook.tw">https://testflight.icook.tw</a>.</p>
 <span class="kd">public</span> <span class="k">var</span> <span class="nv">highlightedTokenAttributes</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">]?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span>
 </code></pre>
 
-<p>Customizable properties in storyboard:</p>
+<ul>
+<li>Customizable properties in storyboard:</li>
+</ul>
 <pre class="highlight swift"><code><span class="kd">@IBInspectable</span> <span class="k">var</span> <span class="nv">icon</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">?</span>
 <span class="kd">@IBInspectable</span> <span class="k">var</span> <span class="nv">placeholder</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span>
 <span class="kd">@IBInspectable</span> <span class="k">var</span> <span class="nv">textColor</span><span class="p">:</span> <span class="kt">UIColor</span><span class="p">?</span>
@@ -260,7 +233,7 @@ Try <a href="https://testflight.icook.tw">https://testflight.icook.tw</a>.</p>
 <p>See <code>Example/CustomizedTokenField.swift</code> for more details.</p>
 <h4 id='ictokenfielddelegate' class='heading'>ICTokenFieldDelegate</h4>
 
-<p><code>ICTokenField</code> currently notifies its delegate the following events:</p>
+<p><code><a href="Classes/ICTokenField.html">ICTokenField</a></code> currently notifies its delegate the following events:</p>
 <pre class="highlight swift"><code><span class="kd">@objc</span> <span class="kd">optional</span> <span class="kd">func</span> <span class="nf">tokenFieldDidBeginEditing</span><span class="p">(</span><span class="n">_</span> <span class="nv">tokenField</span><span class="p">:</span> <span class="kt">ICTokenField</span><span class="p">)</span>
 <span class="kd">@objc</span> <span class="kd">optional</span> <span class="kd">func</span> <span class="nf">tokenFieldDidEndEditing</span><span class="p">(</span><span class="n">_</span> <span class="nv">tokenField</span><span class="p">:</span> <span class="kt">ICTokenField</span><span class="p">)</span>
 <span class="kd">@objc</span> <span class="kd">optional</span> <span class="kd">func</span> <span class="nf">tokenFieldWillReturn</span><span class="p">(</span><span class="n">_</span> <span class="nv">tokenField</span><span class="p">:</span> <span class="kt">ICTokenField</span><span class="p">)</span>
@@ -316,8 +289,8 @@ Try <a href="https://testflight.icook.tw">https://testflight.icook.tw</a>.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2018 <a class="link" href="https://github.com/polydice" target="_blank" rel="external">polydice</a>. All rights reserved. (Last updated: 2018-01-21)</p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+      <p>&copy; 2018 <a class="link" href="https://github.com/polydice" target="_blank" rel="external">polydice</a>. All rights reserved. (Last updated: 2018-01-22)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
 </div>

@@ -23,7 +23,7 @@
         <a class="header-link" href="../index.html">
           ICInputAccessory Docs
         </a>
-         (73% documented)
+         (71% documented)
       </p>
 
       <p class="header-col--secondary">
@@ -62,9 +62,6 @@
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/ICTokenField.html">ICTokenField</a>
               </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Classes/OptionPickerControl.html">OptionPickerControl</a>
-              </li>
             </ul>
           </li>
           <li class="nav-group-name">
@@ -72,17 +69,6 @@
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Protocols/ICTokenFieldDelegate.html">ICTokenFieldDelegate</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Protocols/OptionDescriptive.html">OptionDescriptive</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
-            <a class="nav-group-name-link" href="../Structs.html">Structs</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Structs/Option.html">Option</a>
               </li>
             </ul>
           </li>
@@ -95,7 +81,7 @@
             <h1>ICTokenFieldDelegate</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">ICTokenFieldDelegate</span><span class="p">:</span> <span class="kt">NSObjectProtocol</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">@objc</span> <span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">ICTokenFieldDelegate</span><span class="p">:</span> <span class="kt">NSObjectProtocol</span></code></pre>
 
                 </div>
               </div>
@@ -128,7 +114,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">optional</span> <span class="kd">func</span> <span class="nf">tokenFieldDidBeginEditing</span><span class="p">(</span><span class="n">_</span> <span class="nv">tokenField</span><span class="p">:</span> <span class="kt"><a href="../Classes/ICTokenField.html">ICTokenField</a></span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span> <span class="kd">optional</span> <span class="kd">func</span> <span class="nf">tokenFieldDidBeginEditing</span><span class="p">(</span><span class="n">_</span> <span class="nv">tokenField</span><span class="p">:</span> <span class="kt"><a href="../Classes/ICTokenField.html">ICTokenField</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -158,7 +144,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">optional</span> <span class="kd">func</span> <span class="nf">tokenFieldDidEndEditing</span><span class="p">(</span><span class="n">_</span> <span class="nv">tokenField</span><span class="p">:</span> <span class="kt"><a href="../Classes/ICTokenField.html">ICTokenField</a></span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span> <span class="kd">optional</span> <span class="kd">func</span> <span class="nf">tokenFieldDidEndEditing</span><span class="p">(</span><span class="n">_</span> <span class="nv">tokenField</span><span class="p">:</span> <span class="kt"><a href="../Classes/ICTokenField.html">ICTokenField</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -188,7 +174,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">optional</span> <span class="kd">func</span> <span class="nf">tokenFieldWillReturn</span><span class="p">(</span><span class="n">_</span> <span class="nv">tokenField</span><span class="p">:</span> <span class="kt"><a href="../Classes/ICTokenField.html">ICTokenField</a></span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span> <span class="kd">optional</span> <span class="kd">func</span> <span class="nf">tokenFieldWillReturn</span><span class="p">(</span><span class="n">_</span> <span class="nv">tokenField</span><span class="p">:</span> <span class="kt"><a href="../Classes/ICTokenField.html">ICTokenField</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -218,7 +204,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">optional</span> <span class="kd">func</span> <span class="nf">tokenField</span><span class="p">(</span><span class="n">_</span> <span class="nv">tokenField</span><span class="p">:</span> <span class="kt"><a href="../Classes/ICTokenField.html">ICTokenField</a></span><span class="p">,</span> <span class="n">didChangeInputText</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span> <span class="kd">optional</span> <span class="kd">func</span> <span class="nf">tokenField</span><span class="p">(</span><span class="n">_</span> <span class="nv">tokenField</span><span class="p">:</span> <span class="kt"><a href="../Classes/ICTokenField.html">ICTokenField</a></span><span class="p">,</span> <span class="n">didChangeInputText</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -248,7 +234,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">optional</span> <span class="kd">func</span> <span class="nf">tokenField</span><span class="p">(</span><span class="n">_</span> <span class="nv">tokenField</span><span class="p">:</span> <span class="kt"><a href="../Classes/ICTokenField.html">ICTokenField</a></span><span class="p">,</span> <span class="n">shouldCompleteText</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span> <span class="kd">optional</span> <span class="kd">func</span> <span class="nf">tokenField</span><span class="p">(</span><span class="n">_</span> <span class="nv">tokenField</span><span class="p">:</span> <span class="kt"><a href="../Classes/ICTokenField.html">ICTokenField</a></span><span class="p">,</span> <span class="n">shouldCompleteText</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
 
                         </div>
                       </div>
@@ -278,7 +264,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">optional</span> <span class="kd">func</span> <span class="nf">tokenField</span><span class="p">(</span><span class="n">_</span> <span class="nv">tokenField</span><span class="p">:</span> <span class="kt"><a href="../Classes/ICTokenField.html">ICTokenField</a></span><span class="p">,</span> <span class="n">didCompleteText</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span> <span class="kd">optional</span> <span class="kd">func</span> <span class="nf">tokenField</span><span class="p">(</span><span class="n">_</span> <span class="nv">tokenField</span><span class="p">:</span> <span class="kt"><a href="../Classes/ICTokenField.html">ICTokenField</a></span><span class="p">,</span> <span class="n">didCompleteText</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -308,7 +294,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">optional</span> <span class="kd">func</span> <span class="nf">tokenField</span><span class="p">(</span><span class="n">_</span> <span class="nv">tokenField</span><span class="p">:</span> <span class="kt"><a href="../Classes/ICTokenField.html">ICTokenField</a></span><span class="p">,</span> <span class="n">didDeleteText</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">atIndex</span> <span class="nv">index</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span> <span class="kd">optional</span> <span class="kd">func</span> <span class="nf">tokenField</span><span class="p">(</span><span class="n">_</span> <span class="nv">tokenField</span><span class="p">:</span> <span class="kt"><a href="../Classes/ICTokenField.html">ICTokenField</a></span><span class="p">,</span> <span class="n">didDeleteText</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">atIndex</span> <span class="nv">index</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -338,7 +324,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">optional</span> <span class="kd">func</span> <span class="nf">tokenField</span><span class="p">(</span><span class="n">_</span> <span class="nv">tokenField</span><span class="p">:</span> <span class="kt"><a href="../Classes/ICTokenField.html">ICTokenField</a></span><span class="p">,</span> <span class="n">subsequentDelimiterForCompletedText</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span> <span class="kd">optional</span> <span class="kd">func</span> <span class="nf">tokenField</span><span class="p">(</span><span class="n">_</span> <span class="nv">tokenField</span><span class="p">:</span> <span class="kt"><a href="../Classes/ICTokenField.html">ICTokenField</a></span><span class="p">,</span> <span class="n">subsequentDelimiterForCompletedText</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
 
                         </div>
                       </div>
@@ -356,8 +342,8 @@
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2018 <a class="link" href="https://github.com/polydice" target="_blank" rel="external">polydice</a>. All rights reserved. (Last updated: 2018-01-21)</p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+      <p>&copy; 2018 <a class="link" href="https://github.com/polydice" target="_blank" rel="external">polydice</a>. All rights reserved. (Last updated: 2018-01-22)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
 </div>

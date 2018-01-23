@@ -92,7 +92,7 @@ open class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDelega
       if let text = newValue {
         attributedPlaceholder = NSAttributedString(
           string: text,
-          attributes: [NSForegroundColorAttributeName: UIColor(red: 0.78, green: 0.78, blue: 0.80, alpha: 0.9)]
+          attributes: [.foregroundColor: UIColor(red: 0.78, green: 0.78, blue: 0.80, alpha: 0.9)]
         )
       } else {
         attributedPlaceholder = nil
@@ -114,7 +114,7 @@ open class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDelega
       if placeholderLabel.superview != nil { return }
       insertSubview(placeholderLabel, belowSubview: scrollView)
       placeholderLabel.translatesAutoresizingMaskIntoConstraints = false
-      placeholderLabel.setContentHuggingPriority(UILayoutPriorityDefaultLow - 1, for: .horizontal)
+      placeholderLabel.setContentHuggingPriority(UILayoutPriority(rawValue: UILayoutPriority.defaultLow.rawValue - 1), for: .horizontal)
       addConstraint(NSLayoutConstraint(item: placeholderLabel, attribute: .leading, relatedBy: .equal, toItem: scrollView, attribute: .leading, multiplier: 1, constant: 0))
       addConstraint(NSLayoutConstraint(item: placeholderLabel, attribute: .trailing, relatedBy: .greaterThanOrEqual, toItem: scrollView, attribute: .trailing, multiplier: 1, constant: 10))
       addConstraint(NSLayoutConstraint(item: placeholderLabel, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1, constant: 0))
@@ -122,14 +122,14 @@ open class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDelega
   }
 
   /// Customized attributes for tokens in the normal state, e.g. `NSFontAttributeName` and `NSForegroundColorAttributeName`.
-  public var normalTokenAttributes: [String: NSObject]? {
+  public var normalTokenAttributes: [NSAttributedStringKey: NSObject]? {
     didSet {
       tokens.forEach { $0.normalTextAttributes = normalTokenAttributes ?? [:] }
     }
   }
 
   /// Customized attributes for tokens in the highlighted state.
-  public var highlightedTokenAttributes: [String: NSObject]? {
+  public var highlightedTokenAttributes: [NSAttributedStringKey: NSObject]? {
     didSet {
       tokens.forEach { $0.highlightedTextAttributes = normalTokenAttributes ?? [:] }
     }
@@ -301,7 +301,7 @@ open class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDelega
       }
 
       let index = text.index(text.endIndex, offsetBy: -delimiter.characters.count)
-      let newText = text.substring(to: index)
+      let newText = String(text[..<index])
 
       if !newText.isEmpty && newText != delimiter && (delegate?.tokenField?(self, shouldCompleteText: newText) ?? true) {
         tokens.append(customizedToken(with: newText))
@@ -344,7 +344,7 @@ open class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDelega
       // textField(_:shouldChangeCharactersIn:replacementString:) is skipped when the delete key is pressed.
       // Notify the delegate of the changed input text manually.
       let index = text.index(text.endIndex, offsetBy: -1)
-      delegate?.tokenField?(self, didChangeInputText: text.substring(to: index))
+      delegate?.tokenField?(self, didChangeInputText: String(text[..<index]))
     }
 
     return true

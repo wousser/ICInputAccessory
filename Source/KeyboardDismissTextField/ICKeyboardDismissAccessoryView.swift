@@ -53,7 +53,7 @@ open class ICKeyboardDismissAccessoryView: UIView {
   }()
 
   private struct Constants {
-    static let ButtonColor = UIColor(red:0.21, green:0.2, blue:0.19, alpha:0.5)
+    static let ButtonColor = UIColor(red: 0.21, green: 0.2, blue: 0.19, alpha: 0.5)
     static let EdgePadding = CGFloat(7)
     static let InteractiveSize = CGSize(width: 44, height: 44)
   }

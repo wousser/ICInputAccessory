@@ -8,15 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		B2DE3D9763F12E231BC56717 /* Pods_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BF6D42E3926584426ECDFE2 /* Pods_Example.framework */; };
-		B528196C1C9035BE007D01D5 /* ICBackspaceTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52819681C9035BE007D01D5 /* ICBackspaceTextField.swift */; };
-		B528196D1C9035BE007D01D5 /* ICInsetLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52819691C9035BE007D01D5 /* ICInsetLabel.swift */; };
-		B528196E1C9035BE007D01D5 /* ICToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = B528196A1C9035BE007D01D5 /* ICToken.swift */; };
-		B528196F1C9035BE007D01D5 /* ICTokenField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B528196B1C9035BE007D01D5 /* ICTokenField.swift */; };
+		B528196C1C9035BE007D01D5 /* BackspaceTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52819681C9035BE007D01D5 /* BackspaceTextField.swift */; };
+		B528196D1C9035BE007D01D5 /* InsetLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52819691C9035BE007D01D5 /* InsetLabel.swift */; };
+		B528196E1C9035BE007D01D5 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = B528196A1C9035BE007D01D5 /* Token.swift */; };
+		B528196F1C9035BE007D01D5 /* TokenField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B528196B1C9035BE007D01D5 /* TokenField.swift */; };
 		B533768B1F4436D000230739 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B533768A1F4436D000230739 /* AppDelegate.swift */; };
 		B53376921F4436D000230739 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B53376911F4436D000230739 /* Assets.xcassets */; };
 		B53376951F4436D000230739 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B53376931F4436D000230739 /* LaunchScreen.storyboard */; };
 		B53376AB1F4437D900230739 /* ICKeyboardDismissTextFieldUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53376A91F4437D900230739 /* ICKeyboardDismissTextFieldUITests.swift */; };
-		B53376AC1F4437D900230739 /* ICTokenFieldUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53376AA1F4437D900230739 /* ICTokenFieldUITests.swift */; };
+		B53376AC1F4437D900230739 /* TokenFieldUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53376AA1F4437D900230739 /* TokenFieldUITests.swift */; };
 		B53376B31F44387000230739 /* CustomizedTokenField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53376AD1F44387000230739 /* CustomizedTokenField.swift */; };
 		B53376B41F44387000230739 /* CustomizedTokenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53376AE1F44387000230739 /* CustomizedTokenViewController.swift */; };
 		B53376B51F44387000230739 /* ExampleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53376AF1F44387000230739 /* ExampleCell.swift */; };
@@ -66,10 +66,10 @@
 		05C165FF29CCF16E184D992C /* Pods-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Example/Pods-Example.release.xcconfig"; sourceTree = "<group>"; };
 		2BF6D42E3926584426ECDFE2 /* Pods_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		75194B6A5953690B736EFCD1 /* Pods-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Example/Pods-Example.debug.xcconfig"; sourceTree = "<group>"; };
-		B52819681C9035BE007D01D5 /* ICBackspaceTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ICBackspaceTextField.swift; path = Source/TokenField/ICBackspaceTextField.swift; sourceTree = SOURCE_ROOT; };
-		B52819691C9035BE007D01D5 /* ICInsetLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ICInsetLabel.swift; path = Source/TokenField/ICInsetLabel.swift; sourceTree = SOURCE_ROOT; };
-		B528196A1C9035BE007D01D5 /* ICToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ICToken.swift; path = Source/TokenField/ICToken.swift; sourceTree = SOURCE_ROOT; };
-		B528196B1C9035BE007D01D5 /* ICTokenField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ICTokenField.swift; path = Source/TokenField/ICTokenField.swift; sourceTree = SOURCE_ROOT; };
+		B52819681C9035BE007D01D5 /* BackspaceTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BackspaceTextField.swift; path = Source/TokenField/BackspaceTextField.swift; sourceTree = SOURCE_ROOT; };
+		B52819691C9035BE007D01D5 /* InsetLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InsetLabel.swift; path = Source/TokenField/InsetLabel.swift; sourceTree = SOURCE_ROOT; };
+		B528196A1C9035BE007D01D5 /* Token.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Token.swift; path = Source/TokenField/Token.swift; sourceTree = SOURCE_ROOT; };
+		B528196B1C9035BE007D01D5 /* TokenField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TokenField.swift; path = Source/TokenField/TokenField.swift; sourceTree = SOURCE_ROOT; };
 		B53376881F4436D000230739 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B533768A1F4436D000230739 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B53376911F4436D000230739 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -78,7 +78,7 @@
 		B533769B1F4436D000230739 /* ICInputAccessoryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ICInputAccessoryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B53376A11F4436D000230739 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ICInputAccessoryUITests/Info.plist; sourceTree = SOURCE_ROOT; };
 		B53376A91F4437D900230739 /* ICKeyboardDismissTextFieldUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ICKeyboardDismissTextFieldUITests.swift; path = ICInputAccessoryUITests/ICKeyboardDismissTextFieldUITests.swift; sourceTree = SOURCE_ROOT; };
-		B53376AA1F4437D900230739 /* ICTokenFieldUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ICTokenFieldUITests.swift; path = ICInputAccessoryUITests/ICTokenFieldUITests.swift; sourceTree = SOURCE_ROOT; };
+		B53376AA1F4437D900230739 /* TokenFieldUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TokenFieldUITests.swift; path = ICInputAccessoryUITests/TokenFieldUITests.swift; sourceTree = SOURCE_ROOT; };
 		B53376AD1F44387000230739 /* CustomizedTokenField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomizedTokenField.swift; sourceTree = "<group>"; };
 		B53376AE1F44387000230739 /* CustomizedTokenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomizedTokenViewController.swift; sourceTree = "<group>"; };
 		B53376AF1F44387000230739 /* ExampleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleCell.swift; sourceTree = "<group>"; };
@@ -137,15 +137,15 @@
 			name = ICKeyboardDismissAccessory;
 			sourceTree = "<group>";
 		};
-		B52819701C9035C3007D01D5 /* ICTokenField */ = {
+		B52819701C9035C3007D01D5 /* TokenField */ = {
 			isa = PBXGroup;
 			children = (
-				B52819681C9035BE007D01D5 /* ICBackspaceTextField.swift */,
-				B52819691C9035BE007D01D5 /* ICInsetLabel.swift */,
-				B528196A1C9035BE007D01D5 /* ICToken.swift */,
-				B528196B1C9035BE007D01D5 /* ICTokenField.swift */,
+				B52819681C9035BE007D01D5 /* BackspaceTextField.swift */,
+				B52819691C9035BE007D01D5 /* InsetLabel.swift */,
+				B528196A1C9035BE007D01D5 /* Token.swift */,
+				B528196B1C9035BE007D01D5 /* TokenField.swift */,
 			);
-			name = ICTokenField;
+			name = TokenField;
 			sourceTree = "<group>";
 		};
 		B53376891F4436D000230739 /* Example */ = {
@@ -169,8 +169,8 @@
 			isa = PBXGroup;
 			children = (
 				B53376A91F4437D900230739 /* ICKeyboardDismissTextFieldUITests.swift */,
-				B53376AA1F4437D900230739 /* ICTokenFieldUITests.swift */,
 				B53376A11F4436D000230739 /* Info.plist */,
+				B53376AA1F4437D900230739 /* TokenFieldUITests.swift */,
 			);
 			name = ICInputAccessoryUITests;
 			path = ExampleUITests;
@@ -202,7 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				B52819671C90358C007D01D5 /* ICKeyboardDismissAccessory */,
-				B52819701C9035C3007D01D5 /* ICTokenField */,
+				B52819701C9035C3007D01D5 /* TokenField */,
 				B56BC42D1C89A7EA00C20AD6 /* ICInputAccessory.h */,
 				B548C5AC1C8D69A5009D5AEE /* Images.xcassets */,
 				B56BC42F1C89A7EA00C20AD6 /* Info.plist */,
@@ -419,7 +419,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B53376AB1F4437D900230739 /* ICKeyboardDismissTextFieldUITests.swift in Sources */,
-				B53376AC1F4437D900230739 /* ICTokenFieldUITests.swift in Sources */,
+				B53376AC1F4437D900230739 /* TokenFieldUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,12 +427,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B528196C1C9035BE007D01D5 /* ICBackspaceTextField.swift in Sources */,
-				B528196D1C9035BE007D01D5 /* ICInsetLabel.swift in Sources */,
+				B528196C1C9035BE007D01D5 /* BackspaceTextField.swift in Sources */,
 				B56BC4361C89A8D800C20AD6 /* ICKeyboardDismissAccessoryView.swift in Sources */,
 				B548C5EE1C8EB9E2009D5AEE /* ICKeyboardDismissTextField.swift in Sources */,
-				B528196E1C9035BE007D01D5 /* ICToken.swift in Sources */,
-				B528196F1C9035BE007D01D5 /* ICTokenField.swift in Sources */,
+				B528196D1C9035BE007D01D5 /* InsetLabel.swift in Sources */,
+				B528196E1C9035BE007D01D5 /* Token.swift in Sources */,
+				B528196F1C9035BE007D01D5 /* TokenField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

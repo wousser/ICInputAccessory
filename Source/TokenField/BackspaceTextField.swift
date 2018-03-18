@@ -1,5 +1,5 @@
 //
-//  ICBackspaceTextField.swift
+//  BackspaceTextField.swift
 //  iCook
 //
 //  Created by Ben on 02/03/2016.
@@ -26,16 +26,16 @@
 
 import UIKit
 
-protocol ICBackspaceTextFieldDelegate: class {
-  func textFieldShouldDelete(_ textField: ICBackspaceTextField) -> Bool
+internal protocol BackspaceTextFieldDelegate: class {
+  func textFieldShouldDelete(_ textField: BackspaceTextField) -> Bool
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 
 
-class ICBackspaceTextField: UITextField {
+internal class BackspaceTextField: UITextField {
 
-  weak var backspaceDelegate: ICBackspaceTextFieldDelegate?
+  weak var backspaceDelegate: BackspaceTextFieldDelegate?
 
   var showsCursor = true {
     didSet {

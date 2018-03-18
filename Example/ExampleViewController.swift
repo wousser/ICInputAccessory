@@ -31,7 +31,7 @@ class ExampleViewController: UITableViewController {
 
   private let types: [UIView.Type] = [
     ICKeyboardDismissTextField.self,
-    ICTokenField.self,
+    TokenField.self,
     CustomizedTokenField.self
   ]
 
@@ -74,7 +74,7 @@ class ExampleViewController: UITableViewController {
     switch types[section] {
     case is ICKeyboardDismissTextField.Type:
       return "Dismiss Keyboard"
-    case is ICTokenField.Type:
+    case is TokenField.Type:
       return "Text Field with Tokens"
     case is CustomizedTokenField.Type:
       return "Customize Token Field"
@@ -98,7 +98,7 @@ class ExampleViewController: UITableViewController {
       cell.textLabel?.text = String(describing: type)
       cell.accessoryType = .disclosureIndicator
 
-    case let type as ICTokenField.Type:
+    case let type as TokenField.Type:
       let container = UIView(frame: cell.bounds)
       let tokenField = type.init()
       tokenField.placeholder = String(describing: type)

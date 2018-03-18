@@ -27,7 +27,7 @@
 import UIKit
 import ICInputAccessory
 
-class CustomizedTokenField: ICTokenField {
+class CustomizedTokenField: TokenField {
 
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -49,7 +49,7 @@ class CustomizedTokenField: ICTokenField {
 ////////////////////////////////////////////////////////////////////////////////
 
 
-extension ICTokenField {
+extension TokenField {
 
   func applyCustomizedStyle() {
     icon = UIImage(named: "icook-iphone-input-search")

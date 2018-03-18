@@ -29,7 +29,7 @@ import ICInputAccessory
 
 class StoryboardViewController: UITableViewController {
 
-  @IBOutlet weak var tokenField: ICTokenField! {
+  @IBOutlet weak var tokenField: TokenField! {
     didSet {
       tokenField.normalTokenAttributes = [
         .foregroundColor: UIColor.white,

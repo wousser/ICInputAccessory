@@ -1,5 +1,5 @@
 //
-//  ICToken.swift
+//  Token.swift
 //  iCook
 //
 //  Created by Ben on 03/03/2016.
@@ -26,7 +26,7 @@
 
 import UIKit
 
-class ICToken: UIView {
+internal class Token: UIView {
 
   var text = "" {
     didSet {
@@ -70,7 +70,7 @@ class ICToken: UIView {
   }()
 
   private(set) lazy var textLabel: UILabel = {
-    let _label = ICInsetLabel(contentEdgeInsets: UIEdgeInsets(top: 3, left: 5, bottom: 3, right: 5), cornerRadius: .constant(3))
+    let _label = InsetLabel(contentEdgeInsets: UIEdgeInsets(top: 3, left: 5, bottom: 3, right: 5), cornerRadius: .constant(3))
     _label.textAlignment = .center
     _label.textColor = self.normalTextAttributes[.foregroundColor] as? UIColor
     _label.backgroundColor = self.normalTextAttributes[.backgroundColor] as? UIColor

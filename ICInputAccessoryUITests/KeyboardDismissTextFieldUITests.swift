@@ -1,5 +1,5 @@
 //
-//  ICKeyboardDismissTextFieldUITests.swift
+//  KeyboardDismissTextFieldUITests.swift
 //  ICInputAccessoryUITests
 //
 //  Created by Ben on 20/03/2016.
@@ -26,7 +26,7 @@
 
 import XCTest
 
-class ICKeyboardDismissTextFieldUITests: XCTestCase {
+class KeyboardDismissTextFieldUITests: XCTestCase {
 
   private lazy var app = XCUIApplication()
 
@@ -37,13 +37,13 @@ class ICKeyboardDismissTextFieldUITests: XCTestCase {
   }
 
   func testKeyboardDismissing() {
-    app.tables.textFields["ICKeyboardDismissTextField"].tap()
+    app.tables.textFields["KeyboardDismissTextField"].tap()
     app.buttons["Dismiss Keyboard"].tap()
   }
 
   func testStoryboard() {
     app.tables.buttons["Storyboard"].tap()
-    app.tables.textFields["Storyboard ICKeyboardDismissTextField"].tap()
+    app.tables.textFields["Storyboard KeyboardDismissTextField"].tap()
     app.buttons["Dismiss Keyboard"].tap()
     app.tables.buttons["Back to Code"].tap()
   }

@@ -30,7 +30,7 @@ import ICInputAccessory
 class ExampleViewController: UITableViewController {
 
   private let types: [UIView.Type] = [
-    ICKeyboardDismissTextField.self,
+    KeyboardDismissTextField.self,
     TokenField.self,
     CustomizedTokenField.self
   ]
@@ -72,7 +72,7 @@ class ExampleViewController: UITableViewController {
 
   override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
     switch types[section] {
-    case is ICKeyboardDismissTextField.Type:
+    case is KeyboardDismissTextField.Type:
       return "Dismiss Keyboard"
     case is TokenField.Type:
       return "Text Field with Tokens"
@@ -87,7 +87,7 @@ class ExampleViewController: UITableViewController {
     let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ExampleCell.self), for: indexPath)
 
     switch types[indexPath.section] {
-    case let type as ICKeyboardDismissTextField.Type:
+    case let type as KeyboardDismissTextField.Type:
       let textField = type.init()
       textField.leftViewMode = .always
       textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: 15))

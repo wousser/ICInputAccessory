@@ -19,6 +19,7 @@ Pod::Spec.new do |s|
   s.license       = { type: "MIT", file: "LICENSE" }
   s.authors       = "bcylin", "trisix"
   s.platform      = :ios, "8.0"
+  s.swift_version = "4.0"
   s.source        = { git: "https://github.com/polydice/ICInputAccessory.git", tag: "v#{s.version}" }
   s.requires_arc  = true
 

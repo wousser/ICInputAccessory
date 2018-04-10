@@ -1,5 +1,6 @@
 disabled_rules:
   - file_length
+  - identifier_name
   - line_length
   - type_body_length
   - vertical_whitespace

@@ -5,5 +5,5 @@ workspace "ICInputAccessory"
 project "ICInputAccessory"
 
 target "Example" do
-  pod "SwiftLint", "0.19.0"
+  pod "SwiftLint", podspec: "https://raw.githubusercontent.com/CocoaPods/Specs/master/Specs/4/0/1/SwiftLint/0.25.1/SwiftLint.podspec.json"
 end

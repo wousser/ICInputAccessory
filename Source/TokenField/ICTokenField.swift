@@ -300,7 +300,7 @@ open class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDelega
         continue
       }
 
-      let index = text.index(text.endIndex, offsetBy: -delimiter.characters.count)
+      let index = text.index(text.endIndex, offsetBy: -delimiter.count)
       let newText = String(text[..<index])
 
       if !newText.isEmpty && newText != delimiter && (delegate?.tokenField?(self, shouldCompleteText: newText) ?? true) {

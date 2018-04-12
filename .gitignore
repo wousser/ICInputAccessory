@@ -22,11 +22,15 @@ xcuserdata
 *.moved-aside
 *.xcuserstate
 *.xcscmblueprint
-docs
 
 ## Obj-C/Swift specific
 *.hmap
 *.ipa
+
+## Docs
+undocumented.json
+*.docset
+*.tgz
 
 ## CocoaPods
 Pods/

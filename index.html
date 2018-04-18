@@ -53,13 +53,13 @@
             <a class="nav-group-name-link" href="Classes.html">Classes</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Classes/KeyboardDismissAccessoryView.html">KeyboardDismissAccessoryView</a>
+                <a class="nav-group-task-link" href="Classes/ICKeyboardDismissAccessoryView.html">ICKeyboardDismissAccessoryView</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Classes/KeyboardDismissTextField.html">KeyboardDismissTextField</a>
+                <a class="nav-group-task-link" href="Classes/ICKeyboardDismissTextField.html">ICKeyboardDismissTextField</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Classes/TokenField.html">TokenField</a>
+                <a class="nav-group-task-link" href="Classes/ICTokenField.html">ICTokenField</a>
               </li>
             </ul>
           </li>
@@ -67,7 +67,7 @@
             <a class="nav-group-name-link" href="Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Protocols/TokenFieldDelegate.html">TokenFieldDelegate</a>
+                <a class="nav-group-task-link" href="Protocols/ICTokenFieldDelegate.html">ICTokenFieldDelegate</a>
               </li>
             </ul>
           </li>
@@ -80,14 +80,13 @@
 
             <h1 id='icinputaccessory' class='heading'>ICInputAccessory</h1>
 
-<p>Customized text fields used in the <a href="https://itunes.apple.com/app/id554065086">iCook app</a>.
-Try <a href="https://testflight.icook.tw">https://testflight.icook.tw</a>.</p>
+<p>Customized text fields used in the <a href="https://itunes.apple.com/app/id554065086">iCook app</a>.</p>
 
 <p><a href="https://travis-ci.org/polydice/ICInputAccessory"><img src="https://travis-ci.org/polydice/ICInputAccessory.svg" alt="Build Status"></a>
 <a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg" alt="Carthage compatible"></a>
 <a href="https://cocoapods.org/pods/ICInputAccessory"><img src="https://img.shields.io/cocoapods/v/ICInputAccessory.svg" alt="CocoaPods Compatible"></a>
 <img src="https://img.shields.io/cocoapods/p/ICInputAccessory.svg" alt="Platform">
-<img src="https://img.shields.io/badge/Swift-4.0-orange.svg" alt="Swift 4"></p>
+<img src="https://img.shields.io/badge/Swift-4.1-orange.svg" alt="Swift 4.1"></p>
 <h3 id='ickeyboarddismisstextfield' class='heading'>ICKeyboardDismissTextField</h3>
 
 <ul>
@@ -144,10 +143,10 @@ Try <a href="https://testflight.icook.tw">https://testflight.icook.tw</a>.</p>
 <td><img src="https://img.shields.io/badge/Swift-3.1-orange.svg" alt="Swift 3.1"></td>
 </tr>
 <tr>
-<td><code>develop</code></td>
+<td><code>~&gt; 1.5.0</code></td>
 <td style="text-align: center">8.0+</td>
-<td style="text-align: center">9.0</td>
-<td><img src="https://img.shields.io/badge/Swift-4.0-orange.svg" alt="Swift 4.0"></td>
+<td style="text-align: center">9.3</td>
+<td><img src="https://img.shields.io/badge/Swift-4.1-orange.svg" alt="Swift 4.1"></td>
 </tr>
 </tbody></table>
 <h2 id='installation' class='heading'>Installation</h2>
@@ -233,7 +232,7 @@ Try <a href="https://testflight.icook.tw">https://testflight.icook.tw</a>.</p>
 <p>See <code>Example/CustomizedTokenField.swift</code> for more details.</p>
 <h4 id='ictokenfielddelegate' class='heading'>ICTokenFieldDelegate</h4>
 
-<p><code>ICTokenField</code> currently notifies its delegate the following events:</p>
+<p><code><a href="Classes/ICTokenField.html">ICTokenField</a></code> currently notifies its delegate the following events:</p>
 <pre class="highlight swift"><code><span class="kd">@objc</span> <span class="kd">optional</span> <span class="kd">func</span> <span class="nf">tokenFieldDidBeginEditing</span><span class="p">(</span><span class="n">_</span> <span class="nv">tokenField</span><span class="p">:</span> <span class="kt">ICTokenField</span><span class="p">)</span>
 <span class="kd">@objc</span> <span class="kd">optional</span> <span class="kd">func</span> <span class="nf">tokenFieldDidEndEditing</span><span class="p">(</span><span class="n">_</span> <span class="nv">tokenField</span><span class="p">:</span> <span class="kt">ICTokenField</span><span class="p">)</span>
 <span class="kd">@objc</span> <span class="kd">optional</span> <span class="kd">func</span> <span class="nf">tokenFieldWillReturn</span><span class="p">(</span><span class="n">_</span> <span class="nv">tokenField</span><span class="p">:</span> <span class="kt">ICTokenField</span><span class="p">)</span>
@@ -289,7 +288,7 @@ Try <a href="https://testflight.icook.tw">https://testflight.icook.tw</a>.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2018 <a class="link" href="https://github.com/polydice" target="_blank" rel="external">polydice</a>. All rights reserved. (Last updated: 2018-04-10)</p>
+      <p>&copy; 2018 <a class="link" href="https://github.com/polydice" target="_blank" rel="external">polydice</a>. All rights reserved. (Last updated: 2018-04-18)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

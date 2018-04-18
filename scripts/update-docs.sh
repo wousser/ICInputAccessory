@@ -17,7 +17,9 @@ git --no-pager diff --stat
 git add .
 git commit -m "[CI] Update documentation at $(date +'%Y-%m-%d %H:%M:%S %z')"
 
-if [ "${TRAVIS_COMMIT_MESSAGE}" = Merge* ] && [ "${TRAVIS_BRANCH}" = "master" ] && [ -n "$DANGER_GITHUB_API_TOKEN" ]; then
+if ! [ -n "$DANGER_GITHUB_API_TOKEN" ]; then
+  echo "Missing GitHub API token"
+elif [ "${TRAVIS_BRANCH}" = "develop" ] && [ "${TRAVIS_PULL_REQUEST}" = false ]; then
   echo "Updating gh-pages..."
   git remote add upstream "https://${DANGER_GITHUB_API_TOKEN}@github.com/polydice/ICInputAccessory.git"
   git push --quiet upstream HEAD:gh-pages

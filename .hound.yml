@@ -1,3 +1,11 @@
+eslint:
+  enabled: false
+jshint:
+  enabled: false
+sass-lint:
+  enabled: false
+scss:
+  enabled: false
 swift:
   enabled: true
   config_file: .swiftlint.yml

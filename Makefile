@@ -24,7 +24,8 @@ carthage:
 	set -o pipefail && carthage build --no-skip-current --verbose | bundle exec xcpretty
 
 docs:
-	test -d docs || git clone -b gh-pages --single-branch https://github.com/polydice/ICInputAccessory.git docs
-	cd docs && git fetch origin gh-pages && git clean -f -d
-	cd docs && git checkout gh-pages && git reset --hard origin/gh-pages
 	bundle exec jazzy --config .jazzy.yml
+	for file in "html" "css" "js" "json"; do \
+		echo "Trimming whitespace in *."$$file ; \
+		find docs -name "*."$$file -exec sed -E -i "" -e "s/[[:blank:]]*$$//" {} \; ; \
+	done

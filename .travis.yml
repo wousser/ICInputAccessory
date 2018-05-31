@@ -17,8 +17,6 @@ script:
   - bundle exec rake ci:test
   - make -B carthage
   - make -B docs
-after_script:
-  - sh scripts/update-docs.sh
 notifications:
   email: false
   slack:

@@ -1,5 +1,5 @@
 //
-//  ICTokenField.swift
+//  TokenField.swift
 //  iCook
 //
 //  Created by Ben on 01/03/2016.
@@ -27,34 +27,34 @@
 import UIKit
 
 /// The protocol defines the messages sent to a delegate. All the methods are optional.
-@objc public protocol ICTokenFieldDelegate: NSObjectProtocol {
+@objc public protocol TokenFieldDelegate: NSObjectProtocol {
   /// Tells the delegate that editing began for the token field.
-  @objc optional func tokenFieldDidBeginEditing(_ tokenField: ICTokenField)
+  @objc optional func tokenFieldDidBeginEditing(_ tokenField: TokenField)
   /// Tells the delegate that editing stopped for the token field.
-  @objc optional func tokenFieldDidEndEditing(_ tokenField: ICTokenField)
+  @objc optional func tokenFieldDidEndEditing(_ tokenField: TokenField)
   /// Tells the delegate that the token field will process the pressing of the return button.
-  @objc optional func tokenFieldWillReturn(_ tokenField: ICTokenField)
+  @objc optional func tokenFieldWillReturn(_ tokenField: TokenField)
   /// Tells the delegate the input text is changed.
-  @objc optional func tokenField(_ tokenField: ICTokenField, didChangeInputText text: String)
+  @objc optional func tokenField(_ tokenField: TokenField, didChangeInputText text: String)
   /// Asks the delegate if the text should become a token in the token field.
-  @objc optional func tokenField(_ tokenField: ICTokenField, shouldCompleteText text: String) -> Bool
+  @objc optional func tokenField(_ tokenField: TokenField, shouldCompleteText text: String) -> Bool
   /// Tells the delegate that the text becomes a token in the token field.
-  @objc optional func tokenField(_ tokenField: ICTokenField, didCompleteText text: String)
+  @objc optional func tokenField(_ tokenField: TokenField, didCompleteText text: String)
   /// Tells the delegate that the token at certain index is removed from the token field.
-  @objc optional func tokenField(_ tokenField: ICTokenField, didDeleteText text: String, atIndex index: Int)
+  @objc optional func tokenField(_ tokenField: TokenField, didDeleteText text: String, atIndex index: Int)
   /// Asks the delegate for the subsequent delimiter string for a completed text in the token field.
-  @objc optional func tokenField(_ tokenField: ICTokenField, subsequentDelimiterForCompletedText text: String) -> String
+  @objc optional func tokenField(_ tokenField: TokenField, subsequentDelimiterForCompletedText text: String) -> String
 }
 
 
 /// A text field that groups input texts with delimiters.
 @IBDesignable
-open class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDelegate {
+open class TokenField: UIView, UITextFieldDelegate, BackspaceTextFieldDelegate {
 
   // MARK: - Public Properties
 
   /// The receiver's delegate.
-  public weak var delegate: ICTokenFieldDelegate?
+  public weak var delegate: TokenFieldDelegate?
 
   /// Characters that completes a new token, defaults are whitespace and commas.
   public var delimiters = [" ", ",", "，"]
@@ -78,7 +78,7 @@ open class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDelega
   }
 
   /// The text field that handles text inputs.
-  /// Do not change textField's delegate, which is required to be handled by ICTokenField.
+  /// Do not change textField's delegate, which is required to be handled by `TokenField`.
   public var textField: UITextField {
     return inputTextField
   }
@@ -166,10 +166,10 @@ open class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDelega
 
   // MARK: - Private Properties
 
-  private var tokens = [ICToken]()
+  private var tokens = [Token]()
 
-  private lazy var inputTextField: ICBackspaceTextField = {
-    let _textField = ICBackspaceTextField()
+  private lazy var inputTextField: BackspaceTextField = {
+    let _textField = BackspaceTextField()
     _textField.backgroundColor = UIColor.clear
     _textField.clearButtonMode = .whileEditing
     _textField.autocorrectionType = .no
@@ -325,9 +325,9 @@ open class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDelega
     return true
   }
 
-  // MARK: - ICBackspaceTextFieldDelegate
+  // MARK: - BackspaceTextFieldDelegate
 
-  @nonobjc func textFieldShouldDelete(_ textField: ICBackspaceTextField) -> Bool {
+  @nonobjc func textFieldShouldDelete(_ textField: BackspaceTextField) -> Bool {
     if !textField.showsCursor {
       _ = removeHighlightedToken()
       return true
@@ -381,11 +381,11 @@ open class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDelega
 
   // MARK: - Private Methods
 
-  private func customizedToken(with text: String) -> ICToken {
+  private func customizedToken(with text: String) -> Token {
     if let string = delegate?.tokenField?(self, subsequentDelimiterForCompletedText: text) {
-      return ICToken(text: text, delimiter: string, normalAttributes: normalTokenAttributes, highlightedAttributes: highlightedTokenAttributes)
+      return Token(text: text, delimiter: string, normalAttributes: normalTokenAttributes, highlightedAttributes: highlightedTokenAttributes)
     } else {
-      return ICToken(text: text, normalAttributes: normalTokenAttributes, highlightedAttributes: highlightedTokenAttributes)
+      return Token(text: text, normalAttributes: normalTokenAttributes, highlightedAttributes: highlightedTokenAttributes)
     }
   }
 
@@ -424,7 +424,7 @@ open class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDelega
     var offset = CGFloat(0)
     var contentRect = CGRect.zero
 
-    scrollView.subviews.filter { $0 is ICToken } .forEach { $0.removeFromSuperview() }
+    scrollView.subviews.filter { $0 is Token } .forEach { $0.removeFromSuperview() }
 
     for token in tokens {
       let frame = CGRect(
@@ -486,6 +486,6 @@ open class ICTokenField: UIView, UITextFieldDelegate, ICBackspaceTextFieldDelega
 
 
 private extension Selector {
-  static let togglePlaceholderIfNeeded = #selector(ICTokenField.togglePlaceholderIfNeeded(_:))
-  static let handleTapGesture = #selector(ICTokenField.handleTapGesture(_:))
+  static let togglePlaceholderIfNeeded = #selector(TokenField.togglePlaceholderIfNeeded(_:))
+  static let handleTapGesture = #selector(TokenField.handleTapGesture(_:))
 }

@@ -1,5 +1,5 @@
 //
-//  ICInsetLabel.swift
+//  InsetLabel.swift
 //  iCook
 //
 //  Created by Ben on 10/07/2015.
@@ -26,7 +26,7 @@
 
 import UIKit
 
-class ICInsetLabel: UILabel {
+internal class InsetLabel: UILabel {
 
   enum CornerRadius {
     case dynamic

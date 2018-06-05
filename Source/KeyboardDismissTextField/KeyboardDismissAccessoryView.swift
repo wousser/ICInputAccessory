@@ -1,5 +1,5 @@
 //
-//  ICKeyboardDismissAccessoryView.swift
+//  KeyboardDismissAccessoryView.swift
 //  iCook
 //
 //  Created by Ben on 27/08/2015.
@@ -28,7 +28,7 @@ import UIKit
 
 /// A customized keyboard accessory view with a dismiss button.
 @IBDesignable
-open class ICKeyboardDismissAccessoryView: UIView {
+open class KeyboardDismissAccessoryView: UIView {
 
   /// The background color of the button to dismiss keyboard.
   @IBInspectable public var buttonColor: UIColor = Constants.ButtonColor {

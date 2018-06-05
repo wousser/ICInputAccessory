@@ -27,7 +27,7 @@
 import UIKit
 import ICInputAccessory
 
-class CustomizedTokenViewController: UIViewController, ICTokenFieldDelegate {
+class CustomizedTokenViewController: UIViewController, TokenFieldDelegate {
 
   private let tokenField = CustomizedTokenField()
   private let textView = UITextView()
@@ -84,40 +84,40 @@ class CustomizedTokenViewController: UIViewController, ICTokenFieldDelegate {
     textView.endEditing(true)
   }
 
-  // MARK: - ICTokenFieldDelegate
+  // MARK: - TokenFieldDelegate
 
-  func tokenFieldDidBeginEditing(_ tokenField: ICTokenField) {
+  func tokenFieldDidBeginEditing(_ tokenField: TokenField) {
     print(#function)
   }
 
-  func tokenFieldDidEndEditing(_ tokenField: ICTokenField) {
+  func tokenFieldDidEndEditing(_ tokenField: TokenField) {
     print(#function)
   }
 
-  func tokenFieldWillReturn(_ tokenField: ICTokenField) {
+  func tokenFieldWillReturn(_ tokenField: TokenField) {
     print(#function)
   }
 
-  func tokenField(_ tokenField: ICTokenField, didChangeInputText text: String) {
+  func tokenField(_ tokenField: TokenField, didChangeInputText text: String) {
     print("Typing \"\(text)\"")
   }
 
-  func tokenField(_ tokenField: ICTokenField, shouldCompleteText text: String) -> Bool {
+  func tokenField(_ tokenField: TokenField, shouldCompleteText text: String) -> Bool {
     print("Should add \"\(text)\"?")
     return text != "42"
   }
 
-  func tokenField(_ tokenField: ICTokenField, didCompleteText text: String) {
+  func tokenField(_ tokenField: TokenField, didCompleteText text: String) {
     print("Added \"\(text)\"")
     updateTexts()
   }
 
-  func tokenField(_ tokenField: ICTokenField, didDeleteText text: String, atIndex index: Int) {
+  func tokenField(_ tokenField: TokenField, didDeleteText text: String, atIndex index: Int) {
     print("Deleted \"\(text)\"")
     updateTexts()
   }
 
-  func tokenField(_ tokenField: ICTokenField, subsequentDelimiterForCompletedText text: String) -> String {
+  func tokenField(_ tokenField: TokenField, subsequentDelimiterForCompletedText text: String) -> String {
     return " ,"
   }
 

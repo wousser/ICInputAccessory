@@ -1,8 +1,8 @@
 //
-//  ICKeyboardDismissTextFieldUITests.swift
-//  ICInputAccessoryUITests
+//  BackspaceTextField.swift
+//  iCook
 //
-//  Created by Ben on 20/03/2016.
+//  Created by Ben on 02/03/2016.
 //  Copyright © 2016 Polydice, Inc.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -24,28 +24,40 @@
 //  SOFTWARE.
 //
 
-import XCTest
+import UIKit
 
-class ICKeyboardDismissTextFieldUITests: XCTestCase {
+internal protocol BackspaceTextFieldDelegate: class {
+  func textFieldShouldDelete(_ textField: BackspaceTextField) -> Bool
+}
 
-  private lazy var app = XCUIApplication()
+////////////////////////////////////////////////////////////////////////////////
 
-  override func setUp() {
-    super.setUp()
-    continueAfterFailure = false
-    XCUIApplication().launch()
+
+internal class BackspaceTextField: UITextField {
+
+  weak var backspaceDelegate: BackspaceTextFieldDelegate?
+
+  var showsCursor = true {
+    didSet {
+      // Trigger the lazy instantiation of cursorColor
+      let color = cursorColor
+      tintColor = showsCursor ? color : UIColor.clear
+    }
   }
 
-  func testKeyboardDismissing() {
-    app.tables.textFields["ICKeyboardDismissTextField"].tap()
-    app.buttons["Dismiss Keyboard"].tap()
+  lazy var cursorColor: UIColor! = { self.tintColor }()
+
+  // MARK: - UIView
+
+  override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
+    // Forward touches to the superview when the cursor is hidden.
+    return showsCursor && super.point(inside: point, with: event)
   }
 
-  func testStoryboard() {
-    app.tables.buttons["Storyboard"].tap()
-    app.tables.textFields["Storyboard ICKeyboardDismissTextField"].tap()
-    app.buttons["Dismiss Keyboard"].tap()
-    app.tables.buttons["Back to Code"].tap()
+  // MARK: - UITextField
+
+  @objc func keyboardInputShouldDelete(_ textField: UITextField) -> Bool {
+    return backspaceDelegate?.textFieldShouldDelete(self) ?? true
   }
 
 }

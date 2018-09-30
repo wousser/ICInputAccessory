@@ -29,11 +29,19 @@ import ICInputAccessory
 
 class ExampleViewController: UITableViewController {
 
-  private let types: [UIView.Type] = [
+  private let showcases: [UIView.Type] = [
     KeyboardDismissTextField.self,
     TokenField.self,
-    CustomizedTokenField.self
+    CustomizedTokenField.self,
+    OptionPickerControl<Language>.self
   ]
+
+  private lazy var languagePicker: OptionPickerControl<Language> = {
+    let picker = OptionPickerControl<Language>()
+    picker.options += Language.availableLanguages.map(Option.init(_:))
+    picker.addTarget(self, action: .updateLanguage, for: .valueChanged)
+    return picker
+  }()
 
   private lazy var flipButton: UIButton = {
     let _button = UIButton(type: .system)
@@ -52,18 +60,19 @@ class ExampleViewController: UITableViewController {
 
   // MARK: - UIViewController
 
-  override func loadView() {
-    super.loadView()
+  override func viewDidLoad() {
+    super.viewDidLoad()
     tableView.rowHeight = 44
     tableView.register(ExampleCell.self, forCellReuseIdentifier: String(describing: ExampleCell.self))
     tableView.tableFooterView = flipButton
     tableView.tableFooterView?.isUserInteractionEnabled = true
+    view.addSubview(languagePicker)
   }
 
   // MARK: - UITableViewDataSource
 
   override func numberOfSections(in tableView: UITableView) -> Int {
-    return types.count
+    return showcases.count
   }
 
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -71,13 +80,15 @@ class ExampleViewController: UITableViewController {
   }
 
   override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    switch types[section] {
+    switch showcases[section] {
     case is KeyboardDismissTextField.Type:
       return "Dismiss Keyboard"
     case is TokenField.Type:
       return "Text Field with Tokens"
     case is CustomizedTokenField.Type:
       return "Customize Token Field"
+    case is OptionPickerControl<Language>.Type:
+      return "Option Picker Control"
     default:
       return ""
     }
@@ -85,8 +96,9 @@ class ExampleViewController: UITableViewController {
 
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ExampleCell.self), for: indexPath)
+    cell.accessoryType = .none
 
-    switch types[indexPath.section] {
+    switch showcases[indexPath.section] {
     case let type as KeyboardDismissTextField.Type:
       let textField = type.init()
       textField.leftViewMode = .always
@@ -107,6 +119,11 @@ class ExampleViewController: UITableViewController {
       container.addSubview(tokenField)
       (cell as? ExampleCell)?.showcase = container
 
+    case is OptionPickerControl<Language>.Type:
+      (cell as? ExampleCell)?.showcase = nil
+      cell.textLabel?.text = languagePicker.selectedOption.title
+      cell.accessoryType = .disclosureIndicator
+
     default:
       break
     }
@@ -116,12 +133,25 @@ class ExampleViewController: UITableViewController {
   // MARK: - UITableViewDelegate
 
   override func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
-    return types[indexPath.section] == CustomizedTokenField.self
+    switch showcases[indexPath.section] {
+    case is CustomizedTokenField.Type:
+      return true
+    case is OptionPickerControl<Language>.Type:
+      return true
+    default:
+      return false
+    }
   }
 
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    if types[indexPath.section] == CustomizedTokenField.self {
+    switch showcases[indexPath.section] {
+    case is CustomizedTokenField.Type:
       present(UINavigationController(rootViewController: CustomizedTokenViewController()), animated: true, completion: nil)
+    case is OptionPickerControl<Language>.Type:
+      tableView.deselectRow(at: indexPath, animated: true)
+      languagePicker.becomeFirstResponder()
+    default:
+      break
     }
   }
 
@@ -134,6 +164,10 @@ class ExampleViewController: UITableViewController {
     }
   }
 
+  @objc fileprivate func updateLanguage(_ sender: UIControl) {
+    tableView.reloadData()
+  }
+
 }
 
 
@@ -142,4 +176,5 @@ class ExampleViewController: UITableViewController {
 
 private extension Selector {
   static let showStoryboard = #selector(ExampleViewController.showStoryboard(_:))
+  static let updateLanguage = #selector(ExampleViewController.updateLanguage(_:))
 }

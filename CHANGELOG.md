@@ -1,3 +1,8 @@
+## `develop`
+
+* Drop Class Name Prefixes
+* Add an easy to use `OptionPickerControl` that displays a `UIPickerView` with given options
+
 ## v1.5.0
 
 * Swift 4.0

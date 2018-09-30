@@ -12,6 +12,10 @@
 		B528196D1C9035BE007D01D5 /* InsetLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52819691C9035BE007D01D5 /* InsetLabel.swift */; };
 		B528196E1C9035BE007D01D5 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = B528196A1C9035BE007D01D5 /* Token.swift */; };
 		B528196F1C9035BE007D01D5 /* TokenField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B528196B1C9035BE007D01D5 /* TokenField.swift */; };
+		B52ADB1920132F0C00D96B87 /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52ADB1720132F0C00D96B87 /* Option.swift */; };
+		B52ADB1A20132F0C00D96B87 /* OptionPickerControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52ADB1820132F0C00D96B87 /* OptionPickerControl.swift */; };
+		B52ADB1C201332E400D96B87 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52ADB1B201332E400D96B87 /* Language.swift */; };
+		B52ADB1F201485B800D96B87 /* OptionPickerControlUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52ADB1D201485A700D96B87 /* OptionPickerControlUITests.swift */; };
 		B533768B1F4436D000230739 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B533768A1F4436D000230739 /* AppDelegate.swift */; };
 		B53376921F4436D000230739 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B53376911F4436D000230739 /* Assets.xcassets */; };
 		B53376951F4436D000230739 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B53376931F4436D000230739 /* LaunchScreen.storyboard */; };
@@ -70,6 +74,10 @@
 		B52819691C9035BE007D01D5 /* InsetLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InsetLabel.swift; path = Source/TokenField/InsetLabel.swift; sourceTree = SOURCE_ROOT; };
 		B528196A1C9035BE007D01D5 /* Token.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Token.swift; path = Source/TokenField/Token.swift; sourceTree = SOURCE_ROOT; };
 		B528196B1C9035BE007D01D5 /* TokenField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TokenField.swift; path = Source/TokenField/TokenField.swift; sourceTree = SOURCE_ROOT; };
+		B52ADB1720132F0C00D96B87 /* Option.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Option.swift; path = Source/OptionPickerControl/Option.swift; sourceTree = SOURCE_ROOT; };
+		B52ADB1820132F0C00D96B87 /* OptionPickerControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OptionPickerControl.swift; path = Source/OptionPickerControl/OptionPickerControl.swift; sourceTree = SOURCE_ROOT; };
+		B52ADB1B201332E400D96B87 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
+		B52ADB1D201485A700D96B87 /* OptionPickerControlUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OptionPickerControlUITests.swift; path = ICInputAccessoryUITests/OptionPickerControlUITests.swift; sourceTree = SOURCE_ROOT; };
 		B53376881F4436D000230739 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B533768A1F4436D000230739 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B53376911F4436D000230739 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -148,6 +156,15 @@
 			name = TokenField;
 			sourceTree = "<group>";
 		};
+		B52ADB1220132EEF00D96B87 /* OptionPickerControl */ = {
+			isa = PBXGroup;
+			children = (
+				B52ADB1720132F0C00D96B87 /* Option.swift */,
+				B52ADB1820132F0C00D96B87 /* OptionPickerControl.swift */,
+			);
+			name = OptionPickerControl;
+			sourceTree = "<group>";
+		};
 		B53376891F4436D000230739 /* Example */ = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +175,7 @@
 				B53376AF1F44387000230739 /* ExampleCell.swift */,
 				B53376B01F44387000230739 /* ExampleViewController.swift */,
 				B53376961F4436D000230739 /* Info.plist */,
+				B52ADB1B201332E400D96B87 /* Language.swift */,
 				B53376931F4436D000230739 /* LaunchScreen.storyboard */,
 				B53376B11F44387000230739 /* Main.storyboard */,
 				B53376B21F44387000230739 /* StoryboardViewController.swift */,
@@ -170,6 +188,7 @@
 			children = (
 				B53376A11F4436D000230739 /* Info.plist */,
 				B53376A91F4437D900230739 /* KeyboardDismissTextFieldUITests.swift */,
+				B52ADB1D201485A700D96B87 /* OptionPickerControlUITests.swift */,
 				B53376AA1F4437D900230739 /* TokenFieldUITests.swift */,
 			);
 			name = ICInputAccessoryUITests;
@@ -202,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				B52819671C90358C007D01D5 /* KeyboardDismissAccessory */,
+				B52ADB1220132EEF00D96B87 /* OptionPickerControl */,
 				B52819701C9035C3007D01D5 /* TokenField */,
 				B56BC42D1C89A7EA00C20AD6 /* ICInputAccessory.h */,
 				B548C5AC1C8D69A5009D5AEE /* Images.xcassets */,
@@ -410,6 +430,7 @@
 				B53376B41F44387000230739 /* CustomizedTokenViewController.swift in Sources */,
 				B53376B51F44387000230739 /* ExampleCell.swift in Sources */,
 				B53376B61F44387000230739 /* ExampleViewController.swift in Sources */,
+				B52ADB1C201332E400D96B87 /* Language.swift in Sources */,
 				B53376B81F44387000230739 /* StoryboardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -419,6 +440,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B53376AB1F4437D900230739 /* KeyboardDismissTextFieldUITests.swift in Sources */,
+				B52ADB1F201485B800D96B87 /* OptionPickerControlUITests.swift in Sources */,
 				B53376AC1F4437D900230739 /* TokenFieldUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -431,6 +453,8 @@
 				B528196D1C9035BE007D01D5 /* InsetLabel.swift in Sources */,
 				B56BC4361C89A8D800C20AD6 /* KeyboardDismissAccessoryView.swift in Sources */,
 				B548C5EE1C8EB9E2009D5AEE /* KeyboardDismissTextField.swift in Sources */,
+				B52ADB1920132F0C00D96B87 /* Option.swift in Sources */,
+				B52ADB1A20132F0C00D96B87 /* OptionPickerControl.swift in Sources */,
 				B528196E1C9035BE007D01D5 /* Token.swift in Sources */,
 				B528196F1C9035BE007D01D5 /* TokenField.swift in Sources */,
 			);

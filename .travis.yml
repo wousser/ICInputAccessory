@@ -8,13 +8,13 @@ cache:
 before_install:
   - export LANG=en_US.UTF-8
   - xcrun instruments -s devices
-  - open -b com.apple.iphonesimulator
+  - xcrun instruments -w "iPhone X (12.0) [" || true
 install:
   - make install
 before_script:
   - xcodebuild -workspace ICInputAccessory.xcworkspace -list
 script:
-  - bundle exec rake ci:test
+  - bundle exec rake "ci:test[12.0]"
   - make -B carthage
   - make -B docs
 notifications:

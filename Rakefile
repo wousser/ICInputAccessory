@@ -22,7 +22,7 @@ def xcodebuild(params)
     %(-workspace ICInputAccessory.xcworkspace),
     %(-scheme #{params[:scheme]}),
     %(-sdk iphonesimulator),
-    %(-destination 'name=iPhone 8,OS=#{params[:version] || "latest"}'),
+    %(-destination 'name=iPhone X,OS=#{params[:version] || "latest"}'),
     %(#{params[:action]} | xcpretty -c && exit ${PIPESTATUS[0]})
   ].join " "
 end

@@ -46,7 +46,7 @@ class ExampleViewController: UITableViewController {
   private lazy var flipButton: UIButton = {
     let _button = UIButton(type: .system)
     _button.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 88)
-    _button.setTitle("Storyboard", for: UIControlState())
+    _button.setTitle("Storyboard", for: UIControl.State())
     _button.addTarget(self, action: .showStoryboard, for: .touchUpInside)
     return _button
   }()

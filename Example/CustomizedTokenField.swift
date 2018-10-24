@@ -40,7 +40,7 @@ class CustomizedTokenField: TokenField {
   }
 
   override var intrinsicContentSize: CGSize {
-    return UILayoutFittingExpandedSize
+    return UIView.layoutFittingExpandedSize
   }
 
 }

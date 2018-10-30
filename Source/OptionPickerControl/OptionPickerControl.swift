@@ -45,10 +45,10 @@ open class OptionPickerControl<T: OptionDescriptive>: UIControl, UIPickerViewDat
   // MARK: - Properties
 
   /// Options that shows in the `UIPickerView`.
-  public var options: [Option<T>] = [Option<T>.optional()]
+  public var options: [Option<T>] = [.optional]
 
   /// The currently selected item in the options.
-  public var selectedOption: Option<T> = Option<T>.optional() {
+  public var selectedOption: Option<T> = .optional {
     didSet {
       if hiddenTextField.isFirstResponder {
         sendActions(for: .valueChanged)

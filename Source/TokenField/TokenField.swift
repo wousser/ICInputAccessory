@@ -121,7 +121,7 @@ open class TokenField: UIView, UITextFieldDelegate, BackspaceTextFieldDelegate {
     }
   }
 
-  /// Customized attributes for tokens in the normal state, e.g. `NSFontAttributeName` and `NSForegroundColorAttributeName`.
+  /// Customized attributes for tokens in the normal state, e.g. `.font` and `.foregroundColor`.
   public var normalTokenAttributes: [NSAttributedStringKey: NSObject]? {
     didSet {
       tokens.forEach { $0.normalTextAttributes = normalTokenAttributes ?? [:] }

@@ -1,4 +1,4 @@
-## `develop`
+## v2.0.0
 
 * Drop Class Name Prefixes
 * Add an easy to use `OptionPickerControl` that displays a `UIPickerView` with given options

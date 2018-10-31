@@ -8,11 +8,11 @@ Customized text fields used in the [iCook app](https://itunes.apple.com/app/id55
 ![Platform](https://img.shields.io/cocoapods/p/ICInputAccessory.svg)
 ![Swift 4.1](https://img.shields.io/badge/Swift-4.1-orange.svg)
 
-### ICKeyboardDismissTextField
+### KeyboardDismissTextField
 
 * A text field that has a button to dismiss keyboard on the input accessory view.
 
-### ICTokenField
+### TokenField
 
 * A horizontal scrolling UI that groups input texts.
 * Easy to add, select and delete tokens.
@@ -20,6 +20,10 @@ Customized text fields used in the [iCook app](https://itunes.apple.com/app/id55
 * Supports storyboard.
 
 ![ICTokenField](https://polydice.github.io/ICInputAccessory/screenshots/ICTokenField.gif)
+
+### OptionPickerControl
+
+* An easy to use `UIControl` that displays a `UIPickerView` with given options.
 
 ## Requirements
 
@@ -31,6 +35,7 @@ ICInputAccessory | iOS  | Xcode | Swift
 `~> 1.3.0`       | 8.0+ | 8.0   | ![Swift 3.0](https://img.shields.io/badge/Swift-3.0-orange.svg)
 `~> 1.4.0`       | 8.0+ | 8.3   | ![Swift 3.1](https://img.shields.io/badge/Swift-3.1-orange.svg)
 `~> 1.5.0`       | 8.0+ | 9.3   | ![Swift 4.1](https://img.shields.io/badge/Swift-4.1-orange.svg)
+`~> 2.0.0`       | 8.0+ | 10.0  | ![Swift 4.1](https://img.shields.io/badge/Swift-4.1-orange.svg)
 
 ## Installation
 
@@ -65,27 +70,27 @@ git submodule add -b master git@github.com:polydice/ICInputAccessory.git Depende
 
 ## Usage
 
-### ICKeyboardDismissTextField
+### KeyboardDismissTextField
 
 ```swift
-let textField = ICKeyboardDismissTextField(frame: rect)
+let textField = KeyboardDismissTextField(frame: rect)
 ```
 
-### ICTokenField
+### TokenField
 
 ```swift
-let tokenField = ICTokenField(frame: rect)
-tokenField.delegate = self as? ICTokenFieldDelegate
+let tokenField = TokenField(frame: rect)
+tokenField.delegate = self as? TokenFieldDelegate
 ```
 
-* The characters that complete a token:
+The characters that complete a token:
 
 ```swift
 /// Characters that complete a new token, defaults are whitespace and commas.
 public var delimiters: [String]
 ```
 
-* Tokens:
+Tokens:
 
 ```swift
 /// Texts of each created token.
@@ -98,7 +103,7 @@ public func completeCurrentInputText()
 public func resetTokens()
 ```
 
-* UI customization:
+UI customization:
 
 ```swift
 /// The image on the left of text field.
@@ -110,14 +115,14 @@ public var placeholder: String? { get set }
 /// The placeholder with customized attributes.
 public var attributedPlaceholder: NSAttributedString? { get set }
 
-/// Customized attributes for tokens in the normal state, e.g. NSFontAttributeName and NSForegroundColorAttributeName.
-public var normalTokenAttributes: [String : NSObject]? { get set }
+/// Customized attributes for tokens in the normal state, e.g. .font and .foregroundColor.
+public var normalTokenAttributes: [NSAttributedStringKey : NSObject]? { get set }
 
 /// Customized attributes for tokens in the highlighted state.
-public var highlightedTokenAttributes: [String : NSObject]? { get set }
+public var highlightedTokenAttributes: [NSAttributedStringKey : NSObject]? { get set }
 ```
 
-* Customizable properties in storyboard:
+Customizable properties in storyboard:
 
 ```swift
 @IBInspectable var icon: UIImage?
@@ -128,24 +133,57 @@ public var highlightedTokenAttributes: [String : NSObject]? { get set }
 
 See `Example/CustomizedTokenField.swift` for more details.
 
-#### ICTokenFieldDelegate
+#### TokenFieldDelegate
 
-`ICTokenField` currently notifies its delegate the following events:
+`TokenField` currently notifies its delegate the following events:
 
 ```swift
-@objc optional func tokenFieldDidBeginEditing(_ tokenField: ICTokenField)
-@objc optional func tokenFieldDidEndEditing(_ tokenField: ICTokenField)
-@objc optional func tokenFieldWillReturn(_ tokenField: ICTokenField)
-@objc optional func tokenField(_ tokenField: ICTokenField, didChangeInputText text: String)
-@objc optional func tokenField(_ tokenField: ICTokenField, shouldCompleteText text: String) -> Bool
-@objc optional func tokenField(_ tokenField: ICTokenField, didCompleteText text: String)
-@objc optional func tokenField(_ tokenField: ICTokenField, didDeleteText text: String, atIndex index: Int)
+@objc optional func tokenFieldDidBeginEditing(_ tokenField: TokenField)
+@objc optional func tokenFieldDidEndEditing(_ tokenField: TokenField)
+@objc optional func tokenFieldWillReturn(_ tokenField: TokenField)
+@objc optional func tokenField(_ tokenField: TokenField, didChangeInputText text: String)
+@objc optional func tokenField(_ tokenField: TokenField, shouldCompleteText text: String) -> Bool
+@objc optional func tokenField(_ tokenField: TokenField, didCompleteText text: String)
+@objc optional func tokenField(_ tokenField: TokenField, didDeleteText text: String, atIndex index: Int)
 ```
 
 The displayed delimiter string can be customized by:
 
 ```swift
-@objc optional func tokenField(_ tokenField: ICTokenField, subsequentDelimiterForCompletedText text: String) -> String
+@objc optional func tokenField(_ tokenField: TokenField, subsequentDelimiterForCompletedText text: String) -> String
+```
+
+### OptionPickerControl
+
+An example type that conforms to `OptionDescriptive`:
+
+```swift
+extension String: OptionDescriptive {
+
+  var title: String {
+    return self
+  }
+
+  static var titleForOptionalValue: String {
+    return "(optional)"
+  }
+
+}
+```
+
+To initialize `OptionPickerControl` with `CGRect.zero` and add it to the view hierarchy:
+
+```swift
+let optionPicker = OptionPickerControl<String>()
+optionPicker.options = [.optional, Option("Option 1"), Option("Option 2")]
+optionPicker.addTarget(self, action: #selector(didChangeOption(_:)), for: .valueChanged)
+view.addSubview(optionPicker)
+```
+
+To show the `UIPickerView`:
+
+```swift
+optionPicker.becomeFirstResponder()
 ```
 
 ### Documentation

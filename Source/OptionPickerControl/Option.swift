@@ -41,7 +41,7 @@ public struct Option<T: OptionDescriptive>: Equatable {
   // MARK: - Initialization
 
   /// Returns an option that displays the optional value of an `OptionDescriptive` type.
-  public static func optional() -> Option<T> {
+  public static var optional: Option<T> {
     return Option<T>()
   }
 

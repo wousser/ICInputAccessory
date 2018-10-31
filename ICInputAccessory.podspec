@@ -1,16 +1,19 @@
 Pod::Spec.new do |s|
   s.name          = "ICInputAccessory"
-  s.version       = "1.5.0"
+  s.version       = "2.0.0"
   s.summary       = "A customized token text field used in the iCook app."
   s.description   = <<-DESC
-                     ICKeyboardDismissTextField:
+                     KeyboardDismissTextField:
                      * An input accessory view with a button to dismiss keyboard.
 
-                     ICTokenField:
+                     TokenField:
                      * A horizontal scrolling UI that groups input texts.
                      * Easy to add, select and delete tokens.
                      * Customizable icon and colors.
                      * Supports storyboard.
+
+                     OptionPickerControl:
+                     * An easy to use UIControl that displays a UIPickerView with given options.
                     DESC
 
   s.screenshots   = "https://polydice.github.io/ICInputAccessory/screenshots/ICTokenField.png",

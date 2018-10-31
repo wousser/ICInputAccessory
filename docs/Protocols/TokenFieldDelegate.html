@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>ICTokenFieldDelegate Protocol Reference</title>
+    <title>TokenFieldDelegate Protocol Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset="utf-8">
@@ -14,16 +14,16 @@
   </head>
   <body>
 
-    <a name="//apple_ref/swift/Protocol/ICTokenFieldDelegate" class="dashAnchor"></a>
+    <a name="//apple_ref/swift/Protocol/TokenFieldDelegate" class="dashAnchor"></a>
 
-    <a title="ICTokenFieldDelegate Protocol Reference"></a>
+    <a title="TokenFieldDelegate Protocol Reference"></a>
 
     <header class="header">
       <p class="header-col header-col--primary">
         <a class="header-link" href="../index.html">
           ICInputAccessory Docs
         </a>
-         (71% documented)
+         (73% documented)
       </p>
 
       <p class="header-col--secondary">
@@ -44,7 +44,7 @@
     <p class="breadcrumbs">
       <a class="breadcrumb" href="../index.html">ICInputAccessory Reference</a>
       <img class="carat" src="../img/carat.png" />
-      ICTokenFieldDelegate Protocol Reference
+      TokenFieldDelegate Protocol Reference
     </p>
 
     <div class="content-wrapper">
@@ -54,13 +54,16 @@
             <a class="nav-group-name-link" href="../Classes.html">Classes</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Classes/ICKeyboardDismissAccessoryView.html">ICKeyboardDismissAccessoryView</a>
+                <a class="nav-group-task-link" href="../Classes/KeyboardDismissAccessoryView.html">KeyboardDismissAccessoryView</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Classes/ICKeyboardDismissTextField.html">ICKeyboardDismissTextField</a>
+                <a class="nav-group-task-link" href="../Classes/KeyboardDismissTextField.html">KeyboardDismissTextField</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Classes/ICTokenField.html">ICTokenField</a>
+                <a class="nav-group-task-link" href="../Classes/OptionPickerControl.html">OptionPickerControl</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/TokenField.html">TokenField</a>
               </li>
             </ul>
           </li>
@@ -68,7 +71,18 @@
             <a class="nav-group-name-link" href="../Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Protocols/ICTokenFieldDelegate.html">ICTokenFieldDelegate</a>
+                <a class="nav-group-task-link" href="../Protocols/OptionDescriptive.html">OptionDescriptive</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/TokenFieldDelegate.html">TokenFieldDelegate</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/Option.html">Option</a>
               </li>
             </ul>
           </li>
@@ -78,10 +92,11 @@
 
         <section class="section">
           <div class="section-content">
-            <h1>ICTokenFieldDelegate</h1>
+            <h1>TokenFieldDelegate</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">@objc</span> <span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">ICTokenFieldDelegate</span><span class="p">:</span> <span class="kt">NSObjectProtocol</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">TokenFieldDelegate</span> <span class="p">:</span> <span class="kt">NSObjectProtocol</span></code></pre>
 
                 </div>
               </div>
@@ -97,9 +112,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@ICInputAccessory@objc(pl)ICTokenFieldDelegate(im)tokenFieldDidBeginEditing:"></a>
+                    <a name="/c:@M@ICInputAccessory@objc(pl)TokenFieldDelegate(im)tokenFieldDidBeginEditing:"></a>
                     <a name="//apple_ref/swift/Method/tokenFieldDidBeginEditing(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@ICInputAccessory@objc(pl)ICTokenFieldDelegate(im)tokenFieldDidBeginEditing:">tokenFieldDidBeginEditing(_:)</a>
+                    <a class="token" href="#/c:@M@ICInputAccessory@objc(pl)TokenFieldDelegate(im)tokenFieldDidBeginEditing:">tokenFieldDidBeginEditing(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -114,12 +129,13 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@objc</span> <span class="kd">optional</span> <span class="kd">func</span> <span class="nf">tokenFieldDidBeginEditing</span><span class="p">(</span><span class="n">_</span> <span class="nv">tokenField</span><span class="p">:</span> <span class="kt"><a href="../Classes/ICTokenField.html">ICTokenField</a></span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">optional</span> <span class="kd">func</span> <span class="nf">tokenFieldDidBeginEditing</span><span class="p">(</span><span class="n">_</span> <span class="nv">tokenField</span><span class="p">:</span> <span class="kt"><a href="../Classes/TokenField.html">TokenField</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/polydice/ICInputAccessory/blob/develop/Source/TokenField/ICTokenField.swift#L32">Show on GitHub</a>
+                        <a href="https://github.com/polydice/ICInputAccessory/blob/develop/Source/TokenField/TokenField.swift#L32">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -127,9 +143,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@ICInputAccessory@objc(pl)ICTokenFieldDelegate(im)tokenFieldDidEndEditing:"></a>
+                    <a name="/c:@M@ICInputAccessory@objc(pl)TokenFieldDelegate(im)tokenFieldDidEndEditing:"></a>
                     <a name="//apple_ref/swift/Method/tokenFieldDidEndEditing(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@ICInputAccessory@objc(pl)ICTokenFieldDelegate(im)tokenFieldDidEndEditing:">tokenFieldDidEndEditing(_:)</a>
+                    <a class="token" href="#/c:@M@ICInputAccessory@objc(pl)TokenFieldDelegate(im)tokenFieldDidEndEditing:">tokenFieldDidEndEditing(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -144,12 +160,13 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@objc</span> <span class="kd">optional</span> <span class="kd">func</span> <span class="nf">tokenFieldDidEndEditing</span><span class="p">(</span><span class="n">_</span> <span class="nv">tokenField</span><span class="p">:</span> <span class="kt"><a href="../Classes/ICTokenField.html">ICTokenField</a></span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">optional</span> <span class="kd">func</span> <span class="nf">tokenFieldDidEndEditing</span><span class="p">(</span><span class="n">_</span> <span class="nv">tokenField</span><span class="p">:</span> <span class="kt"><a href="../Classes/TokenField.html">TokenField</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/polydice/ICInputAccessory/blob/develop/Source/TokenField/ICTokenField.swift#L34">Show on GitHub</a>
+                        <a href="https://github.com/polydice/ICInputAccessory/blob/develop/Source/TokenField/TokenField.swift#L34">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -157,9 +174,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@ICInputAccessory@objc(pl)ICTokenFieldDelegate(im)tokenFieldWillReturn:"></a>
+                    <a name="/c:@M@ICInputAccessory@objc(pl)TokenFieldDelegate(im)tokenFieldWillReturn:"></a>
                     <a name="//apple_ref/swift/Method/tokenFieldWillReturn(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@ICInputAccessory@objc(pl)ICTokenFieldDelegate(im)tokenFieldWillReturn:">tokenFieldWillReturn(_:)</a>
+                    <a class="token" href="#/c:@M@ICInputAccessory@objc(pl)TokenFieldDelegate(im)tokenFieldWillReturn:">tokenFieldWillReturn(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -174,12 +191,13 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@objc</span> <span class="kd">optional</span> <span class="kd">func</span> <span class="nf">tokenFieldWillReturn</span><span class="p">(</span><span class="n">_</span> <span class="nv">tokenField</span><span class="p">:</span> <span class="kt"><a href="../Classes/ICTokenField.html">ICTokenField</a></span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">optional</span> <span class="kd">func</span> <span class="nf">tokenFieldWillReturn</span><span class="p">(</span><span class="n">_</span> <span class="nv">tokenField</span><span class="p">:</span> <span class="kt"><a href="../Classes/TokenField.html">TokenField</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/polydice/ICInputAccessory/blob/develop/Source/TokenField/ICTokenField.swift#L36">Show on GitHub</a>
+                        <a href="https://github.com/polydice/ICInputAccessory/blob/develop/Source/TokenField/TokenField.swift#L36">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -187,9 +205,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@ICInputAccessory@objc(pl)ICTokenFieldDelegate(im)tokenField:didChangeInputText:"></a>
+                    <a name="/c:@M@ICInputAccessory@objc(pl)TokenFieldDelegate(im)tokenField:didChangeInputText:"></a>
                     <a name="//apple_ref/swift/Method/tokenField(_:didChangeInputText:)" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@ICInputAccessory@objc(pl)ICTokenFieldDelegate(im)tokenField:didChangeInputText:">tokenField(_:didChangeInputText:)</a>
+                    <a class="token" href="#/c:@M@ICInputAccessory@objc(pl)TokenFieldDelegate(im)tokenField:didChangeInputText:">tokenField(_:didChangeInputText:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -204,12 +222,13 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@objc</span> <span class="kd">optional</span> <span class="kd">func</span> <span class="nf">tokenField</span><span class="p">(</span><span class="n">_</span> <span class="nv">tokenField</span><span class="p">:</span> <span class="kt"><a href="../Classes/ICTokenField.html">ICTokenField</a></span><span class="p">,</span> <span class="n">didChangeInputText</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">optional</span> <span class="kd">func</span> <span class="nf">tokenField</span><span class="p">(</span><span class="n">_</span> <span class="nv">tokenField</span><span class="p">:</span> <span class="kt"><a href="../Classes/TokenField.html">TokenField</a></span><span class="p">,</span> <span class="n">didChangeInputText</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/polydice/ICInputAccessory/blob/develop/Source/TokenField/ICTokenField.swift#L38">Show on GitHub</a>
+                        <a href="https://github.com/polydice/ICInputAccessory/blob/develop/Source/TokenField/TokenField.swift#L38">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -217,9 +236,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@ICInputAccessory@objc(pl)ICTokenFieldDelegate(im)tokenField:shouldCompleteText:"></a>
+                    <a name="/c:@M@ICInputAccessory@objc(pl)TokenFieldDelegate(im)tokenField:shouldCompleteText:"></a>
                     <a name="//apple_ref/swift/Method/tokenField(_:shouldCompleteText:)" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@ICInputAccessory@objc(pl)ICTokenFieldDelegate(im)tokenField:shouldCompleteText:">tokenField(_:shouldCompleteText:)</a>
+                    <a class="token" href="#/c:@M@ICInputAccessory@objc(pl)TokenFieldDelegate(im)tokenField:shouldCompleteText:">tokenField(_:shouldCompleteText:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -234,12 +253,13 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@objc</span> <span class="kd">optional</span> <span class="kd">func</span> <span class="nf">tokenField</span><span class="p">(</span><span class="n">_</span> <span class="nv">tokenField</span><span class="p">:</span> <span class="kt"><a href="../Classes/ICTokenField.html">ICTokenField</a></span><span class="p">,</span> <span class="n">shouldCompleteText</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">optional</span> <span class="kd">func</span> <span class="nf">tokenField</span><span class="p">(</span><span class="n">_</span> <span class="nv">tokenField</span><span class="p">:</span> <span class="kt"><a href="../Classes/TokenField.html">TokenField</a></span><span class="p">,</span> <span class="n">shouldCompleteText</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/polydice/ICInputAccessory/blob/develop/Source/TokenField/ICTokenField.swift#L40">Show on GitHub</a>
+                        <a href="https://github.com/polydice/ICInputAccessory/blob/develop/Source/TokenField/TokenField.swift#L40">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -247,9 +267,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@ICInputAccessory@objc(pl)ICTokenFieldDelegate(im)tokenField:didCompleteText:"></a>
+                    <a name="/c:@M@ICInputAccessory@objc(pl)TokenFieldDelegate(im)tokenField:didCompleteText:"></a>
                     <a name="//apple_ref/swift/Method/tokenField(_:didCompleteText:)" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@ICInputAccessory@objc(pl)ICTokenFieldDelegate(im)tokenField:didCompleteText:">tokenField(_:didCompleteText:)</a>
+                    <a class="token" href="#/c:@M@ICInputAccessory@objc(pl)TokenFieldDelegate(im)tokenField:didCompleteText:">tokenField(_:didCompleteText:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -264,12 +284,13 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@objc</span> <span class="kd">optional</span> <span class="kd">func</span> <span class="nf">tokenField</span><span class="p">(</span><span class="n">_</span> <span class="nv">tokenField</span><span class="p">:</span> <span class="kt"><a href="../Classes/ICTokenField.html">ICTokenField</a></span><span class="p">,</span> <span class="n">didCompleteText</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">optional</span> <span class="kd">func</span> <span class="nf">tokenField</span><span class="p">(</span><span class="n">_</span> <span class="nv">tokenField</span><span class="p">:</span> <span class="kt"><a href="../Classes/TokenField.html">TokenField</a></span><span class="p">,</span> <span class="n">didCompleteText</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/polydice/ICInputAccessory/blob/develop/Source/TokenField/ICTokenField.swift#L42">Show on GitHub</a>
+                        <a href="https://github.com/polydice/ICInputAccessory/blob/develop/Source/TokenField/TokenField.swift#L42">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -277,9 +298,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@ICInputAccessory@objc(pl)ICTokenFieldDelegate(im)tokenField:didDeleteText:atIndex:"></a>
+                    <a name="/c:@M@ICInputAccessory@objc(pl)TokenFieldDelegate(im)tokenField:didDeleteText:atIndex:"></a>
                     <a name="//apple_ref/swift/Method/tokenField(_:didDeleteText:atIndex:)" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@ICInputAccessory@objc(pl)ICTokenFieldDelegate(im)tokenField:didDeleteText:atIndex:">tokenField(_:didDeleteText:atIndex:)</a>
+                    <a class="token" href="#/c:@M@ICInputAccessory@objc(pl)TokenFieldDelegate(im)tokenField:didDeleteText:atIndex:">tokenField(_:didDeleteText:atIndex:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -294,12 +315,13 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@objc</span> <span class="kd">optional</span> <span class="kd">func</span> <span class="nf">tokenField</span><span class="p">(</span><span class="n">_</span> <span class="nv">tokenField</span><span class="p">:</span> <span class="kt"><a href="../Classes/ICTokenField.html">ICTokenField</a></span><span class="p">,</span> <span class="n">didDeleteText</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">atIndex</span> <span class="nv">index</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">optional</span> <span class="kd">func</span> <span class="nf">tokenField</span><span class="p">(</span><span class="n">_</span> <span class="nv">tokenField</span><span class="p">:</span> <span class="kt"><a href="../Classes/TokenField.html">TokenField</a></span><span class="p">,</span> <span class="n">didDeleteText</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">atIndex</span> <span class="nv">index</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/polydice/ICInputAccessory/blob/develop/Source/TokenField/ICTokenField.swift#L44">Show on GitHub</a>
+                        <a href="https://github.com/polydice/ICInputAccessory/blob/develop/Source/TokenField/TokenField.swift#L44">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -307,9 +329,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@ICInputAccessory@objc(pl)ICTokenFieldDelegate(im)tokenField:subsequentDelimiterForCompletedText:"></a>
+                    <a name="/c:@M@ICInputAccessory@objc(pl)TokenFieldDelegate(im)tokenField:subsequentDelimiterForCompletedText:"></a>
                     <a name="//apple_ref/swift/Method/tokenField(_:subsequentDelimiterForCompletedText:)" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@ICInputAccessory@objc(pl)ICTokenFieldDelegate(im)tokenField:subsequentDelimiterForCompletedText:">tokenField(_:subsequentDelimiterForCompletedText:)</a>
+                    <a class="token" href="#/c:@M@ICInputAccessory@objc(pl)TokenFieldDelegate(im)tokenField:subsequentDelimiterForCompletedText:">tokenField(_:subsequentDelimiterForCompletedText:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -324,12 +346,13 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@objc</span> <span class="kd">optional</span> <span class="kd">func</span> <span class="nf">tokenField</span><span class="p">(</span><span class="n">_</span> <span class="nv">tokenField</span><span class="p">:</span> <span class="kt"><a href="../Classes/ICTokenField.html">ICTokenField</a></span><span class="p">,</span> <span class="n">subsequentDelimiterForCompletedText</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">optional</span> <span class="kd">func</span> <span class="nf">tokenField</span><span class="p">(</span><span class="n">_</span> <span class="nv">tokenField</span><span class="p">:</span> <span class="kt"><a href="../Classes/TokenField.html">TokenField</a></span><span class="p">,</span> <span class="n">subsequentDelimiterForCompletedText</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/polydice/ICInputAccessory/blob/develop/Source/TokenField/ICTokenField.swift#L46">Show on GitHub</a>
+                        <a href="https://github.com/polydice/ICInputAccessory/blob/develop/Source/TokenField/TokenField.swift#L46">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -342,8 +365,8 @@
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2018 <a class="link" href="https://github.com/polydice" target="_blank" rel="external">polydice</a>. All rights reserved. (Last updated: 2018-04-12)</p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+      <p>&copy; 2018 <a class="link" href="https://github.com/polydice" target="_blank" rel="external">polydice</a>. All rights reserved. (Last updated: 2018-10-31)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
 </div>

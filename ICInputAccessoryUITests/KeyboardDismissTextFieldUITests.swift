@@ -1,8 +1,8 @@
 //
-//  StoryboardViewController.swift
-//  Example
+//  KeyboardDismissTextFieldUITests.swift
+//  ICInputAccessoryUITests
 //
-//  Created by Ben on 16/03/2016.
+//  Created by Ben on 20/03/2016.
 //  Copyright © 2016 Polydice, Inc.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -24,27 +24,28 @@
 //  SOFTWARE.
 //
 
-import UIKit
-import ICInputAccessory
+import XCTest
 
-class StoryboardViewController: UITableViewController {
+class KeyboardDismissTextFieldUITests: XCTestCase {
 
-  @IBOutlet weak var tokenField: TokenField! {
-    didSet {
-      tokenField.normalTokenAttributes = [
-        .foregroundColor: UIColor.white,
-        .backgroundColor: UIColor.white.withAlphaComponent(0.25)
-      ]
+  private lazy var app = XCUIApplication()
 
-      tokenField.highlightedTokenAttributes = [
-        .foregroundColor: UIColor.darkGray,
-        .backgroundColor: UIColor.white
-      ]
-    }
+  override func setUp() {
+    super.setUp()
+    continueAfterFailure = false
+    XCUIApplication().launch()
   }
 
-  @IBAction func dismiss(_ sender: UIButton) {
-    presentingViewController?.dismiss(animated: true, completion: nil)
+  func testKeyboardDismissing() {
+    app.tables.textFields["KeyboardDismissTextField"].tap()
+    app.buttons["Dismiss Keyboard"].tap()
+  }
+
+  func testStoryboard() {
+    app.tables.buttons["Storyboard"].tap()
+    app.tables.textFields["Storyboard KeyboardDismissTextField"].tap()
+    app.buttons["Dismiss Keyboard"].tap()
+    app.tables.buttons["Back to Code"].tap()
   }
 
 }

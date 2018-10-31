@@ -1,5 +1,5 @@
 //
-//  ICTokenFieldUITests.swift
+//  TokenFieldUITests.swift
 //  ICInputAccessoryUITests
 //
 //  Created by Ben on 08/03/2016.
@@ -26,7 +26,7 @@
 
 import XCTest
 
-class ICTokenFieldUITests: XCTestCase {
+class TokenFieldUITests: XCTestCase {
 
   private lazy var app = XCUIApplication()
 
@@ -56,7 +56,7 @@ class ICTokenFieldUITests: XCTestCase {
   }
 
   func testTokenField() {
-    let textField = app.tables.cells.containing(.staticText, identifier: "ICTokenField").children(matching: .textField).element
+    let textField = app.tables.cells.containing(.staticText, identifier: "TokenField").children(matching: .textField).element
     typeTexts(in: textField)
   }
 
@@ -68,7 +68,7 @@ class ICTokenFieldUITests: XCTestCase {
 
   func testStoryboard() {
     app.tables.buttons["Storyboard"].tap()
-    let tokenField = app.tables.cells.containing(.staticText, identifier: "Storyboard ICTokenField").children(matching: .textField).element
+    let tokenField = app.tables.cells.containing(.staticText, identifier: "Storyboard TokenField").children(matching: .textField).element
     typeTexts(in: tokenField)
     app.tables.buttons["Back to Code"].tap()
   }

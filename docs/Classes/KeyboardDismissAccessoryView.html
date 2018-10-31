@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>ICKeyboardDismissAccessoryView Class Reference</title>
+    <title>KeyboardDismissAccessoryView Class Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset="utf-8">
@@ -14,16 +14,16 @@
   </head>
   <body>
 
-    <a name="//apple_ref/swift/Class/ICKeyboardDismissAccessoryView" class="dashAnchor"></a>
+    <a name="//apple_ref/swift/Class/KeyboardDismissAccessoryView" class="dashAnchor"></a>
 
-    <a title="ICKeyboardDismissAccessoryView Class Reference"></a>
+    <a title="KeyboardDismissAccessoryView Class Reference"></a>
 
     <header class="header">
       <p class="header-col header-col--primary">
         <a class="header-link" href="../index.html">
           ICInputAccessory Docs
         </a>
-         (71% documented)
+         (73% documented)
       </p>
 
       <p class="header-col--secondary">
@@ -44,7 +44,7 @@
     <p class="breadcrumbs">
       <a class="breadcrumb" href="../index.html">ICInputAccessory Reference</a>
       <img class="carat" src="../img/carat.png" />
-      ICKeyboardDismissAccessoryView Class Reference
+      KeyboardDismissAccessoryView Class Reference
     </p>
 
     <div class="content-wrapper">
@@ -54,13 +54,16 @@
             <a class="nav-group-name-link" href="../Classes.html">Classes</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Classes/ICKeyboardDismissAccessoryView.html">ICKeyboardDismissAccessoryView</a>
+                <a class="nav-group-task-link" href="../Classes/KeyboardDismissAccessoryView.html">KeyboardDismissAccessoryView</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Classes/ICKeyboardDismissTextField.html">ICKeyboardDismissTextField</a>
+                <a class="nav-group-task-link" href="../Classes/KeyboardDismissTextField.html">KeyboardDismissTextField</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Classes/ICTokenField.html">ICTokenField</a>
+                <a class="nav-group-task-link" href="../Classes/OptionPickerControl.html">OptionPickerControl</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/TokenField.html">TokenField</a>
               </li>
             </ul>
           </li>
@@ -68,7 +71,18 @@
             <a class="nav-group-name-link" href="../Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Protocols/ICTokenFieldDelegate.html">ICTokenFieldDelegate</a>
+                <a class="nav-group-task-link" href="../Protocols/OptionDescriptive.html">OptionDescriptive</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/TokenFieldDelegate.html">TokenFieldDelegate</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/Option.html">Option</a>
               </li>
             </ul>
           </li>
@@ -78,10 +92,11 @@
 
         <section class="section">
           <div class="section-content">
-            <h1>ICKeyboardDismissAccessoryView</h1>
+            <h1>KeyboardDismissAccessoryView</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">class</span> <span class="kt">ICKeyboardDismissAccessoryView</span><span class="p">:</span> <span class="kt">UIView</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">@IBDesignable</span>
+<span class="kd">open</span> <span class="kd">class</span> <span class="kt">KeyboardDismissAccessoryView</span> <span class="p">:</span> <span class="kt">UIView</span></code></pre>
 
                 </div>
               </div>
@@ -97,9 +112,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@ICInputAccessory@objc(cs)ICKeyboardDismissAccessoryView(py)buttonColor"></a>
+                    <a name="/c:@M@ICInputAccessory@objc(cs)KeyboardDismissAccessoryView(py)buttonColor"></a>
                     <a name="//apple_ref/swift/Property/buttonColor" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@ICInputAccessory@objc(cs)ICKeyboardDismissAccessoryView(py)buttonColor">buttonColor</a>
+                    <a class="token" href="#/c:@M@ICInputAccessory@objc(cs)KeyboardDismissAccessoryView(py)buttonColor">buttonColor</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -114,12 +129,13 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@IBInspectable</span> <span class="kd">public</span> <span class="k">var</span> <span class="nv">buttonColor</span><span class="p">:</span> <span class="kt">UIColor</span> <span class="o">=</span> <span class="kt">Constants</span><span class="o">.</span><span class="kt">ButtonColor</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@IBInspectable</span>
+<span class="kd">public</span> <span class="k">var</span> <span class="nv">buttonColor</span><span class="p">:</span> <span class="kt">UIColor</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/polydice/ICInputAccessory/blob/develop/Source/KeyboardDismissTextField/ICKeyboardDismissAccessoryView.swift#L34-L38">Show on GitHub</a>
+                        <a href="https://github.com/polydice/ICInputAccessory/blob/develop/Source/KeyboardDismissTextField/KeyboardDismissAccessoryView.swift#L34-L38">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -127,9 +143,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:16ICInputAccessory017ICKeyboardDismissB4ViewC13dismissButtonSo8UIButtonCvp"></a>
+                    <a name="/s:16ICInputAccessory015KeyboardDismissB4ViewC13dismissButtonSo8UIButtonCvp"></a>
                     <a name="//apple_ref/swift/Property/dismissButton" class="dashAnchor"></a>
-                    <a class="token" href="#/s:16ICInputAccessory017ICKeyboardDismissB4ViewC13dismissButtonSo8UIButtonCvp">dismissButton</a>
+                    <a class="token" href="#/s:16ICInputAccessory015KeyboardDismissB4ViewC13dismissButtonSo8UIButtonCvp">dismissButton</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -144,12 +160,12 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">private(set)</span> <span class="kd">lazy</span> <span class="k">var</span> <span class="nv">dismissButton</span><span class="p">:</span> <span class="kt">UIButton</span> <span class="o">=</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">private(set)</span> <span class="kd">lazy</span> <span class="k">var</span> <span class="nv">dismissButton</span><span class="p">:</span> <span class="kt">UIButton</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/polydice/ICInputAccessory/blob/develop/Source/KeyboardDismissTextField/ICKeyboardDismissAccessoryView.swift#L41">Show on GitHub</a>
+                        <a href="https://github.com/polydice/ICInputAccessory/blob/develop/Source/KeyboardDismissTextField/KeyboardDismissAccessoryView.swift#L41">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -168,9 +184,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@ICInputAccessory@objc(cs)ICKeyboardDismissAccessoryView(im)initWithFrame:"></a>
+                    <a name="/c:@M@ICInputAccessory@objc(cs)KeyboardDismissAccessoryView(im)initWithFrame:"></a>
                     <a name="//apple_ref/swift/Method/init(frame:)" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@ICInputAccessory@objc(cs)ICKeyboardDismissAccessoryView(im)initWithFrame:">init(frame:)</a>
+                    <a class="token" href="#/c:@M@ICInputAccessory@objc(cs)KeyboardDismissAccessoryView(im)initWithFrame:">init(frame:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -190,7 +206,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/polydice/ICInputAccessory/blob/develop/Source/KeyboardDismissTextField/ICKeyboardDismissAccessoryView.swift#L64-L67">Show on GitHub</a>
+                        <a href="https://github.com/polydice/ICInputAccessory/blob/develop/Source/KeyboardDismissTextField/KeyboardDismissAccessoryView.swift#L64-L67">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -198,9 +214,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@ICInputAccessory@objc(cs)ICKeyboardDismissAccessoryView(im)initWithCoder:"></a>
+                    <a name="/c:@M@ICInputAccessory@objc(cs)KeyboardDismissAccessoryView(im)initWithCoder:"></a>
                     <a name="//apple_ref/swift/Method/init(coder:)" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@ICInputAccessory@objc(cs)ICKeyboardDismissAccessoryView(im)initWithCoder:">init(coder:)</a>
+                    <a class="token" href="#/c:@M@ICInputAccessory@objc(cs)KeyboardDismissAccessoryView(im)initWithCoder:">init(coder:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -220,7 +236,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/polydice/ICInputAccessory/blob/develop/Source/KeyboardDismissTextField/ICKeyboardDismissAccessoryView.swift#L70-L73">Show on GitHub</a>
+                        <a href="https://github.com/polydice/ICInputAccessory/blob/develop/Source/KeyboardDismissTextField/KeyboardDismissAccessoryView.swift#L70-L73">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -233,8 +249,8 @@
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2018 <a class="link" href="https://github.com/polydice" target="_blank" rel="external">polydice</a>. All rights reserved. (Last updated: 2018-04-12)</p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+      <p>&copy; 2018 <a class="link" href="https://github.com/polydice" target="_blank" rel="external">polydice</a>. All rights reserved. (Last updated: 2018-10-31)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
 </div>

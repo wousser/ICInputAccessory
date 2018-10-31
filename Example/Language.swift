@@ -1,9 +1,9 @@
 //
-//  ICKeyboardDismissTextFieldUITests.swift
-//  ICInputAccessoryUITests
+//  Language.swift
+//  Example
 //
-//  Created by Ben on 20/03/2016.
-//  Copyright © 2016 Polydice, Inc.
+//  Created by Ben on 20/01/2018.
+//  Copyright © 2018 bcylin.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -24,28 +24,35 @@
 //  SOFTWARE.
 //
 
-import XCTest
+import Foundation
+import ICInputAccessory
 
-class ICKeyboardDismissTextFieldUITests: XCTestCase {
+enum Language: String, OptionDescriptive {
 
-  private lazy var app = XCUIApplication()
+  case english
+  case french
+  case german
+  case japanese
+  case mandarin
+  case spanish
 
-  override func setUp() {
-    super.setUp()
-    continueAfterFailure = false
-    XCUIApplication().launch()
+  static var availableLanguages: [Language] = [
+    .english,
+    .french,
+    .german,
+    .japanese,
+    .mandarin,
+    .spanish
+  ]
+
+  // MARK: - OptionDescriptive
+
+  var title: String {
+    return rawValue.capitalized
   }
 
-  func testKeyboardDismissing() {
-    app.tables.textFields["ICKeyboardDismissTextField"].tap()
-    app.buttons["Dismiss Keyboard"].tap()
-  }
-
-  func testStoryboard() {
-    app.tables.buttons["Storyboard"].tap()
-    app.tables.textFields["Storyboard ICKeyboardDismissTextField"].tap()
-    app.buttons["Dismiss Keyboard"].tap()
-    app.tables.buttons["Back to Code"].tap()
+  static var titleForOptionalValue: String {
+    return "(Optional)"
   }
 
 }

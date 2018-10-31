@@ -1,5 +1,5 @@
 //
-//  ICKeyboardDismissTextField.swift
+//  KeyboardDismissTextField.swift
 //  ICInputAccessory
 //
 //  Created by Ben on 07/03/2016.
@@ -28,10 +28,10 @@ import UIKit
 
 /// A text field that has a button to dismiss keyboard on the input accessory view.
 @IBDesignable
-open class ICKeyboardDismissTextField: UITextField {
+open class KeyboardDismissTextField: UITextField {
 
   /// The custom input accessory view with a button to dismiss keyboard.
-  @IBOutlet public var keyboardAccessoryView: ICKeyboardDismissAccessoryView! {
+  @IBOutlet public var keyboardAccessoryView: KeyboardDismissAccessoryView! {
     didSet {
       if UI_USER_INTERFACE_IDIOM() != .phone { return }
       keyboardAccessoryView.dismissButton.addTarget(self, action: .dismiss, for: .touchUpInside)
@@ -75,7 +75,7 @@ open class ICKeyboardDismissTextField: UITextField {
     if keyboardAccessoryView == nil {
       // Set an initial frame for the button to appear during UI testing.
       let frame = CGRect(x: 0, y: 0, width: 320, height: 60)
-      keyboardAccessoryView = ICKeyboardDismissAccessoryView(frame: frame)
+      keyboardAccessoryView = KeyboardDismissAccessoryView(frame: frame)
     }
   }
 
@@ -86,5 +86,5 @@ open class ICKeyboardDismissTextField: UITextField {
 
 
 private extension Selector {
-  static let dismiss = #selector(ICKeyboardDismissTextField.dismiss(_:))
+  static let dismiss = #selector(KeyboardDismissTextField.dismiss(_:))
 }

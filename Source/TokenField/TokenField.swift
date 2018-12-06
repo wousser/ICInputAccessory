@@ -473,9 +473,6 @@ open class TokenField: UIView, UITextFieldDelegate, BackspaceTextFieldDelegate {
 
     /// Creates a token with the current input text.
     open func addToken(text: String) {
-        guard let text = text, !text.isEmpty else {
-            return
-        }
         tokens.append(customizedToken(with: text))
         layoutTokenTextField()
         delegate?.tokenField?(self, didCompleteText: text)

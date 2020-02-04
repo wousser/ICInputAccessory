@@ -31,7 +31,7 @@ internal class Token: UIView {
   var text = "" {
     didSet {
       updateTextLabel()
-      frame = CGRect(origin: CGPoint.zero, size: systemLayoutSizeFitting(UILayoutFittingCompressedSize))
+        frame = CGRect(origin: CGPoint.zero, size: systemLayoutSizeFitting(UIView.layoutFittingCompressedSize))
     }
   }
 
@@ -41,7 +41,7 @@ internal class Token: UIView {
     }
   }
 
-  var normalTextAttributes: [NSAttributedStringKey: NSObject] = [
+    var normalTextAttributes: [NSAttributedString.Key: NSObject] = [
     .foregroundColor: UIColor(red: 0.14, green: 0.38, blue: 0.95, alpha: 1),
     .backgroundColor: UIColor.clear
   ] {
@@ -51,7 +51,7 @@ internal class Token: UIView {
     }
   }
 
-  var highlightedTextAttributes: [NSAttributedStringKey: NSObject] = [
+    var highlightedTextAttributes: [NSAttributedString.Key: NSObject] = [
     .foregroundColor: UIColor.white,
     .backgroundColor: UIColor(red: 0.14, green: 0.38, blue: 0.95, alpha: 1)
   ] {
@@ -93,8 +93,8 @@ internal class Token: UIView {
   convenience init(
     text: String,
     delimiter: String = ",",
-    normalAttributes: [NSAttributedStringKey: NSObject]? = nil,
-    highlightedAttributes: [NSAttributedStringKey: NSObject]? = nil
+    normalAttributes: [NSAttributedString.Key: NSObject]? = nil,
+    highlightedAttributes: [NSAttributedString.Key: NSObject]? = nil
   ) {
     self.init()
     if let attributes = normalAttributes { normalTextAttributes = attributes }

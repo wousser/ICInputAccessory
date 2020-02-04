@@ -42,7 +42,7 @@ open class KeyboardDismissAccessoryView: UIView {
     let _button = UIButton()
     let resources = Bundle(for: type(of: self))
     let icon = UIImage(named: "icook-iphone-button-hide-keyboard", in: resources, compatibleWith: nil)
-    _button.setImage(icon, for: UIControlState())
+    _button.setImage(icon, for: UIControl.State())
     _button.backgroundColor = Constants.ButtonColor
     _button.isExclusiveTouch = true
     _button.layer.cornerRadius = 4
